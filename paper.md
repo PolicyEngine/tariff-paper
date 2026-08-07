@@ -2,7 +2,7 @@
 
 **Authors:** [slots — Max's call]
 **Affiliations:** The Axiom Foundation; PolicyEngine
-**Working paper — not for distribution. Assembled from drafts/; markers unresolved until the verification report lands.**
+**Working paper draft — local only.**
 
 # Abstract (exemplar — calibrates every later section)
 
@@ -37,66 +37,79 @@ evidence are public and pinned.
 
 On February 20, 2026, the additional ad valorem duties imposed under
 the International Emergency Economic Powers Act stopped being law. They
-did not stop being collected. Executive Order 14389, implementing the
-Supreme Court's decision in *Learning Resources v. Trump*
-`[NEEDS CITATION: A2 — date, citation]`, ordered that the duties "shall
-no longer be in effect and, as soon as practicable, shall no longer be
-collected" — one sentence containing two different end dates, one legal
-and one operational `[NEEDS CITATION: A1 — EO 14388 collection
-endpoint]`. Any dataset that records "the tariff on Chinese imports in
-February 2026" as a single number has already taken a position on which
-of those dates counts, and most datasets do not say which position they
-took.
+did not stop being collected. That morning the Supreme Court held that
+"IEEPA does not authorize the President to impose tariffs" (*Learning
+Resources, Inc. v. Trump*, 607 U.S. 229 (2026)); the same day,
+Executive Order 14389 ordered that the duties "shall no longer be in
+effect and, as soon as practicable, shall no longer be collected" —
+and named no date for the second clause. The date arrived two days
+later in a Customs and Border Protection cargo-systems message (CSMS
+#67834313), instructing that collection would end for goods entered on
+or after 12:00 a.m. on February 24. So the legal end of the largest
+tariff action of the era is a court decision and an executive order,
+and its operational end is an agency bulletin — three documents, two
+dates, four days apart. Any dataset that records "the tariff on
+Chinese imports in February 2026" as a single number has taken a
+position on which date counts, and most datasets do not say which
+position they took.
 
-That sentence is the 2025–26 tariff environment in miniature. Over
+That week is the 2025–26 tariff environment in miniature. Over
 eighteen months, the United States imposed, modified, litigated, and
-unwound overlapping duties under at least seven distinct authorities:
-the column rates of the tariff schedule itself, Section 232 national-
-security actions across metals and manufactured goods, Section 301
-actions including a forced-labor program that added sixty
-determinations under a new chapter-99 note `[NEEDS CITATION: A4]`, a
-Section 122 balance-of-payments surcharge that arrived and expired
-within its statutory 150-day limit `[NEEDS CITATION: A3]`, Section 201
-safeguards on solar equipment stepping down on a proclamation schedule,
-Section 338 duties, and the IEEPA orders whose termination opened this
-section. The tariff schedule that these overlays modify was itself a
-moving target: the United States International Trade Commission issued
-revision after revision within the year `[NEEDS CITATION: A5 — count
-as of 2026-08]`, each one changing line structure, statistical
-suffixes, and in some revisions the operative rates.
+unwound overlapping duties under at least seven distinct authorities.
+Alongside the IEEPA orders and their termination: Section 232
+national-security actions across metals and manufactured goods;
+Section 301 actions including a forced-labor program that determined
+sixty investigations actionable at once, inserting a new chapter-99
+note into the tariff schedule (U.S. note 52) with two rate tiers and
+country-specific quotas; a Section 122 balance-of-payments surcharge
+(Proclamation 11012) that ran at 10 percent for exactly its statutory
+maximum of 150 days; Section 201 safeguards on solar equipment
+stepping down annually on a proclamation schedule to a 2026 expiry;
+and Section 338 duties. The seams between authorities are themselves
+dated facts: the §122 surcharge expired at 12:01 a.m. on July 24,
+2026 — the same day the forced-labor duties took effect. The tariff
+schedule these overlays modify was a moving target in its own right:
+the International Trade Commission's 2026 edition stood at Revision 15
+by the first week of August, and a revision can carry a single
+surgical change — Revision 15's only entry amends one chapter-99
+heading, zeroing the Section 232 rate on United Kingdom patented
+pharmaceuticals from +10 percent, four days after Revision 14.
 
 The result is that the object researchers call "the statutory tariff
 rate" became a function of four arguments — tariff line, partner
 country, date, and legal interpretation — and the fourth argument is
-the one nobody's spreadsheet has a column for. A rate query for
-HTS 8541.43 from Malaysia on February 22, 2026 has two defensible
-answers, and the difference between them is not a data error. It is a
-fact about how the law ended: the legal authority died on the 20th,
-the collection machinery wound down later, and an analysis of legal
-exposure needs the first date while an analysis of customs revenue
-needs the second.
+the one nobody's spreadsheet has a column for. A rate query for a
+solar module from Malaysia on February 22, 2026 has defensible answers
+that differ by authority and by reading: the IEEPA overlay is legally
+dead but still being collected for two more days, and the safeguard
+duty's staged schedule has been expired for sixteen days. The
+difference between the answers is not a data error. It is a fact
+about how each authority ended, and an analysis of legal exposure
+needs different dates than an analysis of customs revenue.
 
 Reference datasets handled this churn the way reference datasets
-always have: with expert judgment applied by hand, encoded in scripts,
-and published as numbers whose reasoning lives in commit messages if
-it lives anywhere. The best of these — Yale Budget Lab's
-tariff-rate-tracker, which we use as our validation reference
-throughout this paper — resolves the churn into a
-line-by-country-by-date panel with documented policy parameters, and
-it is very good. It is also the product of judgment calls that a
-reader cannot mechanically audit: which proclamation governs a line on
-a date, when a staged schedule ends, which countries a general note
-diverts to a different rate column. Sections 3 and 4 show what happens
-when those calls are made checkable — including two places where the
-best available reference and the underlying instruments disagree.
+always have: with expert judgment applied by hand, encoded in
+scripts, and published as numbers whose reasoning lives in commit
+messages if it lives anywhere. The best of these — Yale Budget Lab's
+tariff-rate-tracker, an open-source pipeline that resolves the churn
+into an interval-encoded panel of statutory rates by tariff line,
+country, and date, and the validation reference we use throughout
+this paper — is very good. It is also the product of judgment calls
+that a reader cannot mechanically audit: which proclamation governs a
+line on a date, when a staged schedule ends, which countries a
+general note diverts to a different rate column. Sections 3 and 4
+show what happens when those calls are made checkable — including two
+places where the best available reference and the underlying
+instruments disagree.
 
 Our claim in this paper is narrow and, we think, timely: when the law
 moves this fast, the honest representation of a tariff rate is not a
 number but a dated derivation — a rule that cites the instrument that
 set it, bounded by the instrument that ended it, executable so that
 "the rate on date X" is computed rather than transcribed. The 2025–26
-shock is the demonstration that this is not a formalist's luxury. When
-rates change by proclamation monthly and die in two stages, the
+shock is the demonstration that this is not a formalist's luxury.
+When rates change by proclamation monthly, die in two stages, and
+expire into seams that begin the next program the same morning, the
 derivation *is* the data.
 
 # 2. What a tariff change is, formally
@@ -271,24 +284,33 @@ Two derivations from this comparison illustrate the standard, and both
 became upstream reports.
 
 **A safeguard rate outliving its schedule.** The Section 201 solar
-safeguard's extension proclamation (10339) sets a staged duty schedule
-with a final period ending February 6, 2026. The reference carries a
-flat 14.5 percent on the affected lines past that date. Our encoding
-carries the staged schedule and its end, citing the proclamation's
-table; the disagreement covers every affected cell after the schedule
-expires. The derivation — proclamation, table, terminal date — is
-recorded in the disposition file, and the finding was filed upstream
-with the same citations.
+safeguard's extension proclamation (10339) sets a staged duty
+schedule in its annex, verbatim: 14.75 percent through February 6,
+2023, then 14.5, then 14.25, then 14 percent through February 6,
+2026 — and nothing after. The current tariff schedule corroborates
+the end: the compiler's note on the affected headings reads "this
+subheading and its related note … have expired." The reference
+carries a flat 14.5 percent on the affected lines past the terminal
+date, which is wrong on two axes at once — 14.5 was the *second*
+year's rate, stale since February 2024, and every rate is expired
+after February 2026. Our encoding carries the staged schedule and
+its end, citing the proclamation's table; the disagreement covers
+every affected cell after the schedule moves. The derivation —
+proclamation, annex table, terminal date, the schedule's own expiry
+note — is recorded in the disposition file, and the finding was
+filed upstream with the same citations.
 
 **Four countries on the wrong rate column.** The tariff schedule's
-General Note 3(b) assigns column-2 rates — the punitive column — to a
-small set of countries (Cuba, North Korea, Belarus, Russia
-`[NEEDS CITATION: A6 — quote the note's current text]`). The
-reference's parser has no column-2 branch, so those four countries
-inherit column-1 base rates throughout its panel. The disagreement is
-systematic rather than episodic — it touches every line for four
-partners — and the derivation is a single sentence of the schedule's
-own general notes. Filed upstream likewise.
+General Note 3(b) directs that "the rates of duty shown in column 2
+shall apply to products, whether imported directly or indirectly, of
+the following countries and areas": the Republic of Belarus, Cuba,
+North Korea, and the Russian Federation. The reference's parser has
+no column-2 branch, so those four countries inherit column-1 base
+rates throughout its panel. The disagreement is systematic rather
+than episodic — it touches every line for four partners — and the
+derivation is a single sentence of the schedule's own general notes,
+with the note's cross-reference to the Russia and Belarus additional-
+duty headings compounding the gap. Filed upstream likewise.
 
 We report both findings as what they are: derivation-backed and, as of
 this writing, unacknowledged. The reports sit in the tracker's issue
@@ -508,6 +530,88 @@ conflating the two would launder modeling assumptions through a
 dataset whose claim to exactness is precisely that it added none it
 did not declare.
 
+# 8. Related work
+
+**Tariff-rate data for the trade-war literature.** The empirical
+literature on the 2018–19 tariffs built its rate data by hand, wave by
+wave. Fajgelbaum, Goldberg, Kennedy, and Khandelwal digitized each
+wave's product lists and statutory rates from the official
+announcements to estimate the trade war's incidence
+[fajgelbaum2020return]; Amiti, Redding, and Weinstein assembled the
+same sequence for pass-through event studies [amiti2019impact;
+amiti2020whos]; Flaaen and Pierce mapped tariff-line changes into
+industry exposure measures [flaaen2019disentangling]. In each case the
+tariff schedule is a bespoke research input, frozen at publication.
+Bown's widely used trackers institutionalized the hand-compiled
+approach as a maintained public timeline [bown2021uschina;
+bown_piie_chart]. The 2025–26 environment strains this tradition on
+two margins the earlier waves mostly spared it: authority count
+(seven overlapping legal bases with distinct lifecycles) and tempo
+(terminations, expiries, and revision-level rate surgery inside single
+months). Teti's Global Tariff Database extends statutory rate coverage
+impressively in space and time — two hundred importers back to 1988 —
+but at HS-6, without the 2025–26 emergency authorities, and as data
+rather than executable derivations [teti2024missing].
+
+**The tracker we validate against.** The nearest neighbor to our
+statutory panel is its own validation reference. Yale Budget Lab's
+tariff-rate-tracker is an open-source pipeline producing an
+interval-encoded panel of statutory rates at the tariff-line ×
+country level for the 2025–26 regime, built from the trade
+commission's schedule archives with documented policy parameters
+[yaletracker_repo; budgetlab2026tracker]; the Budget Lab's rate
+series are already the benchmark other measurement work checks
+against [cavallo2026tracking]. We are not, therefore, the first
+executable statutory tariff panel; the tracker is one, and a good
+one. The contribution is the form and what the form enables: rules
+at the instrument grain, each version citing and quoting its legal
+source, with mandatory boundary tests — versus one pipeline whose
+judgment calls live in code — and, on top of that form, a
+cross-implementation conformance regime. To our knowledge the
+conformance run of Section 3 is the first external research
+engagement with the tracker's internals (we find no formal citation
+of the tool itself as of August 2026), and Section 4's
+derivation-backed defect reports are what that engagement produces
+when a disagreement survives audit.
+
+**Rules as code and calculator validation.** Executable encodings of
+law have an established line: OpenFisca's deployed tax-benefit
+engines [openfisca], Catala's formally grounded statute-to-code
+language [merigoux2021catala], and the policy agenda articulated for
+rules-as-code generally [mohun2020cracking]. Cross-validation is
+likewise institutionalized practice in tax microsimulation — NBER's
+TAXSIM as a reference implementation [feenberg1993introduction],
+EUROMOD's country-report validation regime [sutherland2013euromod],
+and maintained harnesses that reconcile independent calculators
+line-by-line [taxcalculator_taxsim_validation]. That culture has not
+previously reached trade law. Tariffs are, if anything, the easier
+target for it — the instruments are public, the schedule is versioned
+by the issuing agency, and the reference tracker already exists — and
+the 2025–26 record supplies the volatility that makes the exercise
+informative rather than ornamental.
+
+**Synthetic microdata.** The synthetic-data tradition in official
+statistics runs through disclosure avoidance: synthetic establishment
+panels standing in for confidential business registers
+[kinney2011towards], noise-infused releases with formal privacy
+guarantees [machanavajjhala2008privacy], and, in transport and
+demography, synthetic populations fit to published margins
+[beckman1996creating]. Customs data specifically have seen synthesis
+for machine-learning research — artificial Korean import declarations
+generated for fraud-detection benchmarks [jeong2022customs] — while
+the true U.S. transaction record remains restricted-access
+[bernard2009importers; census_lfttd] or proprietary. Our entries
+invert the disclosure-avoidance objective: the inputs are already
+public, no confidentiality constraint binds, and the generator's
+contract is exact integer reproduction of every published margin cell
+with a registered assumptions ledger below that grain. We find no
+prior public U.S. synthetic customs-entry dataset with that
+contract — the combination this paper ships (instrument-cited
+executable rules, a conformance verdict against an independent
+implementation, and margin-exact public entries) appears to be
+unoccupied, and we state the boundary of that claim as a search
+bounded at August 2026 rather than a certainty.
+
 # Data and code availability
 
 Everything this paper reports predates it in public. The encodings
@@ -533,4 +637,44 @@ conformance derivation at the pinned revisions reproduces the
 scoreboard; re-running the entries build against the manifested
 archives reproduces the artifacts byte-for-byte, a property the review
 regime enforced rather than aspired to.
+
+# Tables (wire into sections at final assembly)
+
+## Table 1 — Conformance scoreboard at the pinned snapshot (§3)
+
+Source: axiom-oracles report `dc1da3af` (2026-08-03); reference =
+Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
+
+| Quantity | Value |
+|---|---|
+| In-scope policies covered | 10 / 10 |
+| Unexplained disagreements | 0 |
+| Open disagreements attributed to the encoding | 0 |
+| Tripwired scope exclusions | 4 |
+| Reference-attributed cells, classified with evidence | 8,283 |
+| Temporal debt surfaced (pre-domain intervals) | 48,000 |
+| Temporal debt surfaced (domain-straddling intervals) | 1,200 |
+| Comparison-harness tests at close | 2,396 |
+| Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |
+| Reference build, measured | 6,368 s wall; 123.4 GiB peak footprint |
+
+## Table 2 — Entries pipeline validation (§5)
+
+Sources: build report + reconciliation records + cross-check report,
+committed in-branch (microcosm #620); generator validation report
+(microcosm #621).
+
+| Check | Result |
+|---|---|
+| Source archives (2025-01…2026-06) | 18, ~3.3 GB, all sha-256 manifested |
+| Detail rows parsed | 38,841,305 |
+| Margin cells (HTS-10 × country × district × month) | 3,070,851 |
+| Consumer facts published (5 grains) | 302,318 |
+| Exact-integer reconciliation vs publisher control totals | 3 axes × 18 months: **0 failures** |
+| Cross-check vs second official channel (API) | 108,977 cells, 16 pairs: **0 mismatches** |
+| Generator identity, pilot window 2026-02…06 | $1,467,109,590,515 weighted = margins total exactly |
+| Pilot entry rows / weighted entries | 3,806,050 / 44,881,145 |
+| Informal-share proxy calibration (σ = 2.6916) | share Δ 2.6×10⁻⁵; mean $32,689 vs $32,916 anchor |
+| Adversarial review at merge | P1: 12 rounds → APPROVE, no findings; P2: 4 rounds → APPROVE |
+| Trade test battery at merge | 149 |
 

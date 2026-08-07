@@ -2,64 +2,77 @@
 
 On February 20, 2026, the additional ad valorem duties imposed under
 the International Emergency Economic Powers Act stopped being law. They
-did not stop being collected. Executive Order 14389, implementing the
-Supreme Court's decision in *Learning Resources v. Trump*
-`[NEEDS CITATION: A2 — date, citation]`, ordered that the duties "shall
-no longer be in effect and, as soon as practicable, shall no longer be
-collected" — one sentence containing two different end dates, one legal
-and one operational `[NEEDS CITATION: A1 — EO 14388 collection
-endpoint]`. Any dataset that records "the tariff on Chinese imports in
-February 2026" as a single number has already taken a position on which
-of those dates counts, and most datasets do not say which position they
-took.
+did not stop being collected. That morning the Supreme Court held that
+"IEEPA does not authorize the President to impose tariffs" (*Learning
+Resources, Inc. v. Trump*, 607 U.S. 229 (2026)); the same day,
+Executive Order 14389 ordered that the duties "shall no longer be in
+effect and, as soon as practicable, shall no longer be collected" —
+and named no date for the second clause. The date arrived two days
+later in a Customs and Border Protection cargo-systems message (CSMS
+#67834313), instructing that collection would end for goods entered on
+or after 12:00 a.m. on February 24. So the legal end of the largest
+tariff action of the era is a court decision and an executive order,
+and its operational end is an agency bulletin — three documents, two
+dates, four days apart. Any dataset that records "the tariff on
+Chinese imports in February 2026" as a single number has taken a
+position on which date counts, and most datasets do not say which
+position they took.
 
-That sentence is the 2025–26 tariff environment in miniature. Over
+That week is the 2025–26 tariff environment in miniature. Over
 eighteen months, the United States imposed, modified, litigated, and
-unwound overlapping duties under at least seven distinct authorities:
-the column rates of the tariff schedule itself, Section 232 national-
-security actions across metals and manufactured goods, Section 301
-actions including a forced-labor program that added sixty
-determinations under a new chapter-99 note `[NEEDS CITATION: A4]`, a
-Section 122 balance-of-payments surcharge that arrived and expired
-within its statutory 150-day limit `[NEEDS CITATION: A3]`, Section 201
-safeguards on solar equipment stepping down on a proclamation schedule,
-Section 338 duties, and the IEEPA orders whose termination opened this
-section. The tariff schedule that these overlays modify was itself a
-moving target: the United States International Trade Commission issued
-revision after revision within the year `[NEEDS CITATION: A5 — count
-as of 2026-08]`, each one changing line structure, statistical
-suffixes, and in some revisions the operative rates.
+unwound overlapping duties under at least seven distinct authorities.
+Alongside the IEEPA orders and their termination: Section 232
+national-security actions across metals and manufactured goods;
+Section 301 actions including a forced-labor program that determined
+sixty investigations actionable at once, inserting a new chapter-99
+note into the tariff schedule (U.S. note 52) with two rate tiers and
+country-specific quotas; a Section 122 balance-of-payments surcharge
+(Proclamation 11012) that ran at 10 percent for exactly its statutory
+maximum of 150 days; Section 201 safeguards on solar equipment
+stepping down annually on a proclamation schedule to a 2026 expiry;
+and Section 338 duties. The seams between authorities are themselves
+dated facts: the §122 surcharge expired at 12:01 a.m. on July 24,
+2026 — the same day the forced-labor duties took effect. The tariff
+schedule these overlays modify was a moving target in its own right:
+the International Trade Commission's 2026 edition stood at Revision 15
+by the first week of August, and a revision can carry a single
+surgical change — Revision 15's only entry amends one chapter-99
+heading, zeroing the Section 232 rate on United Kingdom patented
+pharmaceuticals from +10 percent, four days after Revision 14.
 
 The result is that the object researchers call "the statutory tariff
 rate" became a function of four arguments — tariff line, partner
 country, date, and legal interpretation — and the fourth argument is
-the one nobody's spreadsheet has a column for. A rate query for
-HTS 8541.43 from Malaysia on February 22, 2026 has two defensible
-answers, and the difference between them is not a data error. It is a
-fact about how the law ended: the legal authority died on the 20th,
-the collection machinery wound down later, and an analysis of legal
-exposure needs the first date while an analysis of customs revenue
-needs the second.
+the one nobody's spreadsheet has a column for. A rate query for a
+solar module from Malaysia on February 22, 2026 has defensible answers
+that differ by authority and by reading: the IEEPA overlay is legally
+dead but still being collected for two more days, and the safeguard
+duty's staged schedule has been expired for sixteen days. The
+difference between the answers is not a data error. It is a fact
+about how each authority ended, and an analysis of legal exposure
+needs different dates than an analysis of customs revenue.
 
 Reference datasets handled this churn the way reference datasets
-always have: with expert judgment applied by hand, encoded in scripts,
-and published as numbers whose reasoning lives in commit messages if
-it lives anywhere. The best of these — Yale Budget Lab's
-tariff-rate-tracker, which we use as our validation reference
-throughout this paper — resolves the churn into a
-line-by-country-by-date panel with documented policy parameters, and
-it is very good. It is also the product of judgment calls that a
-reader cannot mechanically audit: which proclamation governs a line on
-a date, when a staged schedule ends, which countries a general note
-diverts to a different rate column. Sections 3 and 4 show what happens
-when those calls are made checkable — including two places where the
-best available reference and the underlying instruments disagree.
+always have: with expert judgment applied by hand, encoded in
+scripts, and published as numbers whose reasoning lives in commit
+messages if it lives anywhere. The best of these — Yale Budget Lab's
+tariff-rate-tracker, an open-source pipeline that resolves the churn
+into an interval-encoded panel of statutory rates by tariff line,
+country, and date, and the validation reference we use throughout
+this paper — is very good. It is also the product of judgment calls
+that a reader cannot mechanically audit: which proclamation governs a
+line on a date, when a staged schedule ends, which countries a
+general note diverts to a different rate column. Sections 3 and 4
+show what happens when those calls are made checkable — including two
+places where the best available reference and the underlying
+instruments disagree.
 
 Our claim in this paper is narrow and, we think, timely: when the law
 moves this fast, the honest representation of a tariff rate is not a
 number but a dated derivation — a rule that cites the instrument that
 set it, bounded by the instrument that ended it, executable so that
 "the rate on date X" is computed rather than transcribed. The 2025–26
-shock is the demonstration that this is not a formalist's luxury. When
-rates change by proclamation monthly and die in two stages, the
+shock is the demonstration that this is not a formalist's luxury.
+When rates change by proclamation monthly, die in two stages, and
+expire into seams that begin the next program the same morning, the
 derivation *is* the data.

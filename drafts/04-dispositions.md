@@ -16,24 +16,33 @@ Two derivations from this comparison illustrate the standard, and both
 became upstream reports.
 
 **A safeguard rate outliving its schedule.** The Section 201 solar
-safeguard's extension proclamation (10339) sets a staged duty schedule
-with a final period ending February 6, 2026. The reference carries a
-flat 14.5 percent on the affected lines past that date. Our encoding
-carries the staged schedule and its end, citing the proclamation's
-table; the disagreement covers every affected cell after the schedule
-expires. The derivation — proclamation, table, terminal date — is
-recorded in the disposition file, and the finding was filed upstream
-with the same citations.
+safeguard's extension proclamation (10339) sets a staged duty
+schedule in its annex, verbatim: 14.75 percent through February 6,
+2023, then 14.5, then 14.25, then 14 percent through February 6,
+2026 — and nothing after. The current tariff schedule corroborates
+the end: the compiler's note on the affected headings reads "this
+subheading and its related note … have expired." The reference
+carries a flat 14.5 percent on the affected lines past the terminal
+date, which is wrong on two axes at once — 14.5 was the *second*
+year's rate, stale since February 2024, and every rate is expired
+after February 2026. Our encoding carries the staged schedule and
+its end, citing the proclamation's table; the disagreement covers
+every affected cell after the schedule moves. The derivation —
+proclamation, annex table, terminal date, the schedule's own expiry
+note — is recorded in the disposition file, and the finding was
+filed upstream with the same citations.
 
 **Four countries on the wrong rate column.** The tariff schedule's
-General Note 3(b) assigns column-2 rates — the punitive column — to a
-small set of countries (Cuba, North Korea, Belarus, Russia
-`[NEEDS CITATION: A6 — quote the note's current text]`). The
-reference's parser has no column-2 branch, so those four countries
-inherit column-1 base rates throughout its panel. The disagreement is
-systematic rather than episodic — it touches every line for four
-partners — and the derivation is a single sentence of the schedule's
-own general notes. Filed upstream likewise.
+General Note 3(b) directs that "the rates of duty shown in column 2
+shall apply to products, whether imported directly or indirectly, of
+the following countries and areas": the Republic of Belarus, Cuba,
+North Korea, and the Russian Federation. The reference's parser has
+no column-2 branch, so those four countries inherit column-1 base
+rates throughout its panel. The disagreement is systematic rather
+than episodic — it touches every line for four partners — and the
+derivation is a single sentence of the schedule's own general notes,
+with the note's cross-reference to the Russia and Belarus additional-
+duty headings compounding the gap. Filed upstream likewise.
 
 We report both findings as what they are: derivation-backed and, as of
 this writing, unacknowledged. The reports sit in the tracker's issue

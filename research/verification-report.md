@@ -1,0 +1,348 @@
+# Verification report — Parts A and B
+
+Executed 2026-08-07 against primary sources (federalregister.gov API + full text,
+supremecourt.gov slip opinion PDF, hts.usitc.gov reststop endpoints, uscode.house.gov
+OLRC, GitHub API, content.govdelivery.com). Part C intentionally omitted (separate
+agent runs it). All BibTeX below is also appended to research/references.bib.
+
+## A. Verifications
+
+A1. CORRECTED — The 2026-02-24 collection-end DATE is right; the INSTRUMENT is wrong.
+Executive Order 14388 of February 20, 2026 is "Continuing the Suspension of Duty-Free
+De Minimis Treatment for All Countries" (91 FR 9433, FR doc 2026-03829, pub.
+2026-02-25) — the de minimis continuation order. It sets no collection-end date for
+IEEPA duties. The termination order is Executive Order 14389 of February 20, 2026,
+"Ending Certain Tariff Actions" (91 FR 9437, FR doc 2026-03832, pub. 2026-02-25),
+whose operative language contains NO specific date: the IEEPA additional ad valorem
+duties (EOs 14193, 14194, 14195, 14245, 14257, 14323, 14329, 14380, 14382) "shall no
+longer be in effect and, as soon as practicable, shall no longer be collected." The
+specific 2026-02-24 cutoff was set operationally by CBP in CSMS # 67834313, "Ending
+Collection of International Emergency Economic Powers Act Duties" (issued
+2026-02-22): IEEPA duties "will no longer be collected for goods entered for
+consumption or withdrawn from warehouse for consumption, on or after 12:00 a.m.
+eastern time on February 24, 2026." (Likely source of the campaign-memory
+conflation: the EO 14389 FR doc is stamped "Filed 2-24-26"; also EO 14388 was signed
+the same day.) EO 14388 was later republished with corrections at 91 FR 17839
+(R1-2026-03829, 2026-04-09). Ground-truth edit required: "collection end 2026-02-24
+(EO 14388)" → "collection end 2026-02-24 (CBP CSMS # 67834313 implementing EO
+14389's 'as soon as practicable' wind-down)". EO 14388 stays citable, but as the
+de minimis-continuity instrument. The "legal end 2026-02-20" leg is consistent: EO
+14389 was signed 2026-02-20 (same day as the SCOTUS decision) and speaks in the
+present tense ("shall no longer be in effect"), with no other date in the text.
+— https://www.federalregister.gov/d/2026-03829 (EO 14388)
+— https://www.federalregister.gov/d/2026-03832 (EO 14389)
+— https://content.govdelivery.com/bulletins/gd/USDHSCBP-40b11c9 (CSMS # 67834313)
+    BibTeX: eo14388_2026, eo14389_2026, csms67834313_2026
+
+A2. CONFIRMED — Learning Resources, Inc. v. Trump, 607 U.S. 229 (2026), No. 24-1287,
+decided February 20, 2026 (argued November 5, 2025), together with No. 25-250, Trump
+v. V.O.S. Selections, Inc. Held (syllabus, verbatim): "IEEPA does not authorize the
+President to impose tariffs. The judgment in No. 24-1287 is vacated, and the case is
+remanded with instructions to dismiss for lack of jurisdiction; the judgment in
+No. 25-250 is affirmed." (No. 24-1287: 784 F. Supp. 3d 209, vacated and remanded;
+No. 25-250: 149 F.4th 1312 (CA Fed en banc), affirmed.) Roberts, C.J., announced the
+judgment and delivered the opinion of the Court as to Parts I, II-A-1, and II-B;
+Part II-A-2 (major questions) was joined by Gorsuch and Barrett; Kagan, joined by
+Sotomayor and Jackson, agreed IEEPA does not authorize tariffs on ordinary statutory
+interpretation without invoking the major questions doctrine. Core reasoning:
+§ 1702(a)(1)(B)'s "regulate ... importation" lists nine powers with no mention of
+tariffs or duties; when Congress delegates tariff power it does so expressly and
+with limits; no President in IEEPA's half century had used it to impose any tariffs.
+Decision date 2026-02-20 = the same day EO 14389 was signed.
+— https://www.supremecourt.gov/opinions/25pdf/607us2r12_8nj9.pdf (preliminary print,
+  Vol. 607 U.S. Part 2, pp. 229–390)
+— https://www.supremecourt.gov/opinions/slipopinion/25
+    BibTeX: learningresources2026
+
+A3. CONFIRMED — Instrument: Proclamation 11012 of February 20, 2026, "Imposing a
+Temporary Import Surcharge To Address Fundamental International Payments Problems"
+(91 FR 9339, FR doc 2026-03824, pub. 2026-02-25). Clause (1): all imported articles
+subject to a 10 percent ad valorem surcharge (Annex I/II exceptions; clause (4): not
+applied on the portion of an import already covered by §232 duties; clause (5):
+treated as a regular customs duty). Clause (7): effective for goods entered for
+consumption or withdrawn from warehouse on or after 12:01 a.m. EST February 24,
+2026, "and shall continue in effect through 12:01 a.m. eastern daylight time on July
+24, 2026, unless ... expressly suspended, modified, or terminated on an earlier
+date, or unless the effective period ... is extended by an Act of the Congress."
+Clause 12(c): the surcharge "should remain operative until July 24, 2026." Feb 24 →
+Jul 24 is exactly 150 days. Expiry 2026-07-24 CONFIRMED. No FR instrument modifying
+or terminating the surcharge appears between 2026-02-26 and 2026-08-07 (FR full-text
+search for "import surcharge" returns only the de minimis documents), so it ran to
+scheduled expiry. Statute: 19 U.S.C. § 2132(a) (OLRC, laws in effect on 2026-08-06):
+"the President shall proclaim, for a period not exceeding 150 days (unless such
+period is extended by Act of Congress)— (A) a temporary import surcharge, not to
+exceed 15 percent ad valorem, in the form of duties (in addition to those already
+imposed, if any) on articles imported into the United States ..." — the 150-day
+limit and 15% ceiling both confirmed; the proclaimed 10% is within the ceiling.
+— https://www.federalregister.gov/d/2026-03824
+— https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title19-section2132&num=0&edition=prelim
+    BibTeX: proc11012_2026, usc2132
+
+A4. CONFIRMED — FR doc 2026-15181 (91 FR 47318, pub. 2026-07-28, USTR): "Notice of
+Actions in Section 301 Investigations of Acts, Policies, and Practices of Various
+Economies Related to the Failure of Each Economy To Impose and Effectively Enforce a
+Prohibition on the Importation of Goods Produced With Forced Labor." The Trade
+Representative "determined under Section 301(b) and Section 304(a) ... that in each
+of 60 investigations, certain of the acts, policies, and practices of the economy at
+issue are actionable" (investigations initiated 2026-03-12, see 91 FR 12884;
+actionability determined 2026-06-02). "60 determinations" is a fair paraphrase.
+Rates: 10% for economies with a forced-labor import prohibition (or an Agreement on
+Reciprocal Trade commitment, or a partial regime), 12.5% for all others, with
+specified economies at rates net of MFN; TRQs when feasible for Bangladesh,
+Cambodia, Indonesia, Malaysia. Annex I — effective for goods entered on/after 12:01
+a.m. ET July 24, 2026, with an in-transit exception — modifies subchapter III of
+chapter 99 HTSUS, inserting new headings (the note's scope spans 9903.05.85–
+9903.06.21) and: "The following new U.S. note 52 is inserted in numerical order."
+Chapter-99 U.S. note 52 creation CONFIRMED. (Annex II, effective 2026-07-31, adds
+"patented pharmaceutical articles" to exemption heading 9903.05.90 and amends note
+52(f).) Timeline seam worth noting: forced-labor §301 duties begin 2026-07-24, the
+same day the §122 surcharge expires.
+— https://www.federalregister.gov/d/2026-15181
+    BibTeX: ustr2026forcedlabor
+
+A5. CONFIRMED — As of 2026-08-07 the current USITC release is "Harmonized Tariff
+Schedule of the United States (2026 Revision 15)," dated August 3, 2026; its change
+record states it follows 2026 Revision 14, published July 31, 2026. Rev 15's change
+record lists exactly one change: heading 9903.04.63, "Modified (rates of duty),"
+effective July 31, 2026, source: Notice. Current HTS text for 9903.04.63: "Patented
+pharmaceutical articles that are the product of the United Kingdom as defined in
+subdivisions (c) and (g) of U.S. note 40 to this subchapter," general rate "The duty
+provided in the applicable subheading +0%". The source notice is Commerce/BIS,
+"Notice of Reduction of Tariffs on Patented Pharmaceuticals and Pharmaceutical
+Ingredients for Products of the United Kingdom Implemented by Presidential
+Proclamation 11020" (91 FR 49406, FR doc 2026-15799, pub. 2026-08-04): effective
+12:01 a.m. ET July 31, 2026, heading 9903.04.63 "is amended by deleting '+10%' in
+each place that it appears and inserting '+0%' in lieu thereof," implementing
+Proclamation 11020 of April 2, 2026, "Adjusting Imports of Pharmaceuticals and
+Pharmaceutical Ingredients Into the United States" (91 FR 18183). Revision count
+(Rev 15) and content (UK §232 pharma zeroing) both CONFIRMED. Draft-scope caveat:
+the zeroing covers PATENTED pharmaceutical articles of the UK (+10% → +0%); for
+context, the general §232 pharma heading 9903.04.60 carries 100% and the
+EU/Japan/Korea/Switzerland/Liechtenstein heading 9903.04.62 carries 15%.
+— https://hts.usitc.gov/reststop/file?release=currentRelease&filename=Change%20Record
+— https://www.federalregister.gov/d/2026-15799
+— https://www.federalregister.gov/d/2026-06956 (Proclamation 11020)
+    BibTeX: hts2026rev15, bis2026ukpharma, proc11020_2026
+
+A6. CONFIRMED — HTSUS (2026 Revision 15), General Note 3(b), verbatim:
+"(b) Rate of Duty Column 2. Notwithstanding any of the foregoing provisions of this
+note, the rates of duty shown in column 2 shall apply to products, whether imported
+directly or indirectly, of the following countries and areas pursuant to section 401
+of the Tariff Classification Act of 1962, to section 231 or 257(e)(2) of the Trade
+Expansion Act of 1962, to section 404(a) of the Trade Act of 1974 or to any other
+applicable section of law, or to action taken by the President thereunder: 1/
+    Republic of Belarus    North Korea
+    Cuba                   Russian Federation"
+Footnote 1/: "See U.S. note 30, subchapter III, chapter 99 and heading 9903.90.08
+for additional duty treatment." The expected set {Cuba, North Korea, Belarus,
+Russia} is confirmed under formal names; the footnote's cross-reference (note 30 /
+9903.90.08, the Russia/Belarus additional duties) strengthens the tracker-issue #28
+column-2 derivation.
+— https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Note%203
+    BibTeX: hts2026rev15
+
+A7. CONFIRMED — Proclamation 10339 of February 4, 2022 (87 FR 7357, FR doc
+2022-02906): extends the §201 solar safeguard (Proclamation 9693) for four years —
+the fifth through eighth years — with the cell TRQ at 5.0 GW/year, bifacial panels
+excluded, and "annual reductions in the rates of duty ... in the fifth, sixth,
+seventh, and eighth years, as described in Annex I." Annex I (87 FR 7361–7362)
+inserts identical staged tables into U.S. note 18(f) (over-quota cells) and 18(h)
+(modules), verbatim: "If entered during the period from February 7, 2022 through
+February 6, 2023 ... 14.75%; ... February 7, 2023 through February 6, 2024 ...
+14.5%; ... February 7, 2024 through February 6, 2025 ... 14.25%; ... February 7,
+2025 through February 6, 2026 ... 14%". Final period end date 2026-02-06 CONFIRMED —
+and the final-year statutory rate is 14%, not 14.5%, so a tracker carrying flat
+14.5% is wrong on two axes (wrong stage after 2024-02-06; nonzero after the
+2026-02-06 expiry). The current HTS corroborates expiry: 9903.45.21/9903.45.22 carry
+the compiler's note "This subheading and its related note, U.S. note 18 to this
+subchapter, have expired. See 87 Fed. Reg. 7357." Later modifications (Proclamation
+10779, signed 2024-06-21, 89 FR 53333; Proclamation 10790, signed 2024-08-12, 89 FR
+66181; current HTS shows a 12.5 GW TRQ) altered coverage/TRQ but did not extend the
+2026-02-06 terminal date — the measure shows as expired in the current schedule.
+— https://www.federalregister.gov/d/2022-02906
+— https://www.govinfo.gov/content/pkg/FR-2022-02-09/pdf/2022-02906.pdf (Annex I)
+    BibTeX: proc10339_2022
+
+A8. CONFIRMED — Repository https://github.com/Budget-Lab-Yale/tariff-rate-tracker;
+owner org Budget-Lab-Yale ("A project of The Budget Lab at Yale"); license MIT
+(GitHub API license.spdx_id = MIT); default branch master; description "Code to
+track and organize tariff rates." README: "Statutory U.S. tariff rates at the
+HTS-10 x country level, built from USITC Harmonized Tariff Schedule archives and
+related policy resources"; core product "an interval-encoded tariff panel for the
+2025-2026 tariff regime" (data/timeseries/rate_timeseries.rds with
+valid_from/valid_until intervals). Commit c4307e51 resolves upstream to
+c4307e514196618afcbf88cf7fd33746417eeabf, committed 2026-07-24T14:06:48Z ("Merge
+pull request #21 from Budget-Lab-Yale/fix/s232-deriv-hs8-overinclusion") and is an
+ancestor of master (compare c4307e51...master: status "ahead", behind_by 0). Repo
+active (pushed_at 2026-08-07). Companion publication: "Introducing the Tariff Rate
+Tracker: An Open-Source Tool for Daily Effective Tariff Rates," The Budget Lab,
+published April 1, 2026, updated May 9, 2026 — "a fully open-source tool that
+computes daily effective tariff rates from official USITC Harmonized Tariff Schedule
+(HTS) data," daily product-by-country rates from 2025-01-01, with policy simulation.
+— https://github.com/Budget-Lab-Yale/tariff-rate-tracker/commit/c4307e514196618afcbf88cf7fd33746417eeabf
+— https://budgetlab.yale.edu/research/introducing-tariff-rate-tracker-open-source-tool-daily-effective-tariff-rates
+    BibTeX: yaletracker_repo, budgetlab2026tracker
+
+## B. Prior art
+
+B1. Fajgelbaum, Goldberg, Kennedy & Khandelwal (2020), "The Return to
+Protectionism," Quarterly Journal of Economics 135(1): 1–55, doi:10.1093/qje/qjz036
+— Estimates the 2018–19 trade-war effects (complete pass-through into duty-inclusive
+import prices; ~$7.2B aggregate real income loss) by digitizing each tariff wave's
+product lists at the 8-digit HTS level with statutory rates and effective dates from
+the official USTR/Federal Register announcements, merged to monthly HS-10 trade
+data; the tariff schedule is a hand-assembled research input frozen at publication.
+This paper differs by making the statutory schedule itself the output: dated
+executable rules citing each instrument, continuously conformance-tested against an
+independent implementation, and covering the 2025–26 authorities (IEEPA, §122, §201,
+§232, §301, §338) rather than the 2018–19 waves.
+    BibTeX: fajgelbaum2020return
+
+B2. Amiti, Redding & Weinstein (2019), "The Impact of the 2018 Tariffs on Prices and
+Welfare," Journal of Economic Perspectives 33(4): 187–210, doi:10.1257/jep.33.4.187;
+and (2020), "Who's Paying for the US Tariffs? A Longer-Term Perspective," AEA Papers
+and Proceedings 110: 541–546, doi:10.1257/pandp.20201018 — note the 2020 piece is
+AEA P&P, not AER: Insights as the brief suggested — Pass-through event studies built
+on monthly HS-10 import values/quantities combined with the sequence of 2018–19
+tariff waves (product lists, statutory rates, implementation dates) compiled from
+official announcements. Same contrast as B1: their tariff-rate panel is bespoke,
+wave-based, and static; this paper's is an executable, instrument-cited encoding
+with a conformance harness, plus released entry-level synthetic microdata.
+    BibTeX: amiti2019impact, amiti2020whos
+
+B3. Flaaen & Pierce (2019), "Disentangling the Effects of the 2018-2019 Tariffs on a
+Globally Connected U.S. Manufacturing Sector," FEDS 2019-086,
+doi:10.17016/FEDS.2019.086 — Builds industry-level tariff-exposure measures through
+three channels (import protection, imported-input costs, foreign retaliation) by
+mapping tariff-line changes into NAICS manufacturing industries; finds net negative
+employment effects from the 2018–19 tariffs. Differs: tariff data enter as
+exposure aggregates constructed once for econometric identification, versus a
+maintained line-level statutory panel with per-instrument citations and companion
+tests.
+    BibTeX: flaaen2019disentangling
+
+B4. Bown (PIIE) trackers: Bown (2021), "The US–China trade war and Phase One
+agreement," Journal of Policy Modeling 43(4): 805–843,
+doi:10.1016/j.jpolmod.2021.02.009, and the PIIE chart "US-China Trade War Tariffs:
+An Up-to-Date Chart" (last updated November 14, 2025; covers §301/§232/§201/IEEPA
+actions; downloadable underlying Excel) — Hand-maintained, expert-compiled timelines
+and trade-weighted average-tariff charts assembled from official announcements;
+authoritative narrative coverage published as charts/spreadsheets. Differs: curated
+summaries with no executable rule base, no line-level HTS-10 × country × day
+statutory panel, no machine-checkable instrument citations, no reproducibility
+harness; this paper encodes the instruments themselves and reconciles against an
+independent computation.
+    BibTeX: bown2021uschina, bown_piie_chart
+
+B5. LFTTD — U.S. Census Bureau Longitudinal Firm Trade Transactions Database: the
+universe of U.S. import/export customs transactions (value, date, country, quantity,
+HS code) linked to firms; restricted-use, 1992–2022 monthly, accessible only through
+approved FSRDC projects; canonical description in Bernard, Jensen & Schott (2009),
+"Importers, Exporters and Multinationals: A Portrait of Firms in the U.S. that Trade
+Goods," ch. 14 (pp. 513–552) of Producer Dynamics (Univ. of Chicago Press) — True
+transaction microdata exist but sit behind Title 13/26 restricted access. Differs:
+this paper's entries are public and synthetic — reconstructed to reproduce
+already-published Census margins exactly — trading firm identity and true
+within-cell variation for unrestricted access; the LFTTD is the contrast that
+motivates the release, not a competitor to it.
+    BibTeX: bernard2009importers, census_lfttd
+
+B6. Law-as-code and calculator-validation literature: Merigoux, Chataing & Protzenko
+(2021), "Catala: A Programming Language for the Law," Proc. ACM Program. Lang.
+5(ICFP): 1–29, doi:10.1145/3473582 (statute-to-code DSL with formalized semantics);
+OpenFisca (openfisca.org; AGPL-3.0 core engine; no canonical journal article — cite
+as software), the most widely deployed rules-as-code tax-benefit engine; Mohun &
+Roberts (2020), "Cracking the Code: Rulemaking for Humans and Machines," OECD
+Working Papers on Public Governance No. 42, doi:10.1787/3afe6ba5-en (the
+rules-as-code agenda statement); TAXSIM: Feenberg & Coutts (1993), "An Introduction
+to the TAXSIM Model," JPAM 12(1): 189–194, doi:10.2307/3325474; EUROMOD: Sutherland
+& Figari (2013), "EUROMOD: the European Union tax-benefit microsimulation model,"
+International Journal of Microsimulation 6(1): 4–26, doi:10.34196/ijm.00075.
+Cross-validation is institutionalized practice for income-tax calculators — the
+Policy Simulation Library's Tax-Calculator ships a maintained validation harness
+against NBER TAXSIM-35 (taxcalc/validation/taxsim35 in PSLmodels/Tax-Calculator,
+verified present upstream, with documented expected differences), and EUROMOD's
+country reports validate against external statistics. Differs: all of this targets
+tax-benefit law; none covers trade/tariff law, and none pairs versioned,
+instrument-cited rules with an adversarial conformance predicate against an
+independent statutory implementation — the paper transplants that validation culture
+into tariffs.
+    BibTeX: merigoux2021catala, openfisca, mohun2020cracking,
+    feenberg1993introduction, sutherland2013euromod, taxcalculator_taxsim_validation
+
+B7. Synthetic-microdata literature: Kinney, Reiter, Reznek, Miranda, Jarmin & Abowd
+(2011), "Towards Unrestricted Public Use Business Microdata: The Synthetic
+Longitudinal Business Database," International Statistical Review 79(3): 362–384,
+doi:10.1111/j.1751-5823.2011.00153.x (model-based synthetic establishment panel
+standing in for the confidential LBD); Machanavajjhala, Kifer, Abowd, Gehrke &
+Vilhuber (2008), "Privacy: Theory meets Practice on the Map," ICDE 2008: 277–286,
+doi:10.1109/ICDE.2008.4497436 (OnTheMap commuting data released under probabilistic
+differential privacy via noise infusion); Beckman, Baggerly & McKay (1996),
+"Creating synthetic baseline populations," Transportation Research Part A 30(6):
+415–429, doi:10.1016/0965-8564(96)00004-3 (IPF synthetic populations matching
+published margins). Differs: the disclosure-avoidance tradition deliberately
+perturbs away from confidential truth (margins approximately preserved; protection
+first), and the IPF tradition matches margins for population weighting. This paper
+inverts the objective: inputs are already-public aggregates, there is no
+confidentiality constraint, and the generator enforces exact integer-dollar
+reproduction of every published margin cell, with a labeled assumptions register
+governing within-cell structure.
+    BibTeX: kinney2011towards, machanavajjhala2008privacy, beckman1996creating
+
+B8. Has Yale's tracker been cited? Budget Lab tariff PUBLICATIONS: yes. Cavallo,
+Llamas & Vazquez, "Tracking the Short-Run Price Impact of U.S. Tariffs"
+(Harvard/pricinglab.org; version of January 30, 2026; first draft April 20, 2025)
+benchmarks its series against rates "reported by Yale Budget Lab (2025), Waugh
+(2025), and Gopinath and Neiman (2026)" and cites "State of U.S. Tariffs: September
+4, 2025" in its references. The tariff-rate-tracker TOOL/REPOSITORY itself (released
+April 1, 2026): NO citation found in any paper, preprint, or agency document.
+Searches run 2026-08-07: repo slug "tariff-rate-tracker"; "Tariff Rate Tracker"
+excluding Yale/GitHub domains; site-restricted arXiv; agency queries (CRS/CBO/Fed +
+"Budget Lab") — all returned only Yale's own pages, the GitHub repo, and press
+coverage. Caveat: web search imperfectly proxies Google Scholar/RePEc, and the tool
+is four months old; the defensible claim is "no formal citation found as of
+2026-08-07." The paper's tracker issues (#23–#28) and conformance run would
+apparently be the first external research artifact engaging the tracker's internals.
+    BibTeX: cavallo2026tracking, budgetlab2026tracker
+
+B9. Occupancy of this paper's exact spot — plainly, in two halves:
+(1) "Executable, instrument-cited statutory tariff panel": PARTIALLY OCCUPIED — by
+the paper's own oracle. Yale's tariff-rate-tracker IS an open-source executable
+pipeline producing an interval-encoded statutory HTS-10 × country panel for the
+2025–26 regime from USITC HTS archives, and its README already records benchmarking
+against Budget Lab's earlier Tariff-ETRs repo and the Tax Policy Center's "Tracking
+Trump Tariffs" feature. The paper cannot claim "first executable statutory tariff
+panel." Its defensible novelty is the form and the regime: per-instrument dated
+rules with verbatim proof citations and companion tests (vs. one R pipeline parsing
+HTS revision snapshots), plus a cross-implementation conformance predicate executed
+against the tracker, with upstream defect reports (#27 §201 staging; #28 GN 3(b)
+column-2) grounded in the instruments verified in Part A. Adjacent but
+non-occupying: Teti's Global Tariff Database ("Missing Tariffs," CESifo WP 11590,
+2024) — bilateral statutory MFN + preferential rates, 200 importers, HS6, 1988–2021
+— wrong era, no 2025–26 US emergency authorities, not executable, not
+instrument-cited.
+(2) "Public synthetic customs entries": NOT OCCUPIED for the US. Closest existing
+artifact: Jeong, Kim, Park & Choi (2022), "Customs Import Declaration Datasets"
+(arXiv:2208.02484) — ~54,000 artificial Korean import declarations synthesized with
+conditional tabular GAN for fraud-detection research; different country, different
+purpose, distributional similarity rather than exact margin reproduction. US
+entry-level truth exists only as restricted Census microdata (LFTTD/IMP) or
+proprietary commercial manifest products (ImportGenius, Datamyne) — real, not
+synthetic, not open. No public US synthetic customs-entry dataset reproducing
+official margins exactly was found. Net: the combination the paper ships —
+instrument-cited executable rules + conformance verdict against an independent
+implementation + margin-exact public synthetic entries — has no occupant, but the
+framing must credit the tracker as an existing executable statutory panel and
+position against it explicitly.
+    BibTeX: teti2024missing, jeong2022customs, yaletracker_repo
+
+## Caveats and residue
+
+- Sutherland & Figari: Crossref deposits the issue year as 2012; the journal issue
+  and standard citation are 2013, 6(1), 4–26. Cited as 2013 (DOI verified).
+- Catala: Crossref gives pages 1–29 for PACMPL 5(ICFP); the ACM article number was
+  not independently verified and is omitted from the BibTeX entry.
+- B8's negative result is bounded by web-search coverage of Scholar/RePEc; state it
+  as "no formal citation found as of 2026-08-07," not "uncited."
+- All eleven journal/report DOIs used in Part B were resolved via Crossref content
+  negotiation on 2026-08-07 (titles, containers, volumes, pages match the entries).

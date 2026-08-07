@@ -30,7 +30,7 @@ lane confirms against the primary artifact.
   89,850,789,888 bytes (83.7 GiB). [read:
   ~/TheAxiomFoundation/_tariff-yale/build-timing.log; two failed
   attempts preserved as .locale-fail and .stale-gate variants]. Panel
-  ~1.9 GB rate_timeseries.rds `[NEEDS VERIFICATION: exact size]`.
+  rate_timeseries.rds = 1,929,830,536 bytes (1.93 GB). [read: local file]
 - Corpus grounding: 138 signed corpus versions ingested for the
   campaign (47 FR instruments + 44 HTS revision snapshots + 47 chapter-99
   /US-note extractions). [read: CAMPAIGN.md cycle-3 block]
@@ -61,19 +61,47 @@ lane confirms against the primary artifact.
   per-country modules, §122, §232-aluminum incl. RU 200%, §301 families).
   [read: composition.yaml imports block]
 
-## Legal timeline (the "why 2026" hook)
+## Legal timeline (the "why 2026" hook) — ALL [verified 2026-08-07, research/verification-report.md]
 
-- IEEPA additional duties: legal end 2026-02-20 (EO 14389), collection
-  end 2026-02-24 (EO 14388) `[NEEDS VERIFICATION: EO 14388 doc]`;
-  SCOTUS Learning Resources v. Trump decided `[NEEDS VERIFICATION:
-  decision date + citation]`. EO 14389 leg is [read] via the encoding's
-  FR citation; the rest is [recall].
-- §122 balance-of-payments surcharge expired 2026-07-24
-  `[NEEDS VERIFICATION]`. [recall]
-- Forced-labor §301 finalization: FR doc 2026-15181, 60 determinations,
-  HTS note 52 `[NEEDS VERIFICATION]`. [recall]
-- HTS 2026 revisions reached Rev 15 (UK pharma §232 zeroed)
-  `[NEEDS VERIFICATION: USITC revision page]`. [recall]
+- IEEPA: Learning Resources, Inc. v. Trump, 607 U.S. 229 (2026),
+  No. 24-1287 (with No. 25-250), decided 2026-02-20; holding (syllabus,
+  verbatim): "IEEPA does not authorize the President to impose
+  tariffs." EO 14389 ("Ending Certain Tariff Actions", 91 FR 9437,
+  doc 2026-03832) signed the SAME DAY: duties "shall no longer be in
+  effect and, as soon as practicable, shall no longer be collected" —
+  NO date in the order's text for collection. The 2026-02-24 00:00 ET
+  collection cutoff was set operationally by CBP CSMS # 67834313
+  (issued 2026-02-22). EO 14388 = the de minimis CONTINUATION order
+  (91 FR 9433), NOT the collection end — never cite it for that.
+- §122: Proclamation 11012 (91 FR 9339), 10% surcharge on all imports
+  (annex exceptions; not stacked on §232), effective 2026-02-24
+  00:01 EST through 2026-07-24 00:01 EDT — exactly the 150-day
+  statutory maximum of 19 U.S.C. § 2132(a) (which caps at 15%). Ran to
+  scheduled expiry (no modifying FR instrument through 2026-08-07).
+- Forced-labor §301: 91 FR 47318 (doc 2026-15181, USTR, pub.
+  2026-07-28): 60 investigations determined actionable; rates 10%
+  (prohibition/agreement economies) / 12.5% (others); TRQs for four;
+  Annex I inserts chapter-99 U.S. note 52 (headings 9903.05.85–
+  9903.06.21); effective 2026-07-24 — THE SAME DAY the §122 surcharge
+  expired (verified seam).
+- HTS 2026: Revision 15 dated 2026-08-03 (Rev 14 was 2026-07-31).
+  Rev 15's sole change: heading 9903.04.63 (UK PATENTED pharmaceutical
+  articles) +10% → +0% per 91 FR 49406 implementing Proclamation 11020;
+  context rates: 9903.04.60 general pharma 100%, 9903.04.62
+  EU/JP/KR/CH/LI 15%.
+- §201 solar: Proclamation 10339 (87 FR 7357) Annex I staged table
+  verbatim: 14.75% / 14.5% / 14.25% / 14% for the four years ending
+  2026-02-06; current HTS marks note 18 EXPIRED. Yale's flat 14.5% past
+  the end is therefore wrong on two axes (stale stage since 2024-02-07;
+  nonzero past expiry). Later Procs 10779/10790 changed TRQ/coverage,
+  not the terminal date.
+- GN 3(b) verbatim (HTS 2026 Rev 15): column-2 rates apply to products
+  "of the following countries and areas": Republic of Belarus, Cuba,
+  North Korea, Russian Federation (footnote cross-references note 30 /
+  9903.90.08 additional duties).
+- Yale tracker: MIT license, org Budget-Lab-Yale, commit c4307e51
+  reachable upstream (2026-07-24, ancestor of master); companion Budget
+  Lab post "Introducing the Tariff Rate Tracker" (2026-04-01).
 
 ## Yale tracker defects (reported upstream, unacknowledged)
 
@@ -90,8 +118,7 @@ All six filings verified open with 0 maintainer comments as of
   oracles main @ 7085600b greps]
 - #28 — no GN3(b)/column-2 branch: CU/KP/BY/RU carry column-1 base
   rates. Column-2 disposition recorded in the same detail file (×2
-  mentions). Statutory derivation: HTSUS General Note 3(b) current
-  text `[NEEDS VERIFICATION: quote the note]`.
+  mentions). Statutory derivation verified: GN 3(b) verbatim above.
 
 ## The entries dataset (Microcosm leg) — microcosm #620 + #621, MERGED 2026-08-07
 
