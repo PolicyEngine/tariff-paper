@@ -7,8 +7,8 @@ for any entry, the rate stack in force on its date, by authority,
 with the derivation attached. That supports revenue accounting by
 statutory component under any counterfactual expressible as dated
 rules (repeal an authority, move a termination date, extend a staged
-schedule), audit-grade rate lookup for any line × country × date in
-the covered window, and calibration: the ingest's 302,318 consumer
+schedule), source-traceable rate lookup — every value carrying its instrument
+citations — within the stated domain, and calibration: the ingest's 302,318 consumer
 facts publish at five aggregation grains with channel-invariant keys,
 built to serve as calibration targets for population synthesis
 downstream.
@@ -28,10 +28,16 @@ reason. The synthetic entries are not the restricted transaction
 record: within-cell structure below the margins is assumption, the
 register says which assumption, and analyses that depend on within-
 cell joint distributions (entry-size inequality, importer
-concentration) should not run on them. The covered window is January
-2025 through June 2026 for margins and the composed spine's domain
-(February 2026 onward) for entry-level duty computation; the panel's
-temporal debt outside the encoded domain is surfaced, not covered.
+concentration) should not run on them. Four ranges govern use and are stated wherever a claim depends on
+them: the rule history runs to the instruments' own dates; the
+reconciliation of Section 3 covers the reference spine's 2025–26
+coverage with 48,000 pre-domain interval-cells surfaced as temporal
+debt rather than compared; the margins cover January 2025 through
+June 2026; and entry-level duty computation is defined on the
+composed spine's domain (February 2026 onward) intersected with the
+pilot allocations (February through June 2026) — a window that ends
+before the July 24 seam and the August revision, which the margins
+record but the pilot does not reach.
 
 The natural next analyses — distributional incidence of the 2025–26
 stack, tariff-revenue swaps against other instruments — sit one layer

@@ -23,3 +23,24 @@ conformance derivation at the pinned revisions reproduces the
 scoreboard; re-running the entries build against the manifested
 archives reproduces the artifacts byte-for-byte, a property the review
 regime enforced rather than aspired to.
+
+**Pinned revisions.** Encoding: rulespec-us
+`dbf09f44eddd00b7ad5520f89371ebe8fdf0b7df`. Engine:
+axiom-rules-engine `ffd8213271947b0189a9dd61a055c1e0e78908a0`
+(v0.1.0; binary sha-256 `674ca6e7…bbe32d7`). Reconciliation snapshot:
+axiom-oracles `dc1da3af067c50fa7138458faf3703b4b9efd7cb`. Reference:
+Budget-Lab-Yale/tariff-rate-tracker
+`c4307e514196618afcbf88cf7fd33746417eeabf` (MIT). Entries pipeline:
+microcosm merge commits `d4b0855157af996bd367146bc200a2f72ee7d15d`
+(ingest) and `6707ed5912d33ff0a340474a1a24f31546c6dec5` (generator).
+An archival release with containerized one-command replication and a
+persistent identifier accompanies submission; until then the commits
+above are the replication interface.
+
+**AI-use disclosure.** The encodings, pipelines, tests, and reviews
+described in Section 6 were produced by AI agents under the stated
+gates, with human direction of scope, dispositions, upstream
+communication, and publication; this manuscript was drafted by the
+authoring agents from a verified fact base and revised under the same
+adversarial-review regime, with the human author responsible for all
+claims.

@@ -19,9 +19,11 @@ from, and the scoreboard numbers quoted in this paper carry their
 snapshot hashes because the live reports refresh as the encoding
 grows.
 
-**The adversary.** Every substantive change merged in this work
-passed independent adversarial review by a different model family,
-prompted to refute rather than confirm, with each finding closed by a
+**The adversary.** Every pull request merged in the repositories
+this paper reports on passed same-project cross-model adversarial
+QA — a reviewing agent from a different frontier model family (an
+OpenAI GPT-5.6-class reviewer against Anthropic Claude-class
+authoring agents) prompted to refute rather than confirm, with each finding closed by a
 code change and a test that fails on the pre-fix implementation —
 mutation-proven, not narrated. The entries pipeline of Section 5 is
 the instructive case: its publication machinery (atomic directory
@@ -52,11 +54,8 @@ manifests, the comparison harness, the entries pipeline, the review
 verdicts, and the evidence packs (build reports, reconciliation
 records, cross-check reports) are public, pinned, and re-runnable.
 
-The synthesis bears stating once, directly. The reason 2025–26 tariff
-law could be encoded, validated to unexplained-zero, and released with
-transaction-grain data inside the same year the law was moving is that
-the marginal cost of rigor collapsed: agents wrote the 149-test
-battery nobody budgets human-weeks for, re-derived the panel on every
-change, and re-litigated every disagreement against primary
-instruments. The gates are what let that speed compound instead of
-compounding error.
+One synthesis sentence, scoped to what this project observed: the
+gate-and-adversary architecture is what allowed agent speed — the
+149-test battery, the per-change panel re-derivations, the twelve
+review rounds — to accumulate as checked artifacts rather than as
+unchecked claims.

@@ -24,7 +24,7 @@ maintainer's memory.
 Section 1 is encoded as a rule, not as the removal of one:
 
 ```yaml
-# source: rulespec-us us/policies/usitc/us-tariff-duty/overlays/ieepa/termination.yaml@main (excerpt)
+# source: rulespec-us us/policies/usitc/us-tariff-duty/overlays/ieepa/termination.yaml@dbf09f44 (excerpt)
 - name: terminated_ieepa_additional_ad_valorem_duty_rate
   kind: parameter
   dtype: Rate
@@ -44,11 +44,16 @@ Section 1 is encoded as a rule, not as the removal of one:
 ```
 
 The terminated rate is a zero that took effect on February 20, 2026,
-citing the order that zeroed it — which means the panel this encoding
-generates carries the termination as a dated fact, exactly as it
-carries the imposition. The two-endpoint character of the IEEPA wind-
-down survives into the data because both endpoints are just versions.
-A companion test evaluates the composed rates on the one-day period of
+citing the order that zeroed it — the panel this encoding generates
+carries the termination as a dated fact, exactly as it carries the
+imposition. One scope note, stated precisely: this encodes the LEGAL
+endpoint, which is the semantics the reference panel publishes by
+default and the semantics we reconcile against in Section 3. The
+operational wind-down of Section 1 — CBP's February 24 collection
+cutoff — is an agency bulletin, not a rule version in this encoding;
+a parallel collection-status series sourced from such bulletins is
+future work, and nothing in this paper's data should be read as
+carrying it. A companion test evaluates the composed rates on the one-day period of
 February 20 itself and asserts that the additional duty no longer
 adds; the test is mandatory, so the change could not have merged
 without pinning its own boundary.
@@ -61,6 +66,23 @@ revision-12 consolidation module alongside its rate overlays). A
 downstream user never faces the silent question of which revision's
 line structure a number refers to; the revision boundary is in the
 derivation.
+
+What the composed function computes, exactly: for a (tariff line,
+partner country, calendar date) triple inside the encoded domain, the
+ex-post statutory rate stack under legal-date semantics — each
+authority's posted ad valorem contribution per the versions in force
+that day, as the instruments read after the fact. Four things the
+function deliberately does not resolve, because the inputs do not
+determine them: intra-day boundaries (the instruments themselves
+specify 12:00 versus 12:01 a.m. entry cutoffs; a date-grain panel
+adopts the day), quota position (tariff-rate-quota lines depend on
+cumulative entries to date), entry-specific facts (in-transit
+exceptions, claimed exclusions), and knowledge-time (a version's
+`effective_from` is legal-valid time; retroactive instruments are
+encoded when published, so the panel is an ex-post record, not a
+reconstruction of what was knowable on each day). Analyses needing
+those distinctions need more state than this function's signature,
+and Section 7 repeats the warning where it bites.
 
 The full stack composes from these pieces. A composition module wires
 the column rates of the tariff schedule to the authority overlays —
@@ -84,3 +106,25 @@ A rate that steps down on a proclamation schedule, dies in two stages,
 or applies to a line that stopped existing mid-year is not a cell in a
 table. It is a small legal argument, and the representation that
 survives contact with it is the one that stores the argument.
+
+**A worked trace.** Take the solar-module query of Section 1 — a
+crystalline-silicon module from Malaysia, February 22, 2026 — and
+follow the version selection rather than inventing numbers. The
+column-rate module for the line contributes its general rate per the
+tariff-schedule revision in force that day. The Section 201 overlay's
+staged versions — 14.75, 14.5, 14.25, 14 percent across the extension
+proclamation's four annual periods [@proc10339_2022] — contribute
+nothing: the final period's version ends February 6, 2026, the
+schedule's own compilation marks the safeguard note expired, and no
+later version exists, so the overlay's contribution on February 22 is
+zero by absence of a version in force, not by an edit. The IEEPA
+overlay resolves through the termination rule shown above: the
+reciprocal version in force until February 19 is superseded by the
+termination's zero from February 20 [@eo14389_2026], so the legal-
+date answer carries no IEEPA contribution — while the collection
+cutoff two days later [@csms67834313_2026] is, per the scope note,
+outside this function's semantics. Every step of that paragraph is a
+version lookup citing an instrument, which is the representation's
+whole argument: the "two defensible answers" of Section 1 become two
+different, explicit functions — and this paper's panel computes the
+legal-date one.

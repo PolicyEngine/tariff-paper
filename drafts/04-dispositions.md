@@ -6,8 +6,13 @@ wrong (demonstrate it), or the two are answering different questions
 (declare it). The disposition machinery exists to make the second and
 third outcomes as auditable as the first. A disagreement attributed to
 the reference cannot be waved through; it requires either the
-reference maintainer's acceptance or an independent derivation from
-the governing instruments, recorded beside the cells it explains. The
+reference maintainer's acceptance or a derivation from the governing
+instruments independent of both implementations' code — the
+proclamation's own table, the schedule's own note — recorded beside
+the cells it explains, with the cells enumerated by an applicability
+predicate rather than by hand. Until the maintainer responds, the
+honest name for such a finding is what we use throughout: author-
+attributed, derivation-backed, maintainer-unacknowledged. The
 rule's purpose is to block the tempting failure mode — "our number
 differs, theirs is probably wrong" — by pricing that claim at a legal
 argument.
@@ -26,8 +31,10 @@ carries a flat 14.5 percent on the affected lines past the terminal
 date, which is wrong on two axes at once — 14.5 was the *second*
 year's rate, stale since February 2024, and every rate is expired
 after February 2026. Our encoding carries the staged schedule and
-its end, citing the proclamation's table; the disagreement covers
-every affected cell after the schedule moves. The derivation —
+its end, citing the proclamation's table; the disagreement's recorded footprint is the
+affected lines after the schedule moves, enumerated in the disposition
+artifact (the Section 201 concept slot's 7,887 mismatched cells of
+Section 3 are dominated by this class). The derivation —
 proclamation, annex table, terminal date, the schedule's own expiry
 note — is recorded in the disposition file, and the finding was
 filed upstream with the same citations.
@@ -45,8 +52,8 @@ with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.
 
 We report both findings as what they are: derivation-backed and, as of
-this writing, unacknowledged. The reports sit in the tracker's issue
-queue with four others we filed en route — a locale-sensitivity bug
+this writing, unacknowledged. The reports sit in the tracker's issue queue with our four other
+filings (five issues and one patch pull request in all) — a locale-sensitivity bug
 that corrupted country matching (with a patch), the measured build
 envelope of Section 3, and a proposal that the project publish its
 panel as a release artifact, which would let every downstream user

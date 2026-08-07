@@ -175,3 +175,28 @@ All six filings verified open with 0 maintainer comments as of
 - Policy advocacy in any direction.
 - Unpinned scoreboard numbers (every scoreboard claim carries its
   snapshot SHA).
+
+## Conformance waterfall + pins (extracted from the dc1da3af artifacts, 2026-08-07)
+
+- Universe (per policy, from the -all report): 240 countries; 68,400
+  in-scope intervals = 20,400 covered + 48,000 temporal debt;
+  comparisons 39,600; raw matches 24,400 (61.6%); raw mismatches
+  15,200; error_count 0. Reference panel rows total: 277,303,920.
+- Per-policy conformance record (detail file): explained_rate 100,
+  unexplained 0, axiom_attributed_open 0, oracle_attributed 8,283
+  (cells); dispositions operate per concept-slot (per-concept mismatch
+  counts overlap across slots: mfn 594, ieepa 476, s122 4,560, s232
+  1,920, s201 7,887; row-level total 15,200).
+- 14 policy records: 10 conformant, 4 excluded:technical, IDs:
+  us-tariff-yale:{other, rate_301_cs, stacking_outputs,
+  swiss_framework}.
+- IEEPA note (verbatim from the detail record): fentanyl compared
+  jointly with reciprocal via the suite's combined ieepa slot (the
+  composition encodes one IEEPA component).
+- Full pins: rulespec-us dbf09f44eddd00b7ad5520f89371ebe8fdf0b7df;
+  axiom-rules-engine ffd8213271947b0189a9dd61a055c1e0e78908a0 (v0.1.0,
+  binary sha256 674ca6e70afdccb59c3d6847933bc24b4590105e49db54790f2dcd0bdbbe32d7);
+  axiom-oracles dc1da3af067c50fa7138458faf3703b4b9efd7cb; Yale
+  c4307e514196618afcbf88cf7fd33746417eeabf; microcosm merges
+  d4b0855157af996bd367146bc200a2f72ee7d15d /
+  6707ed5912d33ff0a340474a1a24f31546c6dec5.

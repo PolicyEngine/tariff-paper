@@ -35,5 +35,5 @@ committed in-branch (microcosm #620); generator validation report
 | Generator identity, pilot window 2026-02…06 | $1,467,109,590,515 weighted = margins total exactly |
 | Pilot entry rows / weighted entries | 3,806,050 / 44,881,145 |
 | Informal-share proxy calibration (σ = 2.6916) | share Δ 2.6×10⁻⁵; mean $32,689 vs $32,916 anchor |
-| Adversarial review at merge | P1: 12 rounds → APPROVE, no findings; P2: 4 rounds → APPROVE |
+| Adversarial review at merge | P1: 12 rounds ending APPROVE, no findings; P2: 4 rounds ending APPROVE |
 | Trade test battery at merge | 149 |
