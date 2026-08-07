@@ -1153,3 +1153,137 @@ employment effects from the 2018–19 tariffs. Differs: tariff data enter as
 exposure aggregates constructed once for econometric identification, versus a
 maintained line-level statutory panel with per-instrument citations and companion
 
+exec
+/bin/zsh -lc "sed -n '221,420p' research/verification-report.md" in /Users/maxghenis/TheAxiomFoundation/tariff-paper
+ succeeded in 0ms:
+tests.
+    BibTeX: flaaen2019disentangling
+
+B4. Bown (PIIE) trackers: Bown (2021), "The US–China trade war and Phase One
+agreement," Journal of Policy Modeling 43(4): 805–843,
+doi:10.1016/j.jpolmod.2021.02.009, and the PIIE chart "US-China Trade War Tariffs:
+An Up-to-Date Chart" (last updated November 14, 2025; covers §301/§232/§201/IEEPA
+actions; downloadable underlying Excel) — Hand-maintained, expert-compiled timelines
+and trade-weighted average-tariff charts assembled from official announcements;
+authoritative narrative coverage published as charts/spreadsheets. Differs: curated
+summaries with no executable rule base, no line-level HTS-10 × country × day
+statutory panel, no machine-checkable instrument citations, no reproducibility
+harness; this paper encodes the instruments themselves and reconciles against an
+independent computation.
+    BibTeX: bown2021uschina, bown_piie_chart
+
+B5. LFTTD — U.S. Census Bureau Longitudinal Firm Trade Transactions Database: the
+universe of U.S. import/export customs transactions (value, date, country, quantity,
+HS code) linked to firms; restricted-use, 1992–2022 monthly, accessible only through
+approved FSRDC projects; canonical description in Bernard, Jensen & Schott (2009),
+"Importers, Exporters and Multinationals: A Portrait of Firms in the U.S. that Trade
+Goods," ch. 14 (pp. 513–552) of Producer Dynamics (Univ. of Chicago Press) — True
+transaction microdata exist but sit behind Title 13/26 restricted access. Differs:
+this paper's entries are public and synthetic — reconstructed to reproduce
+already-published Census margins exactly — trading firm identity and true
+within-cell variation for unrestricted access; the LFTTD is the contrast that
+motivates the release, not a competitor to it.
+    BibTeX: bernard2009importers, census_lfttd
+
+B6. Law-as-code and calculator-validation literature: Merigoux, Chataing & Protzenko
+(2021), "Catala: A Programming Language for the Law," Proc. ACM Program. Lang.
+5(ICFP): 1–29, doi:10.1145/3473582 (statute-to-code DSL with formalized semantics);
+OpenFisca (openfisca.org; AGPL-3.0 core engine; no canonical journal article — cite
+as software), the most widely deployed rules-as-code tax-benefit engine; Mohun &
+Roberts (2020), "Cracking the Code: Rulemaking for Humans and Machines," OECD
+Working Papers on Public Governance No. 42, doi:10.1787/3afe6ba5-en (the
+rules-as-code agenda statement); TAXSIM: Feenberg & Coutts (1993), "An Introduction
+to the TAXSIM Model," JPAM 12(1): 189–194, doi:10.2307/3325474; EUROMOD: Sutherland
+& Figari (2013), "EUROMOD: the European Union tax-benefit microsimulation model,"
+International Journal of Microsimulation 6(1): 4–26, doi:10.34196/ijm.00075.
+Cross-validation is institutionalized practice for income-tax calculators — the
+Policy Simulation Library's Tax-Calculator ships a maintained validation harness
+against NBER TAXSIM-35 (taxcalc/validation/taxsim35 in PSLmodels/Tax-Calculator,
+verified present upstream, with documented expected differences), and EUROMOD's
+country reports validate against external statistics. Differs: all of this targets
+tax-benefit law; none covers trade/tariff law, and none pairs versioned,
+instrument-cited rules with an adversarial conformance predicate against an
+independent statutory implementation — the paper transplants that validation culture
+into tariffs.
+    BibTeX: merigoux2021catala, openfisca, mohun2020cracking,
+    feenberg1993introduction, sutherland2013euromod, taxcalculator_taxsim_validation
+
+B7. Synthetic-microdata literature: Kinney, Reiter, Reznek, Miranda, Jarmin & Abowd
+(2011), "Towards Unrestricted Public Use Business Microdata: The Synthetic
+Longitudinal Business Database," International Statistical Review 79(3): 362–384,
+doi:10.1111/j.1751-5823.2011.00153.x (model-based synthetic establishment panel
+standing in for the confidential LBD); Machanavajjhala, Kifer, Abowd, Gehrke &
+Vilhuber (2008), "Privacy: Theory meets Practice on the Map," ICDE 2008: 277–286,
+doi:10.1109/ICDE.2008.4497436 (OnTheMap commuting data released under probabilistic
+differential privacy via noise infusion); Beckman, Baggerly & McKay (1996),
+"Creating synthetic baseline populations," Transportation Research Part A 30(6):
+415–429, doi:10.1016/0965-8564(96)00004-3 (IPF synthetic populations matching
+published margins). Differs: the disclosure-avoidance tradition deliberately
+perturbs away from confidential truth (margins approximately preserved; protection
+first), and the IPF tradition matches margins for population weighting. This paper
+inverts the objective: inputs are already-public aggregates, there is no
+confidentiality constraint, and the generator enforces exact integer-dollar
+reproduction of every published margin cell, with a labeled assumptions register
+governing within-cell structure.
+    BibTeX: kinney2011towards, machanavajjhala2008privacy, beckman1996creating
+
+B8. Has Yale's tracker been cited? Budget Lab tariff PUBLICATIONS: yes. Cavallo,
+Llamas & Vazquez, "Tracking the Short-Run Price Impact of U.S. Tariffs"
+(Harvard/pricinglab.org; version of January 30, 2026; first draft April 20, 2025)
+benchmarks its series against rates "reported by Yale Budget Lab (2025), Waugh
+(2025), and Gopinath and Neiman (2026)" and cites "State of U.S. Tariffs: September
+4, 2025" in its references. The tariff-rate-tracker TOOL/REPOSITORY itself (released
+April 1, 2026): NO citation found in any paper, preprint, or agency document.
+Searches run 2026-08-07: repo slug "tariff-rate-tracker"; "Tariff Rate Tracker"
+excluding Yale/GitHub domains; site-restricted arXiv; agency queries (CRS/CBO/Fed +
+"Budget Lab") — all returned only Yale's own pages, the GitHub repo, and press
+coverage. Caveat: web search imperfectly proxies Google Scholar/RePEc, and the tool
+is four months old; the defensible claim is "no formal citation found as of
+2026-08-07." The paper's tracker issues (#23–#28) and conformance run would
+apparently be the first external research artifact engaging the tracker's internals.
+    BibTeX: cavallo2026tracking, budgetlab2026tracker
+
+B9. Occupancy of this paper's exact spot — plainly, in two halves:
+(1) "Executable, instrument-cited statutory tariff panel": PARTIALLY OCCUPIED — by
+the paper's own oracle. Yale's tariff-rate-tracker IS an open-source executable
+pipeline producing an interval-encoded statutory HTS-10 × country panel for the
+2025–26 regime from USITC HTS archives, and its README already records benchmarking
+against Budget Lab's earlier Tariff-ETRs repo and the Tax Policy Center's "Tracking
+Trump Tariffs" feature. The paper cannot claim "first executable statutory tariff
+panel." Its defensible novelty is the form and the regime: per-instrument dated
+rules with verbatim proof citations and companion tests (vs. one R pipeline parsing
+HTS revision snapshots), plus a cross-implementation conformance predicate executed
+against the tracker, with upstream defect reports (#27 §201 staging; #28 GN 3(b)
+column-2) grounded in the instruments verified in Part A. Adjacent but
+non-occupying: Teti's Global Tariff Database ("Missing Tariffs," CESifo WP 11590,
+2024) — bilateral statutory MFN + preferential rates, 200 importers, HS6, 1988–2021
+— wrong era, no 2025–26 US emergency authorities, not executable, not
+instrument-cited.
+(2) "Public synthetic customs entries": NOT OCCUPIED for the US. Closest existing
+artifact: Jeong, Kim, Park & Choi (2022), "Customs Import Declaration Datasets"
+(arXiv:2208.02484) — ~54,000 artificial Korean import declarations synthesized with
+conditional tabular GAN for fraud-detection research; different country, different
+purpose, distributional similarity rather than exact margin reproduction. US
+entry-level truth exists only as restricted Census microdata (LFTTD/IMP) or
+proprietary commercial manifest products (ImportGenius, Datamyne) — real, not
+synthetic, not open. No public US synthetic customs-entry dataset reproducing
+official margins exactly was found. Net: the combination the paper ships —
+instrument-cited executable rules + conformance verdict against an independent
+implementation + margin-exact public synthetic entries — has no occupant, but the
+framing must credit the tracker as an existing executable statutory panel and
+position against it explicitly.
+    BibTeX: teti2024missing, jeong2022customs, yaletracker_repo
+
+## Caveats and residue
+
+- Sutherland & Figari: Crossref deposits the issue year as 2012; the journal issue
+  and standard citation are 2013, 6(1), 4–26. Cited as 2013 (DOI verified).
+- Catala: Crossref gives pages 1–29 for PACMPL 5(ICFP); the ACM article number was
+  not independently verified and is omitted from the BibTeX entry.
+- B8's negative result is bounded by web-search coverage of Scholar/RePEc; state it
+  as "no formal citation found as of 2026-08-07," not "uncited."
+- All eleven journal/report DOIs used in Part B were resolved via Crossref content
+  negotiation on 2026-08-07 (titles, containers, volumes, pages match the entries).
+
+codex
+The first pass already exposes a central framing risk: “zero unexplained” is being asked to carry 8,283 reference-attributed cells, four exclusions, and 49,200 debt intervals. I’m now testing whether the paper states those escape conditions tightly enough, rather than treating the scoreboard as self-explanatory.
