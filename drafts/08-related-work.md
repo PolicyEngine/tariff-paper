@@ -72,7 +72,7 @@ the true U.S. transaction record remains restricted-access
 invert the disclosure-avoidance objective: the inputs are already
 public, no confidentiality constraint binds, and the generator's
 contract is exact integer reproduction of every published margin cell
-with a registered assumptions ledger below that grain. We find no
+with a declared assumptions register below that grain. We find no
 prior public U.S. synthetic customs-entry dataset with that
 contract — the combination this paper ships (instrument-cited
 executable rules, a conformance verdict against an independent
