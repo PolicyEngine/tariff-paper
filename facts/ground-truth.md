@@ -25,9 +25,12 @@ lane confirms against the primary artifact.
   utilization, MFN exemption shares, effective constructs.
   [read: CAMPAIGN.md]
 - Reference vintage: Yale tariff-rate-tracker commit `c4307e51`; their
-  full R build measured locally: 1h46m, 123.4 GB peak RSS
-  `[NEEDS VERIFICATION: build log path]`. Panel ~1.9 GB rate_timeseries.rds.
-  [recall]
+  full R build measured locally: 6368.27 s real (1 h 46 m), peak memory
+  footprint 132,526,069,168 bytes (123.4 GiB), maximum RSS
+  89,850,789,888 bytes (83.7 GiB). [read:
+  ~/TheAxiomFoundation/_tariff-yale/build-timing.log; two failed
+  attempts preserved as .locale-fail and .stale-gate variants]. Panel
+  ~1.9 GB rate_timeseries.rds `[NEEDS VERIFICATION: exact size]`.
 - Corpus grounding: 138 signed corpus versions ingested for the
   campaign (47 FR instruments + 44 HTS revision snapshots + 47 chapter-99
   /US-note extractions). [read: CAMPAIGN.md cycle-3 block]
@@ -80,10 +83,15 @@ All six filings verified open with 0 maintainer comments as of
 - #25 — measured build envelope vs documented 32 GB guidance.
 - #26 — proposal: publish the line-level panel as a release artifact.
 - #27 — §201 solar flat 14.5% carried past Proclamation 10339's staged
-  table end (2026-02-06). Independent derivation: the proclamation's
-  staged table [recall: `[NEEDS VERIFICATION: dispositions file path]`].
+  table end (2026-02-06). Independent derivation recorded in
+  axiom-oracles `conformance/detail/us-tariff-yale.json` (Proclamation
+  10339 referenced; snapshot report
+  `reports/axiom-yale-us-tariff-panel-all-2026-08-03.json`). [read:
+  oracles main @ 7085600b greps]
 - #28 — no GN3(b)/column-2 branch: CU/KP/BY/RU carry column-1 base
-  rates. Independent derivation: HTSUS General Note 3(b) text.
+  rates. Column-2 disposition recorded in the same detail file (×2
+  mentions). Statutory derivation: HTSUS General Note 3(b) current
+  text `[NEEDS VERIFICATION: quote the note]`.
 
 ## The entries dataset (Microcosm leg) — microcosm #620 + #621, MERGED 2026-08-07
 
