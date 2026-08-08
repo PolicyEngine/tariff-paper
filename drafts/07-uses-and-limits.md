@@ -2,9 +2,12 @@
 
 What the pair enables now. The statutory panel and the synthetic
 entries share a contract — the entries' fields conform to the
-composed spine's inputs — so duty computation runs at entry grain:
-for any entry, the rate stack in force on its date, by authority,
-with the derivation attached. That supports revenue accounting by
+composed spine's inputs — so duty computation runs at entry grain — the rate stack in force on
+an entry's date, by authority, with the derivation attached — with
+the composed domain's own boundary stated plainly: the pinned
+composition gates on the five witness lines, so entry-level duty
+computation is currently defined for entries on those lines, and
+extends with the encoding. That supports revenue accounting by
 statutory component under any counterfactual expressible as dated
 rules (repeal an authority, move a termination date, extend a staged
 schedule), source-traceable rate lookup — every value carrying its instrument
@@ -33,9 +36,9 @@ them: the rule history runs to the instruments' own dates; the
 reconciliation of Section 3 covers the five-line witness slice of the
 reference spine, with 48,000 pre-domain interval-cells surfaced as
 temporal debt rather than compared; the margins cover January 2025 through
-June 2026; and entry-level duty computation is defined on the
-composed spine's domain (February 2026 onward) intersected with the
-pilot allocations (February through June 2026) — a window that ends
+June 2026; and entry-level duty computation is defined on the composed spine's
+domain (the five witness lines, February 2026 onward) intersected
+with the pilot allocations (February through June 2026) — a window that ends
 before the July 24 seam and the August revision, which the margins
 record but the pilot does not reach.
 

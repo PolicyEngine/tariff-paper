@@ -17,13 +17,14 @@ lane confirms against the primary artifact.
 - Conformance predicate: `covered == in_scope && unexplained == 0 &&
   axiom_attributed_open == 0`, universe generated from the oracle's own
   spine. [read: project_axiom_certification_stack.md]
-- Scope: Yale's `statutory_rate_*` columns — MFN base via HTS columns,
-  §232 family, §301 family (incl. Brazil + forced-labor + CS), IEEPA
-  reciprocal/fentanyl incl. termination, §122, §201, §338 — plus
-  total_additional/total_rate reconciliation, at their default
-  legal-date mode. Out of scope (estimation layer): metal_share, USMCA
-  utilization, MFN exemption shares, effective constructs.
-  [read: CAMPAIGN.md]
+- Scope (CORRECTED per the dc1da3af detail file): 10 covered policy
+  constructs — MFN column rate, §232 (aluminum in the composition),
+  §301 China + Brazil + forced-labor, IEEPA (fentanyl+reciprocal as
+  one combined slot), §122, §201, §338, total — at the reference's
+  default legal-date mode; 4 excluded:technical with tripwires (other,
+  rate_301_cs, stacking_outputs, swiss_framework). Estimation layer
+  (metal_share, USMCA utilization, exemption shares, effective
+  constructs) out of scope entirely. [read: detail file @ dc1da3af]
 - Reference vintage: Yale tariff-rate-tracker commit `c4307e51`; their
   full R build measured locally: 6368.27 s real (1 h 46 m), peak memory
   footprint 132,526,069,168 bytes (123.4 GiB), maximum RSS

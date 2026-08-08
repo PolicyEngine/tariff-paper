@@ -7,13 +7,17 @@ Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 
 | Quantity | Value |
 |---|---|
+| Witness slice | 5 HTS-10 lines × 240 partners × 57 intervals |
+| In-scope interval-cells | 68,400 = 20,400 covered + 48,000 temporal debt |
+| Probe-date comparisons | 39,600 (33 probes per line-partner) |
+| Exact matches / mismatches (raw) | 24,400 / 15,200 (61.6% raw) |
+| Disposition entries partitioning the 15,200 | 30 (each unit in exactly one) |
 | In-scope policies covered | 10 / 10 |
 | Unexplained disagreements | 0 |
 | Open disagreements attributed to the encoding | 0 |
 | Tripwired scope exclusions | 4 |
 | Reference-attributed cells, classified with evidence | 8,283 |
-| Temporal debt surfaced (pre-domain intervals) | 48,000 |
-| Temporal debt surfaced (domain-straddling intervals) | 1,200 |
+| Boundary-straddle clip events recorded | 1,200 |
 | Comparison-harness tests at close | 2,396 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |
 | Reference build, measured | 6,368 s wall; 123.4 GiB peak footprint |

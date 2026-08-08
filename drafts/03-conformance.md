@@ -6,8 +6,9 @@ derive the panel our rules imply and reconcile it, cell by cell,
 against a reference built by people who never saw our code. We are
 deliberate about the term. The reference — Yale Budget Lab's
 tariff-rate-tracker [@yaletracker_repo; @budgetlab2026tracker] — was
-separately developed and is the series other measurement work already
-benchmarks against [@cavallo2026tracking], but both implementations
+separately developed, and the Budget Lab's published rate series are
+already a benchmark other measurement work checks against
+[@cavallo2026tracking], but both implementations
 read the same public instruments, its spine defines the comparison
 universe (an omission from that spine is invisible to this exercise),
 and our encoding iterated against the visible disagreements until the
@@ -44,9 +45,11 @@ overlap on one row. An interval is *covered* when our encoded domain
 spans it and *temporal debt* when it wholly predates that domain
 (48,000 interval-cells here); an interval straddling the domain
 boundary is clipped to its covered portion, with the clip recorded
-(1,200 clip events in the artifact). A *comparison* evaluates one covered cell in both
-implementations at the reference's default legal-date convention; a
-*match* is exact equality. A *disposition* closes a mismatched cell
+(1,200 clip events in the artifact). A *comparison* evaluates one covered row in both implementations at
+one probe date — 33 probe dates per line-partner span the covered
+intervals, placed at interval boundaries and their neighbors — at the
+reference's default legal-date convention; a *match* is exact
+equality across every concept slot. A *disposition* closes a mismatched cell
 with a recorded claim — an encoding defect (which must then be fixed),
 a reference-attributed discrepancy (Section 4's standard), or a
 declared semantic difference — and a *tripwired exclusion* removes a
@@ -60,18 +63,25 @@ The full waterfall at the pinned snapshot
 - The reference panel materializes 277,303,920 rows; the reconciled
   slice is the five witness lines crossed with 240 partners over the
   tracker's 2025–26 coverage.
-- Per policy, the slice's 68,400 in-scope interval-cells (5 lines ×
+- The slice's 68,400 in-scope interval-cells (5 lines ×
   240 partners × 57 intervals) split into 20,400 covered and 48,000
   temporal-debt cells — our encoded rule history begins 2026-02-15,
   later than the tracker's panel start, and the debt is the surfaced
   difference, carried into Section 7's usage limits.
-- Covered cells yield 39,600 comparisons: 24,400 exact matches (61.6
-  percent raw) and 15,200 mismatches, with zero evaluation errors.
+- The covered intervals yield 39,600 probe-date comparisons (5 lines
+  × 240 partners × 33 probes): 24,400 exact matches (61.6 percent
+  raw) and 15,200 mismatches, with zero evaluation errors.
 - Every one of the 15,200 enters a disposition; none remain
-  unexplained, and none are open against our encoding. 8,283 cells
-  carry reference-attributed dispositions under Section 4's standard;
-  the per-class census, with each cell's concept, interval, and
-  instrument, is in the committed disposition artifacts. At the
+  unexplained, and none are open against our encoding. The disposition
+  file partitions them into 30 entries — every mismatched unit appears
+  in exactly one, by construction — whose classes are legible families:
+  an IEEPA metals-exclusion layer (13 entries), the column-2 reference
+  gap of Section 4 (4 entries plus combinations), a Section 232
+  aluminum-content basis on beer, a free-trade-agreement preference
+  layer, a Section 122 metal exclusion, and the Section 201 safeguard
+  expiry of Section 4; 8,283 cells carry reference-attributed
+  dispositions under Section 4's standard, and each entry records its
+  concept, case selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
   Section 232 slots (594, 476, 1,920) — concept counts overlap where
@@ -87,7 +97,8 @@ The full waterfall at the pinned snapshot
   deliberately does not mirror), each with a guard that reds the build
   if its footprint becomes nonzero.
 
-Ten of the reference's fourteen policy constructs are therefore
+Table 1 consolidates the waterfall. Ten of the reference's fourteen
+policy constructs are therefore
 covered and conformant; four are excluded with tripwires; and the
 conformance predicate — covered equals in-scope, unexplained equals
 zero, open encoding-attributed equals zero — holds on the covered

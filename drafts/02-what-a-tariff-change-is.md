@@ -86,8 +86,8 @@ and Section 7 repeats the warning where it bites.
 
 The full stack composes from these pieces. A composition module wires
 the column rates of the tariff schedule to the authority overlays —
-the Section 232 metal programs, the Section 301 families including the
-forced-labor program, the per-country IEEPA reciprocal modules and
+the Section 232 aluminum program (the witness composition's 232
+family), the Section 301 families including the forced-labor program, the per-country IEEPA reciprocal modules and
 their fentanyl-order siblings, Section 122, Section 201, Section 338 —
 and the engine evaluates the composed rate for a (line, country, date)
 triple by resolving every overlay's version in force. Nothing in the
@@ -126,6 +126,11 @@ from February 20 the termination's zero governs [@eo14389_2026], so
 the legal-date answer carries no IEEPA contribution — while the
 collection cutoff two days later [@csms67834313_2026] is, per the
 scope note, outside this function's semantics. Every step is a
-version lookup carrying instrument citations: the "two defensible
-answers" of Section 1 become two different, explicit functions — and
-this paper's panel computes the legal-date one.
+version lookup carrying instrument citations, and the pinned report
+carries the numeric endpoint: at the February 24, 2026 probe for
+solar cells from Canada, both implementations return column rate
+zero, IEEPA zero, Section 201 zero, Section 122 at 0.10 — a total of
+exactly 10 percent, the balance-of-payments surcharge standing alone
+atop an otherwise-terminated stack. The "two defensible answers" of
+Section 1 become two different, explicit functions — and this paper's
+panel computes the legal-date one.

@@ -22,7 +22,7 @@ cell-by-cell against the leading open reference, Yale Budget Lab's
 tariff-rate-tracker [@yaletracker_repo], on a five-line witness slice
 of the tracker's spine — one tariff line per major authority family,
 crossed with all 240 partners and the tracker's full 2025–26 date
-intervals: at the pinned snapshot, 39,600 compared cells resolve to
+intervals: at the pinned snapshot, 39,600 probe-date comparisons resolve to
 24,400 exact matches and 15,200 discrepancies, every one of which is closed by an evidence-
 backed disposition — zero remain unexplained and zero are open against
 our encoding, with the full waterfall (the witness-line design, coverage, temporal
@@ -39,9 +39,10 @@ integer dollar against the publisher's own control totals with zero
 failures, and, over a five-month pilot window, weighted entry-line
 allocations whose customs value reproduces every line-by-country-by-
 month cell exactly, with every distributional assumption registered
-beside the data. AI agents built the encodings and datasets behind
-compile, test, and oracle gates, with same-project cross-model
-adversarial review run until a pass with no findings; all code,
+beside the data. AI agents built the encodings and datasets behind compile, test, and
+oracle gates, with the comparison harness and entries pipelines under
+same-project cross-model adversarial review run until passes with no
+findings; all code,
 corpora, and evidence are public at pinned revisions.
 
 # 1. Why 2026 broke tariff lookup
@@ -84,8 +85,8 @@ and Section 338 duties. The seams between authorities are themselves
 dated facts: the §122 surcharge expired at 12:01 a.m. on July 24,
 2026 — the same day the forced-labor duties took effect. The tariff
 schedule these overlays modify was a moving target in its own right:
-the International Trade Commission's 2026 edition stood at Revision 15
-by the first week of August, and a revision can carry a single
+the International Trade Commission's 2026 edition stood at Revision
+15 by the first week of August [@hts2026rev15], and a revision can carry a single
 surgical change — Revision 15's only entry amends one chapter-99
 heading, zeroing the Section 232 rate on United Kingdom patented
 pharmaceuticals from +10 percent [@bis2026ukpharma], three days after
@@ -133,8 +134,8 @@ representation: the 2025–26 stack encoded as instrument-cited,
 version-dated executable rules whose termination and revision events
 are themselves rules, with mandatory boundary tests (Section 2).
 Second, a validation regime: a cross-implementation reconciliation
-against the leading open reference on its own spine, with an
-unforgiving predicate, a disposition standard that prices reference-
+against the leading open reference, executed depth-first on a
+five-line witness slice of its spine, with an unforgiving predicate, a disposition standard that prices reference-
 attributed claims at a legal derivation, and a fully disclosed
 waterfall — which in passing produced what we believe is the first
 external research engagement with the reference's internals, and two
@@ -234,8 +235,8 @@ and Section 7 repeats the warning where it bites.
 
 The full stack composes from these pieces. A composition module wires
 the column rates of the tariff schedule to the authority overlays —
-the Section 232 metal programs, the Section 301 families including the
-forced-labor program, the per-country IEEPA reciprocal modules and
+the Section 232 aluminum program (the witness composition's 232
+family), the Section 301 families including the forced-labor program, the per-country IEEPA reciprocal modules and
 their fentanyl-order siblings, Section 122, Section 201, Section 338 —
 and the engine evaluates the composed rate for a (line, country, date)
 triple by resolving every overlay's version in force. Nothing in the
@@ -274,9 +275,14 @@ from February 20 the termination's zero governs [@eo14389_2026], so
 the legal-date answer carries no IEEPA contribution — while the
 collection cutoff two days later [@csms67834313_2026] is, per the
 scope note, outside this function's semantics. Every step is a
-version lookup carrying instrument citations: the "two defensible
-answers" of Section 1 become two different, explicit functions — and
-this paper's panel computes the legal-date one.
+version lookup carrying instrument citations, and the pinned report
+carries the numeric endpoint: at the February 24, 2026 probe for
+solar cells from Canada, both implementations return column rate
+zero, IEEPA zero, Section 201 zero, Section 122 at 0.10 — a total of
+exactly 10 percent, the balance-of-payments surcharge standing alone
+atop an otherwise-terminated stack. The "two defensible answers" of
+Section 1 become two different, explicit functions — and this paper's
+panel computes the legal-date one.
 
 # 3. Cross-implementation reconciliation against an independent tracker
 
@@ -286,8 +292,9 @@ derive the panel our rules imply and reconcile it, cell by cell,
 against a reference built by people who never saw our code. We are
 deliberate about the term. The reference — Yale Budget Lab's
 tariff-rate-tracker [@yaletracker_repo; @budgetlab2026tracker] — was
-separately developed and is the series other measurement work already
-benchmarks against [@cavallo2026tracking], but both implementations
+separately developed, and the Budget Lab's published rate series are
+already a benchmark other measurement work checks against
+[@cavallo2026tracking], but both implementations
 read the same public instruments, its spine defines the comparison
 universe (an omission from that spine is invisible to this exercise),
 and our encoding iterated against the visible disagreements until the
@@ -324,9 +331,11 @@ overlap on one row. An interval is *covered* when our encoded domain
 spans it and *temporal debt* when it wholly predates that domain
 (48,000 interval-cells here); an interval straddling the domain
 boundary is clipped to its covered portion, with the clip recorded
-(1,200 clip events in the artifact). A *comparison* evaluates one covered cell in both
-implementations at the reference's default legal-date convention; a
-*match* is exact equality. A *disposition* closes a mismatched cell
+(1,200 clip events in the artifact). A *comparison* evaluates one covered row in both implementations at
+one probe date — 33 probe dates per line-partner span the covered
+intervals, placed at interval boundaries and their neighbors — at the
+reference's default legal-date convention; a *match* is exact
+equality across every concept slot. A *disposition* closes a mismatched cell
 with a recorded claim — an encoding defect (which must then be fixed),
 a reference-attributed discrepancy (Section 4's standard), or a
 declared semantic difference — and a *tripwired exclusion* removes a
@@ -340,18 +349,25 @@ The full waterfall at the pinned snapshot
 - The reference panel materializes 277,303,920 rows; the reconciled
   slice is the five witness lines crossed with 240 partners over the
   tracker's 2025–26 coverage.
-- Per policy, the slice's 68,400 in-scope interval-cells (5 lines ×
+- The slice's 68,400 in-scope interval-cells (5 lines ×
   240 partners × 57 intervals) split into 20,400 covered and 48,000
   temporal-debt cells — our encoded rule history begins 2026-02-15,
   later than the tracker's panel start, and the debt is the surfaced
   difference, carried into Section 7's usage limits.
-- Covered cells yield 39,600 comparisons: 24,400 exact matches (61.6
-  percent raw) and 15,200 mismatches, with zero evaluation errors.
+- The covered intervals yield 39,600 probe-date comparisons (5 lines
+  × 240 partners × 33 probes): 24,400 exact matches (61.6 percent
+  raw) and 15,200 mismatches, with zero evaluation errors.
 - Every one of the 15,200 enters a disposition; none remain
-  unexplained, and none are open against our encoding. 8,283 cells
-  carry reference-attributed dispositions under Section 4's standard;
-  the per-class census, with each cell's concept, interval, and
-  instrument, is in the committed disposition artifacts. At the
+  unexplained, and none are open against our encoding. The disposition
+  file partitions them into 30 entries — every mismatched unit appears
+  in exactly one, by construction — whose classes are legible families:
+  an IEEPA metals-exclusion layer (13 entries), the column-2 reference
+  gap of Section 4 (4 entries plus combinations), a Section 232
+  aluminum-content basis on beer, a free-trade-agreement preference
+  layer, a Section 122 metal exclusion, and the Section 201 safeguard
+  expiry of Section 4; 8,283 cells carry reference-attributed
+  dispositions under Section 4's standard, and each entry records its
+  concept, case selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
   Section 232 slots (594, 476, 1,920) — concept counts overlap where
@@ -367,7 +383,8 @@ The full waterfall at the pinned snapshot
   deliberately does not mirror), each with a guard that reds the build
   if its footprint becomes nonzero.
 
-Ten of the reference's fourteen policy constructs are therefore
+Table 1 consolidates the waterfall. Ten of the reference's fourteen
+policy constructs are therefore
 covered and conformant; four are excluded with tripwires; and the
 conformance predicate — covered equals in-scope, unexplained equals
 zero, open encoding-attributed equals zero — holds on the covered
@@ -441,7 +458,7 @@ note — is recorded in the disposition file, and the finding was
 filed upstream with the same citations.
 
 **Four countries on the wrong rate column.** The tariff schedule's
-General Note 3(b) directs that "the rates of duty shown in column 2
+General Note 3(b) [@hts2026rev15] directs that "the rates of duty shown in column 2
 shall apply to products, whether imported directly or indirectly, of
 the following countries and areas": the Republic of Belarus, Cuba,
 North Korea, and the Russian Federation. The reference's parser has
@@ -660,9 +677,12 @@ unchecked claims.
 
 What the pair enables now. The statutory panel and the synthetic
 entries share a contract — the entries' fields conform to the
-composed spine's inputs — so duty computation runs at entry grain:
-for any entry, the rate stack in force on its date, by authority,
-with the derivation attached. That supports revenue accounting by
+composed spine's inputs — so duty computation runs at entry grain — the rate stack in force on
+an entry's date, by authority, with the derivation attached — with
+the composed domain's own boundary stated plainly: the pinned
+composition gates on the five witness lines, so entry-level duty
+computation is currently defined for entries on those lines, and
+extends with the encoding. That supports revenue accounting by
 statutory component under any counterfactual expressible as dated
 rules (repeal an authority, move a termination date, extend a staged
 schedule), source-traceable rate lookup — every value carrying its instrument
@@ -691,9 +711,9 @@ them: the rule history runs to the instruments' own dates; the
 reconciliation of Section 3 covers the five-line witness slice of the
 reference spine, with 48,000 pre-domain interval-cells surfaced as
 temporal debt rather than compared; the margins cover January 2025 through
-June 2026; and entry-level duty computation is defined on the
-composed spine's domain (February 2026 onward) intersected with the
-pilot allocations (February through June 2026) — a window that ends
+June 2026; and entry-level duty computation is defined on the composed spine's
+domain (the five witness lines, February 2026 onward) intersected
+with the pilot allocations (February through June 2026) — a window that ends
 before the July 24 seam and the August revision, which the margins
 record but the pilot does not reach.
 
@@ -721,7 +741,8 @@ Bown's widely used trackers institutionalized the hand-compiled
 approach as a maintained public timeline [@bown2021uschina;
 @bown_piie_chart]. The 2025–26 environment strains this tradition on
 two margins the earlier waves mostly spared it: authority count
-(seven overlapping legal bases with distinct lifecycles) and tempo
+(a base schedule plus six overlay authorities with distinct
+lifecycles) and tempo
 (terminations, expiries, and revision-level rate surgery inside single
 months). Teti's Global Tariff Database extends statutory rate coverage
 impressively in space and time — two hundred importers back to 1988 —
@@ -760,8 +781,7 @@ likewise institutionalized practice in tax microsimulation — NBER's
 TAXSIM as a reference implementation [@feenberg1993introduction],
 EUROMOD's country-report validation regime [@sutherland2013euromod],
 and maintained harnesses that reconcile independent calculators
-line-by-line [@taxcalculator_taxsim_validation]. That culture has not
-previously reached trade law. Tariffs are, if anything, the easier
+line-by-line [@taxcalculator_taxsim_validation]. To our knowledge that culture had not previously reached trade law. Tariffs are, if anything, the easier
 target for it — the instruments are public, the schedule is versioned
 by the issuing agency, and the reference tracker already exists — and
 the 2025–26 record supplies the volatility that makes the exercise
@@ -845,13 +865,17 @@ Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 
 | Quantity | Value |
 |---|---|
+| Witness slice | 5 HTS-10 lines × 240 partners × 57 intervals |
+| In-scope interval-cells | 68,400 = 20,400 covered + 48,000 temporal debt |
+| Probe-date comparisons | 39,600 (33 probes per line-partner) |
+| Exact matches / mismatches (raw) | 24,400 / 15,200 (61.6% raw) |
+| Disposition entries partitioning the 15,200 | 30 (each unit in exactly one) |
 | In-scope policies covered | 10 / 10 |
 | Unexplained disagreements | 0 |
 | Open disagreements attributed to the encoding | 0 |
 | Tripwired scope exclusions | 4 |
 | Reference-attributed cells, classified with evidence | 8,283 |
-| Temporal debt surfaced (pre-domain intervals) | 48,000 |
-| Temporal debt surfaced (domain-straddling intervals) | 1,200 |
+| Boundary-straddle clip events recorded | 1,200 |
 | Comparison-harness tests at close | 2,396 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |
 | Reference build, measured | 6,368 s wall; 123.4 GiB peak footprint |

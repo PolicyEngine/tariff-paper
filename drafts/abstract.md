@@ -14,7 +14,7 @@ cell-by-cell against the leading open reference, Yale Budget Lab's
 tariff-rate-tracker [@yaletracker_repo], on a five-line witness slice
 of the tracker's spine — one tariff line per major authority family,
 crossed with all 240 partners and the tracker's full 2025–26 date
-intervals: at the pinned snapshot, 39,600 compared cells resolve to
+intervals: at the pinned snapshot, 39,600 probe-date comparisons resolve to
 24,400 exact matches and 15,200 discrepancies, every one of which is closed by an evidence-
 backed disposition — zero remain unexplained and zero are open against
 our encoding, with the full waterfall (the witness-line design, coverage, temporal
@@ -31,7 +31,8 @@ integer dollar against the publisher's own control totals with zero
 failures, and, over a five-month pilot window, weighted entry-line
 allocations whose customs value reproduces every line-by-country-by-
 month cell exactly, with every distributional assumption registered
-beside the data. AI agents built the encodings and datasets behind
-compile, test, and oracle gates, with same-project cross-model
-adversarial review run until a pass with no findings; all code,
+beside the data. AI agents built the encodings and datasets behind compile, test, and
+oracle gates, with the comparison harness and entries pipelines under
+same-project cross-model adversarial review run until passes with no
+findings; all code,
 corpora, and evidence are public at pinned revisions.

@@ -14,7 +14,8 @@ Bown's widely used trackers institutionalized the hand-compiled
 approach as a maintained public timeline [@bown2021uschina;
 @bown_piie_chart]. The 2025–26 environment strains this tradition on
 two margins the earlier waves mostly spared it: authority count
-(seven overlapping legal bases with distinct lifecycles) and tempo
+(a base schedule plus six overlay authorities with distinct
+lifecycles) and tempo
 (terminations, expiries, and revision-level rate surgery inside single
 months). Teti's Global Tariff Database extends statutory rate coverage
 impressively in space and time — two hundred importers back to 1988 —
@@ -53,8 +54,7 @@ likewise institutionalized practice in tax microsimulation — NBER's
 TAXSIM as a reference implementation [@feenberg1993introduction],
 EUROMOD's country-report validation regime [@sutherland2013euromod],
 and maintained harnesses that reconcile independent calculators
-line-by-line [@taxcalculator_taxsim_validation]. That culture has not
-previously reached trade law. Tariffs are, if anything, the easier
+line-by-line [@taxcalculator_taxsim_validation]. To our knowledge that culture had not previously reached trade law. Tariffs are, if anything, the easier
 target for it — the instruments are public, the schedule is versioned
 by the issuing agency, and the reference tracker already exists — and
 the 2025–26 record supplies the volatility that makes the exercise

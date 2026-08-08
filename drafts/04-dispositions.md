@@ -40,7 +40,7 @@ note — is recorded in the disposition file, and the finding was
 filed upstream with the same citations.
 
 **Four countries on the wrong rate column.** The tariff schedule's
-General Note 3(b) directs that "the rates of duty shown in column 2
+General Note 3(b) [@hts2026rev15] directs that "the rates of duty shown in column 2
 shall apply to products, whether imported directly or indirectly, of
 the following countries and areas": the Republic of Belarus, Cuba,
 North Korea, and the Russian Federation. The reference's parser has

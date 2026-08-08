@@ -38,8 +38,8 @@ and Section 338 duties. The seams between authorities are themselves
 dated facts: the §122 surcharge expired at 12:01 a.m. on July 24,
 2026 — the same day the forced-labor duties took effect. The tariff
 schedule these overlays modify was a moving target in its own right:
-the International Trade Commission's 2026 edition stood at Revision 15
-by the first week of August, and a revision can carry a single
+the International Trade Commission's 2026 edition stood at Revision
+15 by the first week of August [@hts2026rev15], and a revision can carry a single
 surgical change — Revision 15's only entry amends one chapter-99
 heading, zeroing the Section 232 rate on United Kingdom patented
 pharmaceuticals from +10 percent [@bis2026ukpharma], three days after
@@ -87,8 +87,8 @@ representation: the 2025–26 stack encoded as instrument-cited,
 version-dated executable rules whose termination and revision events
 are themselves rules, with mandatory boundary tests (Section 2).
 Second, a validation regime: a cross-implementation reconciliation
-against the leading open reference on its own spine, with an
-unforgiving predicate, a disposition standard that prices reference-
+against the leading open reference, executed depth-first on a
+five-line witness slice of its spine, with an unforgiving predicate, a disposition standard that prices reference-
 attributed claims at a legal derivation, and a fully disclosed
 waterfall — which in passing produced what we believe is the first
 external research engagement with the reference's internals, and two
