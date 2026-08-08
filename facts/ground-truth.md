@@ -235,3 +235,12 @@ All six filings verified open with 0 maintainer comments as of
   addressed in revision 1; round-diff + red-team verification rounds =
   same-family (Claude-class); a second cross-model round pending codex
   quota (locks lift Aug 10–13).
+
+## Post-draft repo state note (2026-08-08)
+
+microcosm#638 (namespace rename) squash-merged 2026-08-08 20:23Z:
+`populace.*` imports are now `microcosm.*` on main; `populace_us_trade.*`
+fact keys byte-frozen as designed. The paper's pinned merge commits and
+in-branch evidence paths are historical records and stay correct as
+written; any NEW code (P3/P4, the archival replication release) imports
+`microcosm.*` and cuts worktrees from renamed main.
