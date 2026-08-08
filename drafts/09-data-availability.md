@@ -11,8 +11,8 @@ per-month reconciliation records, the gated cross-check report) in the
 Microcosm repository, merged as pull requests #620 and #621 with the
 full adversarial review inventories in their descriptions. The Yale
 reference is pinned at commit c4307e51 of Budget-Lab-Yale/
-tariff-rate-tracker; our six upstream reports are public issues on
-that repository. The Census source archives are public no-auth
+tariff-rate-tracker; our six upstream filings — five public issues and one patch pull
+request — are on that repository. The Census source archives are public no-auth
 downloads whose URL pattern, sizes, and sha-256 digests appear in the
 committed source manifest; the CBP page bytes our anchors parse from
 are archived beside the facts they ground.
@@ -40,7 +40,11 @@ above are the replication interface.
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 6 were produced by AI agents under the stated
 gates, with human direction of scope, dispositions, upstream
-communication, and publication; this manuscript was drafted by the
-authoring agents from a verified fact base and revised under the same
-adversarial-review regime, with the human author responsible for all
+communication, and publication. This manuscript was drafted by the
+authoring agents from a primary-source-verified fact base; its
+revision record to date comprises one cross-model hostile-referee
+round (GPT-5.6-class) whose twenty findings were addressed, followed
+by same-family verification rounds (a round-diff audit of those
+closures and a fresh red-team pass, Claude-class) whose findings this
+version incorporates. The human author is responsible for all
 claims.

@@ -12,19 +12,39 @@ read the same public instruments, its spine defines the comparison
 universe (an omission from that spine is invisible to this exercise),
 and our encoding iterated against the visible disagreements until the
 predicate held. That is reconciliation between independent
-implementations, which is the standard validation practice of tax
-microsimulation transplanted to tariffs; it is not a held-out
-evaluation, and Section 6 states what would upgrade it (a frozen
-future snapshot, an independently double-coded legal sample, a third
-implementation).
+implementations — the standard validation practice of tax
+microsimulation transplanted to tariffs — not a held-out evaluation;
+the upgrades that would strengthen it (a frozen future snapshot, an
+independently double-coded legal sample, a third implementation) are
+stated future work.
+
+One design choice governs the universe and is the first thing a
+reader should know: the reconciliation runs on a **five-line witness
+slice** of the reference's spine. The five tariff lines — beer
+(2203.00.0030), ferromanganese (7202.11.1000), unwrought aluminum
+(7601.10.3000), crystalline-silicon solar cells (8541.42.0010), and
+inflatable balls (9506.62.4040) — were chosen so that every overlay
+authority in scope has at least one line where it binds, and each is
+crossed with all 240 partners and all 57 of the tracker's date
+intervals. The slice is a pilot of the method at full derivational
+depth, not a sample estimate of schedule-wide agreement: five lines
+are roughly 0.025 percent of the lines behind the reference's
+277-million-row panel, every number below is exact within the slice
+and says nothing outside it, and extending the same machinery across
+the schedule is the recorded next stage of this program. We chose
+depth-first deliberately — the two reference defects of Section 4
+were found by exhausting five lines, not by sampling many — and the
+paper's claims are written at the slice's scale throughout.
 
 Definitions, so the numbers that follow are exact. A *cell* is a
-(tariff line, partner, date-interval, concept) tuple on the
-reference's spine, where a concept is one statutory rate column (the
-column rate, or one overlay authority) or the total. An interval is
-*covered* when our encoded domain spans it, and *temporal debt* when
-it predates that domain or straddles its boundary — debt is surfaced,
-never compared. A *comparison* evaluates one covered cell in both
+(tariff line, partner, date-interval) row on the reference's spine;
+each row carries one value per *concept slot* — the column rate, each
+overlay authority, and the total — so mismatch counts by concept can
+overlap on one row. An interval is *covered* when our encoded domain
+spans it and *temporal debt* when it wholly predates that domain
+(48,000 interval-cells here); an interval straddling the domain
+boundary is clipped to its covered portion, with the clip recorded
+(1,200 clip events in the artifact). A *comparison* evaluates one covered cell in both
 implementations at the reference's default legal-date convention; a
 *match* is exact equality. A *disposition* closes a mismatched cell
 with a recorded claim — an encoding defect (which must then be fixed),
@@ -38,11 +58,13 @@ The full waterfall at the pinned snapshot
 `dbf09f44`; engine at `ffd82132`):
 
 - The reference panel materializes 277,303,920 rows; the reconciled
-  slice covers 240 partners over the tracker's 2025–26 coverage.
-- Per policy, 68,400 in-scope date-intervals split into 20,400 covered
-  and 48,000 temporal-debt intervals (our encoded rule history begins
-  later than the tracker's panel start; the debt is the surfaced
-  difference, and Section 7 carries it into the usage limits).
+  slice is the five witness lines crossed with 240 partners over the
+  tracker's 2025–26 coverage.
+- Per policy, the slice's 68,400 in-scope interval-cells (5 lines ×
+  240 partners × 57 intervals) split into 20,400 covered and 48,000
+  temporal-debt cells — our encoded rule history begins 2026-02-15,
+  later than the tracker's panel start, and the debt is the surfaced
+  difference, carried into Section 7's usage limits.
 - Covered cells yield 39,600 comparisons: 24,400 exact matches (61.6
   percent raw) and 15,200 mismatches, with zero evaluation errors.
 - Every one of the 15,200 enters a disposition; none remain

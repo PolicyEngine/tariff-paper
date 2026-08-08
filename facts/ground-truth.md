@@ -200,3 +200,37 @@ All six filings verified open with 0 maintainer comments as of
   c4307e514196618afcbf88cf7fd33746417eeabf; microcosm merges
   d4b0855157af996bd367146bc200a2f72ee7d15d /
   6707ed5912d33ff0a340474a1a24f31546c6dec5.
+
+## Witness-slice disclosure + section 201 mechanism (round-3 verifications, 2026-08-07)
+
+- **The reconciliation universe is a five-line witness slice** (verified
+  in the pinned report's scope.covered_lines): 2203.00.0030 (beer),
+  7202.11.1000 (ferromanganese), 7601.10.3000 (unwrought aluminum),
+  8541.42.0010 (crystalline-silicon solar cells), 9506.62.4040
+  (inflatable balls) × 240 partners × 57 intervals = 68,400. Lines were
+  chosen as authority witnesses; full-schedule expansion is the
+  recorded backlog (campaign T1). ~0.025% of the reference's
+  277,303,920-row spine. EVERY reconciliation claim must carry this.
+- **Section 201 encoding mechanism at dbf09f44** (composition.yaml
+  section_201_component_rate): ONE version, effective_from 2026-02-15,
+  formula an explicit zero — with proof atoms quoting the ENTIRE staged
+  table (14.75/14.5/14.25/14%, each period's dates) and the schedule's
+  expiry compiler's note. Zero by explicit version with the derivation
+  in the proof, NOT by absence of a version. The encoded domain begins
+  2026-02-15 (post-expiry).
+- Temporal debt semantics per artifact: 48,000 pre-domain intervals =
+  debt; boundary-straddling intervals are clipped to the covered
+  portion (straddle/clip fields present in the report; 1,200 clip
+  events recorded).
+- Generator algorithm (entry_generator.py @ microcosm main): integer
+  largest-remainder allocation; each (line, country, month) stratum
+  yields at most two weighted rows; all dollar allocation in integer
+  arithmetic; proven-exact domain bound documented in-module.
+- Review-coverage truth for §6: the three NAMED reviewed arcs are the
+  comparison harness (6 rounds to APPROVE), entries P1 (12 rounds) and
+  P2 (4 rounds); encoding waves carried lane-level review but NOT every
+  rulespec-us PR (counterexamples exist) — never claim "every PR."
+- Manuscript QA truth: one cross-model hostile round (GPT-5.6-class)
+  addressed in revision 1; round-diff + red-team verification rounds =
+  same-family (Claude-class); a second cross-model round pending codex
+  quota (locks lift Aug 10–13).

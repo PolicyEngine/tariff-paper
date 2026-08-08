@@ -6,13 +6,13 @@ wave. Fajgelbaum, Goldberg, Kennedy, and Khandelwal digitized each
 wave's product lists and statutory rates from the official
 announcements to estimate the trade war's incidence
 [@fajgelbaum2020return]; Amiti, Redding, and Weinstein assembled the
-same sequence for pass-through event studies [amiti2019impact;
-amiti2020whos]; Flaaen and Pierce mapped tariff-line changes into
+same sequence for pass-through event studies [@amiti2019impact;
+@amiti2020whos]; Flaaen and Pierce mapped tariff-line changes into
 industry exposure measures [@flaaen2019disentangling]. In each case the
 tariff schedule is a bespoke research input, frozen at publication.
 Bown's widely used trackers institutionalized the hand-compiled
-approach as a maintained public timeline [bown2021uschina;
-bown_piie_chart]. The 2025–26 environment strains this tradition on
+approach as a maintained public timeline [@bown2021uschina;
+@bown_piie_chart]. The 2025–26 environment strains this tradition on
 two margins the earlier waves mostly spared it: authority count
 (seven overlapping legal bases with distinct lifecycles) and tempo
 (terminations, expiries, and revision-level rate surgery inside single
@@ -27,9 +27,10 @@ tariff-rate-tracker is an open-source pipeline producing an
 interval-encoded panel of statutory rates at the tariff-line ×
 country level for the 2025–26 regime, built from the trade
 commission's schedule archives with documented policy parameters
-[@yaletracker_repo; @budgetlab2026tracker]; the Budget Lab's rate
-series are already the benchmark other measurement work checks
-against [@cavallo2026tracking]. We are not, therefore, the first
+[@yaletracker_repo; @budgetlab2026tracker]; the Budget Lab's published rate series are already a benchmark other
+measurement work checks against [@cavallo2026tracking] (the citation
+benchmarks the Lab's report series; the tracker tool itself is
+newer). We are not, therefore, the first
 executable statutory tariff panel; the tracker is one, and a good
 one. The contribution is the form and what the form enables: rules
 at the instrument grain, each version citing and quoting its legal
@@ -72,8 +73,8 @@ the true U.S. transaction record remains restricted-access
 [@bernard2009importers; @census_lfttd] or proprietary. Our entries
 invert the disclosure-avoidance objective: the inputs are already
 public, no confidentiality constraint binds, and the generator's
-contract is exact integer reproduction of every published margin cell
-with a declared assumptions register below that grain. We find no prior public U.S. synthetic customs-entry dataset with
+contract is exact integer reproduction of the customs-value margin at
+its stated grain, with a declared assumptions register below it. We find no prior public U.S. synthetic customs-entry dataset with
 that contract; the claim is bounded by our search (August 2026) and
 Section 1's contribution list is written to survive even if one
 surfaces — the representation and the reconciliation regime do not

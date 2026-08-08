@@ -46,7 +46,13 @@ what they are.
 
 **Down to entries, assumptions on the table.** The generator
 disaggregates each (line × country × month) customs-value cell into
-weighted synthetic entries. The identity constraint is absolute:
+weighted synthetic entries by integer largest-remainder allocation:
+entry counts and the within-cell size distribution fix each stratum's
+target dollars, integer division allocates the floor, and the
+remainder distributes one dollar at a time by largest fractional
+part — so each stratum resolves to at most two weighted rows and the
+allocation is integer arithmetic end-to-end, with the weights
+carrying how many identical entries each row represents. The identity constraint is absolute:
 weighted customs value reproduces every line-by-country-by-month cell
 to the integer dollar. The arithmetic earns the word exact: cross-
 cell aggregations run in arbitrary-precision Python integers (the

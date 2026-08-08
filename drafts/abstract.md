@@ -11,13 +11,16 @@ version cites its Federal Register instrument or tariff-schedule
 provision with a verbatim excerpt, and terminations are themselves
 encoded law rather than deletions. We reconcile the encoding
 cell-by-cell against the leading open reference, Yale Budget Lab's
-tariff-rate-tracker [@yaletracker_repo], on the tracker's own
-line-by-country-by-date spine over its 2025–26 coverage: at the pinned
-snapshot, 39,600 compared cells resolve to 24,400 exact matches and
-15,200 discrepancies, every one of which is closed by an evidence-
+tariff-rate-tracker [@yaletracker_repo], on a five-line witness slice
+of the tracker's spine — one tariff line per major authority family,
+crossed with all 240 partners and the tracker's full 2025–26 date
+intervals: at the pinned snapshot, 39,600 compared cells resolve to
+24,400 exact matches and 15,200 discrepancies, every one of which is closed by an evidence-
 backed disposition — zero remain unexplained and zero are open against
-our encoding, with the full waterfall (coverage, temporal debt, and
-four excluded reference constructs) reported in Section 3. The
+our encoding, with the full waterfall (the witness-line design, coverage, temporal
+debt, and four excluded reference constructs) reported in Section 3;
+extending the reconciliation from the witness slice to the full
+schedule is stated future work. The
 reconciliation surfaced two author-attributed, derivation-backed, and
 as-yet maintainer-unacknowledged reference defects — a safeguard rate
 carried past its proclamation's staged schedule and missing column-2

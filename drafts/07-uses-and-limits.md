@@ -30,9 +30,9 @@ register says which assumption, and analyses that depend on within-
 cell joint distributions (entry-size inequality, importer
 concentration) should not run on them. Four ranges govern use and are stated wherever a claim depends on
 them: the rule history runs to the instruments' own dates; the
-reconciliation of Section 3 covers the reference spine's 2025–26
-coverage with 48,000 pre-domain interval-cells surfaced as temporal
-debt rather than compared; the margins cover January 2025 through
+reconciliation of Section 3 covers the five-line witness slice of the
+reference spine, with 48,000 pre-domain interval-cells surfaced as
+temporal debt rather than compared; the margins cover January 2025 through
 June 2026; and entry-level duty computation is defined on the
 composed spine's domain (February 2026 onward) intersected with the
 pilot allocations (February through June 2026) — a window that ends

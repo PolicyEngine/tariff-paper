@@ -46,7 +46,9 @@ the following countries and areas": the Republic of Belarus, Cuba,
 North Korea, and the Russian Federation. The reference's parser has
 no column-2 branch, so those four countries inherit column-1 base
 rates throughout its panel. The disagreement is systematic rather
-than episodic — it touches every line for four partners — and the
+than episodic — within the witness slice it touches all five lines
+for the four partners, and nothing in the parser limits it to the
+slice — and the
 derivation is a single sentence of the schedule's own general notes,
 with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.

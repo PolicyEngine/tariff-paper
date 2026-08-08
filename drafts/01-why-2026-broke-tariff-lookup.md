@@ -22,8 +22,9 @@ its convention has taken it silently.
 That week is the 2025–26 tariff environment in miniature. Over
 eighteen months, the United States imposed, modified, litigated, and
 unwound overlapping duties under the base tariff schedule and six
-overlay authorities: IEEPA, Section 232, Section 301, Section 201,
-Section 122, and Section 338.
+overlay authorities — IEEPA, Section 232, Section 301, Section 201,
+Section 122, and Section 338 — the authority set the reference panel
+of Section 3 tracks as statutory rate columns.
 Alongside the IEEPA orders and their termination: Section 232
 national-security actions across metals and manufactured goods;
 Section 301 actions [@ustr2026forcedlabor] including a forced-labor program that determined

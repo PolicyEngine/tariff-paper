@@ -19,13 +19,16 @@ version cites its Federal Register instrument or tariff-schedule
 provision with a verbatim excerpt, and terminations are themselves
 encoded law rather than deletions. We reconcile the encoding
 cell-by-cell against the leading open reference, Yale Budget Lab's
-tariff-rate-tracker [@yaletracker_repo], on the tracker's own
-line-by-country-by-date spine over its 2025–26 coverage: at the pinned
-snapshot, 39,600 compared cells resolve to 24,400 exact matches and
-15,200 discrepancies, every one of which is closed by an evidence-
+tariff-rate-tracker [@yaletracker_repo], on a five-line witness slice
+of the tracker's spine — one tariff line per major authority family,
+crossed with all 240 partners and the tracker's full 2025–26 date
+intervals: at the pinned snapshot, 39,600 compared cells resolve to
+24,400 exact matches and 15,200 discrepancies, every one of which is closed by an evidence-
 backed disposition — zero remain unexplained and zero are open against
-our encoding, with the full waterfall (coverage, temporal debt, and
-four excluded reference constructs) reported in Section 3. The
+our encoding, with the full waterfall (the witness-line design, coverage, temporal
+debt, and four excluded reference constructs) reported in Section 3;
+extending the reconciliation from the witness slice to the full
+schedule is stated future work. The
 reconciliation surfaced two author-attributed, derivation-backed, and
 as-yet maintainer-unacknowledged reference defects — a safeguard rate
 carried past its proclamation's staged schedule and missing column-2
@@ -65,8 +68,9 @@ its convention has taken it silently.
 That week is the 2025–26 tariff environment in miniature. Over
 eighteen months, the United States imposed, modified, litigated, and
 unwound overlapping duties under the base tariff schedule and six
-overlay authorities: IEEPA, Section 232, Section 301, Section 201,
-Section 122, and Section 338.
+overlay authorities — IEEPA, Section 232, Section 301, Section 201,
+Section 122, and Section 338 — the authority set the reference panel
+of Section 3 tracks as statutory rate columns.
 Alongside the IEEPA orders and their termination: Section 232
 national-security actions across metals and manufactured goods;
 Section 301 actions [@ustr2026forcedlabor] including a forced-labor program that determined
@@ -251,27 +255,28 @@ or applies to a line that stopped existing mid-year is not a cell in a
 table. It is a small legal argument, and the representation that
 survives contact with it is the one that stores the argument.
 
-**A worked trace.** Take the solar-module query of Section 1 — a
-crystalline-silicon module from Malaysia, February 22, 2026 — and
-follow the version selection rather than inventing numbers. The
-column-rate module for the line contributes its general rate per the
-tariff-schedule revision in force that day. The Section 201 overlay's
-staged versions — 14.75, 14.5, 14.25, 14 percent across the extension
-proclamation's four annual periods [@proc10339_2022] — contribute
-nothing: the final period's version ends February 6, 2026, the
-schedule's own compilation marks the safeguard note expired, and no
-later version exists, so the overlay's contribution on February 22 is
-zero by absence of a version in force, not by an edit. The IEEPA
-overlay resolves through the termination rule shown above: the
-reciprocal version in force until February 19 is superseded by the
-termination's zero from February 20 [@eo14389_2026], so the legal-
-date answer carries no IEEPA contribution — while the collection
-cutoff two days later [@csms67834313_2026] is, per the scope note,
-outside this function's semantics. Every step of that paragraph is a
-version lookup citing an instrument, which is the representation's
-whole argument: the "two defensible answers" of Section 1 become two
-different, explicit functions — and this paper's panel computes the
-legal-date one.
+**A worked trace.** Take the solar query of Section 1 — the
+crystalline-silicon cell line, one of the five witness lines of
+Section 3, from Malaysia on February 22, 2026 — and read the actual
+rules at the pin rather than a stylized version of them. The
+column-rate module contributes the line's general rate per the
+tariff-schedule revision in force. The Section 201 component is an
+explicit zero: the encoded domain begins February 15, 2026, nine days
+after the safeguard's staged schedule expired, so the rule's single
+version is a zero — and its proof atoms quote the entire derivation
+of that zero, the extension proclamation's staged table (14.75, 14.5,
+14.25, 14 percent, each period dated) and the schedule's own
+compiler's note that the safeguard has expired [@proc10339_2022].
+The operative formula is a constant; the legal argument for the
+constant travels with it, which is the representation's point. The
+IEEPA component resolves through the termination rule shown above:
+from February 20 the termination's zero governs [@eo14389_2026], so
+the legal-date answer carries no IEEPA contribution — while the
+collection cutoff two days later [@csms67834313_2026] is, per the
+scope note, outside this function's semantics. Every step is a
+version lookup carrying instrument citations: the "two defensible
+answers" of Section 1 become two different, explicit functions — and
+this paper's panel computes the legal-date one.
 
 # 3. Cross-implementation reconciliation against an independent tracker
 
@@ -287,19 +292,39 @@ read the same public instruments, its spine defines the comparison
 universe (an omission from that spine is invisible to this exercise),
 and our encoding iterated against the visible disagreements until the
 predicate held. That is reconciliation between independent
-implementations, which is the standard validation practice of tax
-microsimulation transplanted to tariffs; it is not a held-out
-evaluation, and Section 6 states what would upgrade it (a frozen
-future snapshot, an independently double-coded legal sample, a third
-implementation).
+implementations — the standard validation practice of tax
+microsimulation transplanted to tariffs — not a held-out evaluation;
+the upgrades that would strengthen it (a frozen future snapshot, an
+independently double-coded legal sample, a third implementation) are
+stated future work.
+
+One design choice governs the universe and is the first thing a
+reader should know: the reconciliation runs on a **five-line witness
+slice** of the reference's spine. The five tariff lines — beer
+(2203.00.0030), ferromanganese (7202.11.1000), unwrought aluminum
+(7601.10.3000), crystalline-silicon solar cells (8541.42.0010), and
+inflatable balls (9506.62.4040) — were chosen so that every overlay
+authority in scope has at least one line where it binds, and each is
+crossed with all 240 partners and all 57 of the tracker's date
+intervals. The slice is a pilot of the method at full derivational
+depth, not a sample estimate of schedule-wide agreement: five lines
+are roughly 0.025 percent of the lines behind the reference's
+277-million-row panel, every number below is exact within the slice
+and says nothing outside it, and extending the same machinery across
+the schedule is the recorded next stage of this program. We chose
+depth-first deliberately — the two reference defects of Section 4
+were found by exhausting five lines, not by sampling many — and the
+paper's claims are written at the slice's scale throughout.
 
 Definitions, so the numbers that follow are exact. A *cell* is a
-(tariff line, partner, date-interval, concept) tuple on the
-reference's spine, where a concept is one statutory rate column (the
-column rate, or one overlay authority) or the total. An interval is
-*covered* when our encoded domain spans it, and *temporal debt* when
-it predates that domain or straddles its boundary — debt is surfaced,
-never compared. A *comparison* evaluates one covered cell in both
+(tariff line, partner, date-interval) row on the reference's spine;
+each row carries one value per *concept slot* — the column rate, each
+overlay authority, and the total — so mismatch counts by concept can
+overlap on one row. An interval is *covered* when our encoded domain
+spans it and *temporal debt* when it wholly predates that domain
+(48,000 interval-cells here); an interval straddling the domain
+boundary is clipped to its covered portion, with the clip recorded
+(1,200 clip events in the artifact). A *comparison* evaluates one covered cell in both
 implementations at the reference's default legal-date convention; a
 *match* is exact equality. A *disposition* closes a mismatched cell
 with a recorded claim — an encoding defect (which must then be fixed),
@@ -313,11 +338,13 @@ The full waterfall at the pinned snapshot
 `dbf09f44`; engine at `ffd82132`):
 
 - The reference panel materializes 277,303,920 rows; the reconciled
-  slice covers 240 partners over the tracker's 2025–26 coverage.
-- Per policy, 68,400 in-scope date-intervals split into 20,400 covered
-  and 48,000 temporal-debt intervals (our encoded rule history begins
-  later than the tracker's panel start; the debt is the surfaced
-  difference, and Section 7 carries it into the usage limits).
+  slice is the five witness lines crossed with 240 partners over the
+  tracker's 2025–26 coverage.
+- Per policy, the slice's 68,400 in-scope interval-cells (5 lines ×
+  240 partners × 57 intervals) split into 20,400 covered and 48,000
+  temporal-debt cells — our encoded rule history begins 2026-02-15,
+  later than the tracker's panel start, and the debt is the surfaced
+  difference, carried into Section 7's usage limits.
 - Covered cells yield 39,600 comparisons: 24,400 exact matches (61.6
   percent raw) and 15,200 mismatches, with zero evaluation errors.
 - Every one of the 15,200 enters a disposition; none remain
@@ -420,7 +447,9 @@ the following countries and areas": the Republic of Belarus, Cuba,
 North Korea, and the Russian Federation. The reference's parser has
 no column-2 branch, so those four countries inherit column-1 base
 rates throughout its panel. The disagreement is systematic rather
-than episodic — it touches every line for four partners — and the
+than episodic — within the witness slice it touches all five lines
+for the four partners, and nothing in the parser limits it to the
+slice — and the
 derivation is a single sentence of the schedule's own general notes,
 with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.
@@ -499,7 +528,13 @@ what they are.
 
 **Down to entries, assumptions on the table.** The generator
 disaggregates each (line × country × month) customs-value cell into
-weighted synthetic entries. The identity constraint is absolute:
+weighted synthetic entries by integer largest-remainder allocation:
+entry counts and the within-cell size distribution fix each stratum's
+target dollars, integer division allocates the floor, and the
+remainder distributes one dollar at a time by largest fractional
+part — so each stratum resolves to at most two weighted rows and the
+allocation is integer arithmetic end-to-end, with the weights
+carrying how many identical entries each row represents. The identity constraint is absolute:
 weighted customs value reproduces every line-by-country-by-month cell
 to the integer dollar. The arithmetic earns the word exact: cross-
 cell aggregations run in arbitrary-precision Python integers (the
@@ -576,11 +611,14 @@ from, and the scoreboard numbers quoted in this paper carry their
 snapshot hashes because the live reports refresh as the encoding
 grows.
 
-**The adversary.** Every pull request merged in the repositories
-this paper reports on passed same-project cross-model adversarial
-QA — a reviewing agent from a different frontier model family (an
-OpenAI GPT-5.6-class reviewer against Anthropic Claude-class
-authoring agents) prompted to refute rather than confirm, with each finding closed by a
+**The adversary.** The artifacts this paper's numbers rest on — the
+comparison harness, the entries ingest, and the entries generator —
+each passed same-project cross-model adversarial QA before their
+numbers were trusted: a reviewing agent from a different frontier
+model family (an OpenAI GPT-5.6-class reviewer against Anthropic
+Claude-class authoring agents) prompted to refute rather than
+confirm, run per change on those components (six rounds on the
+harness, twelve and four on the two pipeline stages), with each finding closed by a
 code change and a test that fails on the pre-fix implementation —
 mutation-proven, not narrated. The entries pipeline of Section 5 is
 the instructive case: its publication machinery (atomic directory
@@ -604,8 +642,9 @@ machine-checked gates — and human judgment exactly where it is load-
 bearing: scope decisions (what counts as law versus estimation), the
 disposition standard of Section 4, anything that leaves the project
 (upstream reports, this paper), and the decision to ship. We do not
-claim the review regime is external certification; Section 3 states
-that boundary. We do claim the artifact trail is complete enough that
+claim the review regime is external certification — reviewer and
+authors sit inside one project, and a separately governed
+verification protocol is future work. We do claim the artifact trail is complete enough that
 a skeptic need not trust any of it: the encodings, the corpus
 manifests, the comparison harness, the entries pipeline, the review
 verdicts, and the evidence packs (build reports, reconciliation
@@ -649,9 +688,9 @@ register says which assumption, and analyses that depend on within-
 cell joint distributions (entry-size inequality, importer
 concentration) should not run on them. Four ranges govern use and are stated wherever a claim depends on
 them: the rule history runs to the instruments' own dates; the
-reconciliation of Section 3 covers the reference spine's 2025–26
-coverage with 48,000 pre-domain interval-cells surfaced as temporal
-debt rather than compared; the margins cover January 2025 through
+reconciliation of Section 3 covers the five-line witness slice of the
+reference spine, with 48,000 pre-domain interval-cells surfaced as
+temporal debt rather than compared; the margins cover January 2025 through
 June 2026; and entry-level duty computation is defined on the
 composed spine's domain (February 2026 onward) intersected with the
 pilot allocations (February through June 2026) — a window that ends
@@ -674,13 +713,13 @@ wave. Fajgelbaum, Goldberg, Kennedy, and Khandelwal digitized each
 wave's product lists and statutory rates from the official
 announcements to estimate the trade war's incidence
 [@fajgelbaum2020return]; Amiti, Redding, and Weinstein assembled the
-same sequence for pass-through event studies [amiti2019impact;
-amiti2020whos]; Flaaen and Pierce mapped tariff-line changes into
+same sequence for pass-through event studies [@amiti2019impact;
+@amiti2020whos]; Flaaen and Pierce mapped tariff-line changes into
 industry exposure measures [@flaaen2019disentangling]. In each case the
 tariff schedule is a bespoke research input, frozen at publication.
 Bown's widely used trackers institutionalized the hand-compiled
-approach as a maintained public timeline [bown2021uschina;
-bown_piie_chart]. The 2025–26 environment strains this tradition on
+approach as a maintained public timeline [@bown2021uschina;
+@bown_piie_chart]. The 2025–26 environment strains this tradition on
 two margins the earlier waves mostly spared it: authority count
 (seven overlapping legal bases with distinct lifecycles) and tempo
 (terminations, expiries, and revision-level rate surgery inside single
@@ -695,9 +734,10 @@ tariff-rate-tracker is an open-source pipeline producing an
 interval-encoded panel of statutory rates at the tariff-line ×
 country level for the 2025–26 regime, built from the trade
 commission's schedule archives with documented policy parameters
-[@yaletracker_repo; @budgetlab2026tracker]; the Budget Lab's rate
-series are already the benchmark other measurement work checks
-against [@cavallo2026tracking]. We are not, therefore, the first
+[@yaletracker_repo; @budgetlab2026tracker]; the Budget Lab's published rate series are already a benchmark other
+measurement work checks against [@cavallo2026tracking] (the citation
+benchmarks the Lab's report series; the tracker tool itself is
+newer). We are not, therefore, the first
 executable statutory tariff panel; the tracker is one, and a good
 one. The contribution is the form and what the form enables: rules
 at the instrument grain, each version citing and quoting its legal
@@ -740,8 +780,8 @@ the true U.S. transaction record remains restricted-access
 [@bernard2009importers; @census_lfttd] or proprietary. Our entries
 invert the disclosure-avoidance objective: the inputs are already
 public, no confidentiality constraint binds, and the generator's
-contract is exact integer reproduction of every published margin cell
-with a declared assumptions register below that grain. We find no prior public U.S. synthetic customs-entry dataset with
+contract is exact integer reproduction of the customs-value margin at
+its stated grain, with a declared assumptions register below it. We find no prior public U.S. synthetic customs-entry dataset with
 that contract; the claim is bounded by our search (August 2026) and
 Section 1's contribution list is written to survive even if one
 surfaces — the representation and the reconciliation regime do not
@@ -760,8 +800,8 @@ per-month reconciliation records, the gated cross-check report) in the
 Microcosm repository, merged as pull requests #620 and #621 with the
 full adversarial review inventories in their descriptions. The Yale
 reference is pinned at commit c4307e51 of Budget-Lab-Yale/
-tariff-rate-tracker; our six upstream reports are public issues on
-that repository. The Census source archives are public no-auth
+tariff-rate-tracker; our six upstream filings — five public issues and one patch pull
+request — are on that repository. The Census source archives are public no-auth
 downloads whose URL pattern, sizes, and sha-256 digests appear in the
 committed source manifest; the CBP page bytes our anchors parse from
 are archived beside the facts they ground.
@@ -789,9 +829,13 @@ above are the replication interface.
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 6 were produced by AI agents under the stated
 gates, with human direction of scope, dispositions, upstream
-communication, and publication; this manuscript was drafted by the
-authoring agents from a verified fact base and revised under the same
-adversarial-review regime, with the human author responsible for all
+communication, and publication. This manuscript was drafted by the
+authoring agents from a primary-source-verified fact base; its
+revision record to date comprises one cross-model hostile-referee
+round (GPT-5.6-class) whose twenty findings were addressed, followed
+by same-family verification rounds (a round-diff audit of those
+closures and a fresh red-team pass, Claude-class) whose findings this
+version incorporates. The human author is responsible for all
 claims.
 
 ## Table 1 — Conformance scoreboard at the pinned snapshot (§3)

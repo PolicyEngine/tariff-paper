@@ -19,11 +19,14 @@ from, and the scoreboard numbers quoted in this paper carry their
 snapshot hashes because the live reports refresh as the encoding
 grows.
 
-**The adversary.** Every pull request merged in the repositories
-this paper reports on passed same-project cross-model adversarial
-QA — a reviewing agent from a different frontier model family (an
-OpenAI GPT-5.6-class reviewer against Anthropic Claude-class
-authoring agents) prompted to refute rather than confirm, with each finding closed by a
+**The adversary.** The artifacts this paper's numbers rest on — the
+comparison harness, the entries ingest, and the entries generator —
+each passed same-project cross-model adversarial QA before their
+numbers were trusted: a reviewing agent from a different frontier
+model family (an OpenAI GPT-5.6-class reviewer against Anthropic
+Claude-class authoring agents) prompted to refute rather than
+confirm, run per change on those components (six rounds on the
+harness, twelve and four on the two pipeline stages), with each finding closed by a
 code change and a test that fails on the pre-fix implementation —
 mutation-proven, not narrated. The entries pipeline of Section 5 is
 the instructive case: its publication machinery (atomic directory
@@ -47,8 +50,9 @@ machine-checked gates — and human judgment exactly where it is load-
 bearing: scope decisions (what counts as law versus estimation), the
 disposition standard of Section 4, anything that leaves the project
 (upstream reports, this paper), and the decision to ship. We do not
-claim the review regime is external certification; Section 3 states
-that boundary. We do claim the artifact trail is complete enough that
+claim the review regime is external certification — reviewer and
+authors sit inside one project, and a separately governed
+verification protocol is future work. We do claim the artifact trail is complete enough that
 a skeptic need not trust any of it: the encodings, the corpus
 manifests, the comparison harness, the entries pipeline, the review
 verdicts, and the evidence packs (build reports, reconciliation

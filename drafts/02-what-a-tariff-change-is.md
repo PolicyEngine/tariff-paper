@@ -107,24 +107,25 @@ or applies to a line that stopped existing mid-year is not a cell in a
 table. It is a small legal argument, and the representation that
 survives contact with it is the one that stores the argument.
 
-**A worked trace.** Take the solar-module query of Section 1 — a
-crystalline-silicon module from Malaysia, February 22, 2026 — and
-follow the version selection rather than inventing numbers. The
-column-rate module for the line contributes its general rate per the
-tariff-schedule revision in force that day. The Section 201 overlay's
-staged versions — 14.75, 14.5, 14.25, 14 percent across the extension
-proclamation's four annual periods [@proc10339_2022] — contribute
-nothing: the final period's version ends February 6, 2026, the
-schedule's own compilation marks the safeguard note expired, and no
-later version exists, so the overlay's contribution on February 22 is
-zero by absence of a version in force, not by an edit. The IEEPA
-overlay resolves through the termination rule shown above: the
-reciprocal version in force until February 19 is superseded by the
-termination's zero from February 20 [@eo14389_2026], so the legal-
-date answer carries no IEEPA contribution — while the collection
-cutoff two days later [@csms67834313_2026] is, per the scope note,
-outside this function's semantics. Every step of that paragraph is a
-version lookup citing an instrument, which is the representation's
-whole argument: the "two defensible answers" of Section 1 become two
-different, explicit functions — and this paper's panel computes the
-legal-date one.
+**A worked trace.** Take the solar query of Section 1 — the
+crystalline-silicon cell line, one of the five witness lines of
+Section 3, from Malaysia on February 22, 2026 — and read the actual
+rules at the pin rather than a stylized version of them. The
+column-rate module contributes the line's general rate per the
+tariff-schedule revision in force. The Section 201 component is an
+explicit zero: the encoded domain begins February 15, 2026, nine days
+after the safeguard's staged schedule expired, so the rule's single
+version is a zero — and its proof atoms quote the entire derivation
+of that zero, the extension proclamation's staged table (14.75, 14.5,
+14.25, 14 percent, each period dated) and the schedule's own
+compiler's note that the safeguard has expired [@proc10339_2022].
+The operative formula is a constant; the legal argument for the
+constant travels with it, which is the representation's point. The
+IEEPA component resolves through the termination rule shown above:
+from February 20 the termination's zero governs [@eo14389_2026], so
+the legal-date answer carries no IEEPA contribution — while the
+collection cutoff two days later [@csms67834313_2026] is, per the
+scope note, outside this function's semantics. Every step is a
+version lookup carrying instrument citations: the "two defensible
+answers" of Section 1 become two different, explicit functions — and
+this paper's panel computes the legal-date one.
