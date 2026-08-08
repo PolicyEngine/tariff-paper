@@ -335,8 +335,8 @@ boundary is clipped to its covered portion, with the clip recorded
 one probe date — 33 probe dates per line-partner span the covered
 intervals, placed at interval boundaries and their neighbors — at the
 reference's default legal-date convention; a *match* is exact
-equality across every concept slot. A *disposition* closes a mismatched cell
-with a recorded claim — an encoding defect (which must then be fixed),
+equality across every concept slot. A *disposition* closes a mismatched comparison
+unit with a recorded claim — an encoding defect (which must then be fixed),
 a reference-attributed discrepancy (Section 4's standard), or a
 declared semantic difference — and a *tripwired exclusion* removes a
 reference construct from scope entirely behind a machine-checked guard
@@ -365,14 +365,14 @@ The full waterfall at the pinned snapshot
   gap of Section 4 (4 entries plus combinations), a Section 232
   aluminum-content basis on beer, a free-trade-agreement preference
   layer, a Section 122 metal exclusion, and the Section 201 safeguard
-  expiry of Section 4; 8,283 cells carry reference-attributed
+  expiry of Section 4; 8,283 units carry reference-attributed
   dispositions under Section 4's standard, and each entry records its
   concept, case selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
   Section 232 slots (594, 476, 1,920) — concept counts overlap where
   one cell mismatches several concepts, so they exceed the 15,200
-  distinct rows. Section 4 walks the two reference-attributed classes
+  distinct units. Section 4 walks the two reference-attributed classes
   we escalated upstream; the remaining classes are recorded cell-by-
   cell in the same artifacts.
 - Four reference constructs are excluded by tripwire, by name: the
@@ -451,9 +451,10 @@ year's rate, stale since February 2024, and every rate is expired
 after February 2026. Our encoding carries the staged schedule and
 its end, citing the proclamation's table; the disagreement's recorded footprint is the
 affected lines after the schedule moves, enumerated in the disposition
-artifact (the Section 201 concept slot's 7,887 mismatched cells of
+artifact (the Section 201 concept slot's 7,887 mismatched units of
 Section 3 are dominated by this class). The derivation —
-proclamation, annex table, terminal date, the schedule's own expiry
+proclamation [@proc10339_2022], annex table, terminal date, the
+schedule's own expiry
 note — is recorded in the disposition file, and the finding was
 filed upstream with the same citations.
 
@@ -464,9 +465,10 @@ the following countries and areas": the Republic of Belarus, Cuba,
 North Korea, and the Russian Federation. The reference's parser has
 no column-2 branch, so those four countries inherit column-1 base
 rates throughout its panel. The disagreement is systematic rather
-than episodic — within the witness slice it touches all five lines
-for the four partners, and nothing in the parser limits it to the
-slice — and the
+than episodic — within the witness slice it touches four of the
+five lines for the four partners (beer escapes: its column-2 rate is
+specific rather than ad valorem, so the ad valorem panel shows no
+gap there), and nothing in the parser limits it to the slice — and the
 derivation is a single sentence of the schedule's own general notes,
 with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.
@@ -528,7 +530,8 @@ publisher's own control-total files, which makes reconciliation an
 internal affair: our parse must reproduce Census's own totals, in
 integer dollars, on three independent axes — by country, by commodity,
 by district. Across all eighteen months and every published measure,
-it does, with zero tolerance and zero failures. The archives replace an API path we built first and demoted: the
+it does, with zero tolerance and zero failures (Table 2 consolidates
+the pipeline's validation results). The archives replace an API path we built first and demoted: the
 equivalent extraction through the Census International Trade API took
 thousands of calls and failed server-side on the largest chapters,
 and the bulk files carry strictly more detail. The API survives as a
@@ -874,7 +877,7 @@ Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 | Unexplained disagreements | 0 |
 | Open disagreements attributed to the encoding | 0 |
 | Tripwired scope exclusions | 4 |
-| Reference-attributed cells, classified with evidence | 8,283 |
+| Reference-attributed units, classified with evidence | 8,283 |
 | Boundary-straddle clip events recorded | 1,200 |
 | Comparison-harness tests at close | 2,396 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |

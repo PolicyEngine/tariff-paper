@@ -49,8 +49,8 @@ boundary is clipped to its covered portion, with the clip recorded
 one probe date — 33 probe dates per line-partner span the covered
 intervals, placed at interval boundaries and their neighbors — at the
 reference's default legal-date convention; a *match* is exact
-equality across every concept slot. A *disposition* closes a mismatched cell
-with a recorded claim — an encoding defect (which must then be fixed),
+equality across every concept slot. A *disposition* closes a mismatched comparison
+unit with a recorded claim — an encoding defect (which must then be fixed),
 a reference-attributed discrepancy (Section 4's standard), or a
 declared semantic difference — and a *tripwired exclusion* removes a
 reference construct from scope entirely behind a machine-checked guard
@@ -79,14 +79,14 @@ The full waterfall at the pinned snapshot
   gap of Section 4 (4 entries plus combinations), a Section 232
   aluminum-content basis on beer, a free-trade-agreement preference
   layer, a Section 122 metal exclusion, and the Section 201 safeguard
-  expiry of Section 4; 8,283 cells carry reference-attributed
+  expiry of Section 4; 8,283 units carry reference-attributed
   dispositions under Section 4's standard, and each entry records its
   concept, case selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
   Section 232 slots (594, 476, 1,920) — concept counts overlap where
   one cell mismatches several concepts, so they exceed the 15,200
-  distinct rows. Section 4 walks the two reference-attributed classes
+  distinct units. Section 4 walks the two reference-attributed classes
   we escalated upstream; the remaining classes are recorded cell-by-
   cell in the same artifacts.
 - Four reference constructs are excluded by tripwire, by name: the

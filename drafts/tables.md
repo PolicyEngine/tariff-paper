@@ -16,7 +16,7 @@ Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 | Unexplained disagreements | 0 |
 | Open disagreements attributed to the encoding | 0 |
 | Tripwired scope exclusions | 4 |
-| Reference-attributed cells, classified with evidence | 8,283 |
+| Reference-attributed units, classified with evidence | 8,283 |
 | Boundary-straddle clip events recorded | 1,200 |
 | Comparison-harness tests at close | 2,396 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |

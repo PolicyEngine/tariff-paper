@@ -29,7 +29,8 @@ publisher's own control-total files, which makes reconciliation an
 internal affair: our parse must reproduce Census's own totals, in
 integer dollars, on three independent axes — by country, by commodity,
 by district. Across all eighteen months and every published measure,
-it does, with zero tolerance and zero failures. The archives replace an API path we built first and demoted: the
+it does, with zero tolerance and zero failures (Table 2 consolidates
+the pipeline's validation results). The archives replace an API path we built first and demoted: the
 equivalent extraction through the Census International Trade API took
 thousands of calls and failed server-side on the largest chapters,
 and the bulk files carry strictly more detail. The API survives as a

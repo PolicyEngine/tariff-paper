@@ -33,9 +33,10 @@ year's rate, stale since February 2024, and every rate is expired
 after February 2026. Our encoding carries the staged schedule and
 its end, citing the proclamation's table; the disagreement's recorded footprint is the
 affected lines after the schedule moves, enumerated in the disposition
-artifact (the Section 201 concept slot's 7,887 mismatched cells of
+artifact (the Section 201 concept slot's 7,887 mismatched units of
 Section 3 are dominated by this class). The derivation —
-proclamation, annex table, terminal date, the schedule's own expiry
+proclamation [@proc10339_2022], annex table, terminal date, the
+schedule's own expiry
 note — is recorded in the disposition file, and the finding was
 filed upstream with the same citations.
 
@@ -46,9 +47,10 @@ the following countries and areas": the Republic of Belarus, Cuba,
 North Korea, and the Russian Federation. The reference's parser has
 no column-2 branch, so those four countries inherit column-1 base
 rates throughout its panel. The disagreement is systematic rather
-than episodic — within the witness slice it touches all five lines
-for the four partners, and nothing in the parser limits it to the
-slice — and the
+than episodic — within the witness slice it touches four of the
+five lines for the four partners (beer escapes: its column-2 rate is
+specific rather than ad valorem, so the ad valorem panel shows no
+gap there), and nothing in the parser limits it to the slice — and the
 derivation is a single sentence of the schedule's own general notes,
 with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.
