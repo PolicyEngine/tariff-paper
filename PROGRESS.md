@@ -2,7 +2,7 @@
 
 ## State
 
-- Status: artifact audit complete; manuscript revisions in progress.
+- Status: manuscript and PDF revisions complete; final committed-state audit and report pending.
 - Baseline: `2845fd46044997d11d06d02af25db1ce3a9db7d7` on `master`; worktree clean at intake.
 - Scope: paper-side repairs for referee findings F1, F2, M1, M2, M3, and all remaining minors.
 - Hard gates: local commits only; no push, network, preprint, submission, contact, external-repository edits, authorship changes, or venue-slot changes.
@@ -38,9 +38,10 @@
 - Removed unarchived harness-test, review-round, and build-envelope counts from the result tables and narrative rather than using local-only values as validation evidence.
 - Added the round-6 section to `research/verification-report.md`: exact pin/hash receipts, a touched-claim ledger, and quoted baseline/current lines for F1, F2, M1, M2, M3, all minors, and the style corrections.
 - Completed the first living-source grep and draft-synchronization pass: negative grep PASS, required-positive grep PASS, all section/table mirrors PASS, and `git diff --check` PASS.
+- Rebuilt `build/paper.pdf` as a 24-page, font-embedded US-letter artifact; added a minimal PDF preamble so exact pins and hashes wrap rather than clip, eliminated all overfull boxes, visually inspected every page plus full-size risk pages, and recorded sha-256 `86e62008590db028b5dfc44285ea6176ae34559b1d9356ef43d8d8dc0a99115f`.
 
 ## Next
 
-1. Rebuild and inspect `build/paper.pdf`; record its receipt.
+1. Commit the rebuilt and render-verified manuscript artifact.
 2. Re-run the final forbidden-phrase, numerical, mirror, and draft-synchronization checks at the committed manuscript state.
 3. Write the final revision report and close this ledger.

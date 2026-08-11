@@ -1,0 +1,4 @@
+% Permit long artifact pins, paths, and identifiers in inline code to wrap.
+\usepackage{seqsplit}
+\let\papertexttt\texttt
+\renewcommand{\texttt}[1]{\papertexttt{\seqsplit{#1}}}

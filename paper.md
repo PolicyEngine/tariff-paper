@@ -850,10 +850,10 @@ Three limitations prevent an archival-replication claim for this draft:
 1. The authoritative disposition evidence is
    `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml`,
    dated 2026-08-03: 30 entries and an MFN footprint of 594. The public
-   mirror at
+   mirror has 46 entries and an MFN footprint of 462; its file is
    `dashboard/public/data/dispositions/us-tariff-panel.json` at that same
-   pin is stale, dated 2026-08-02: 46 entries and an MFN footprint of
-   462. It is not evidence for this paper's disposition claims and must
+   pin, and it is stale, dated 2026-08-02. It is not evidence for this
+   paper's disposition claims and must
    be regenerated from the authoritative source under a synchronization
    tripwire before archival release.
 2. The P2 validation receipt and outputs are currently local rather

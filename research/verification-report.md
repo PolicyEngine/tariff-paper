@@ -606,3 +606,27 @@ diff_check=PASS
 The negative grep returned no living-source matches. Every required positive
 term appeared at least once, and every mirrored draft matched its assembled
 section after normalizing only trailing separator newlines.
+
+### C4. PDF build and render receipt
+
+The first XeLaTeX probe requested `TeX Gyre Pagella`, but that font was not
+installed and the probe stopped before replacing the tracked PDF. The prior
+tracked PDF embedded Palatino, so the successful build retained that established
+face and added `build/pdf-preamble.tex` solely to permit long exact artifact
+identifiers to wrap:
+
+```sh
+pandoc paper.md --citeproc --pdf-engine=xelatex -V mainfont=Palatino \
+  --include-in-header=build/pdf-preamble.tex --verbose -o build/paper.pdf
+```
+
+Receipt: 24 US-letter pages; 167,143 bytes; sha-256
+`86e62008590db028b5dfc44285ea6176ae34559b1d9356ef43d8d8dc0a99115f`.
+`pdffonts` reports embedded Palatino Roman/Bold/Italic and Latin Modern Mono
+faces. The final XeLaTeX pass reported no overfull boxes and no unresolved
+citations; only non-fatal underfull-box notices remained. An all-page contact
+sheet and full-size review of pages 5, 8, 12, and 18–20 found no clipping,
+collisions, malformed lists, or unreadable tables. Text extraction recovered
+the F1 row counts and grains, F2 mirror warning, M1 no-guard and pilot-scope
+language, M2 non-capabilities, and M3 semantics. The living-source forbidden-
+phrase pattern also returned no match against the extracted PDF.
