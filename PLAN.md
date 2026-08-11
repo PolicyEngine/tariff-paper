@@ -58,3 +58,27 @@ renamed from populace 8/7; packages still `populace.*` until
 microcosm#638); Chronicle (renamed from Ledger 8/7 — schema ids still
 `policyengine_ledger.*`, frozen v1); PolicyEngine. No Thesis mention.
 Products capitalized in prose.
+
+## Archival-release prerequisites exposed by revision round 6
+
+These are named dependencies in their owning repositories, not work to perform
+in this paper repository:
+
+- **Disposition publication (`axiom-oracles`):** regenerate
+  `dashboard/public/data/dispositions/us-tariff-panel.json` from the
+  authoritative `dispositions/us-tariff-panel.yaml`, then add a synchronization
+  tripwire that compares the source and mirror dates, entry counts, selector
+  coverage, and per-concept footprints before publication.
+- **Tariff composition (`rulespec-us` / Axiom side):** add a fail-closed guard
+  for inputs outside the five declared witness lines and negative off-slice
+  tests. Any application to synthetic entries must prefilter to the true
+  five-line intersection until that guard lands, and its row, weight, and value
+  counts must be committed as a receipt before they are reported.
+- **Review reproducibility:** archive the exact component-review prompts,
+  model/version/settings, per-round outputs, finding dispositions and
+  adjudicator, and prospective stop/restart rules. Until then, round counts and
+  final verdicts are development provenance, not a reproducible validation
+  protocol.
+- **Release package:** retain the existing containerized one-command rebuild
+  and persistent-identifier gate. No archival release accompanies the current
+  local draft.

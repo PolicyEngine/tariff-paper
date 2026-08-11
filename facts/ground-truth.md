@@ -14,9 +14,12 @@ lane confirms against the primary artifact.
   classified, temporal debt 48,000 pre-domain + 1,200 straddle-clipped
   intervals surfaced non-blocking. Snapshot pin: axiom-oracles #452 @
   `dc1da3af`. [read: _tariff-parity/CAMPAIGN.md close block]
-- Conformance predicate: `covered == in_scope && unexplained == 0 &&
-  axiom_attributed_open == 0`, universe generated from the oracle's own
-  spine. [read: project_axiom_certification_stack.md]
+- Policy-record conformance predicate: the count of in-scope policy records
+  with `covered: true` equals the count of in-scope policy records, and
+  `unexplained == 0 && axiom_attributed_open == 0`; this `covered` field is not
+  the 20,400 covered-interval-cell term used by the tariff report. The universe
+  is generated from the oracle's own spine. [read:
+  project_axiom_certification_stack.md]
 - Scope (CORRECTED per the dc1da3af detail file): 10 covered policy
   constructs — MFN column rate, §232 (aluminum in the composition),
   §301 China + Brazil + forced-labor, IEEPA (fentanyl+reciprocal as
@@ -61,6 +64,22 @@ lane confirms against the primary artifact.
   line modules + per-authority overlays (IEEPA fentanyl ×4, reciprocal
   per-country modules, §122, §232-aluminum incl. RU 200%, §301 families).
   [read: composition.yaml imports block]
+- **No five-line domain guard at `dbf09f44`.** The composition defines five
+  exact-line predicates but never requires their disjunction. For an unsupported
+  line, `mfn_ad_valorem_rate` falls through to `else: 0`; during
+  2026-02-24 through 2026-07-23, `section_122_component_rate` falls through to
+  the blanket 10 percent rate; the total adds these components. Off-slice calls
+  can therefore return plausible rates rather than errors. All paper inference
+  is caller-restricted to the five lines; a fail-closed guard and negative tests
+  are an Axiom-side archival prerequisite. [read: composition.yaml lines
+  691–799, 2214–2282, 2945–2996, 3804–3821 @ `dbf09f44`]
+- Engine operational semantics at `ffd82132`: version bounds are inclusive and
+  selected at the query period's start; the applicable version with greatest
+  `effective_from` wins, gaps error, and same-start overlap precedence is not a
+  legal semantic to rely on. Formula branch order carries precedence; stacking
+  is explicit component addition; declared scalar/judgment types and missing
+  inputs/versions produce runtime errors. The composed output is a `Rate`, not a
+  duty amount. [read: engine docs/rulespec.md, src/model.rs, src/engine.rs]
 
 ## Legal timeline (the "why 2026" hook) — ALL [verified 2026-08-07, research/verification-report.md]
 
@@ -131,8 +150,10 @@ All six filings verified open with 0 maintainer comments as of
   `census.gov/trade/downloads/{YEAR}/Merch/im_m/IMDB{YY}{MM}.ZIP`,
   18 archives 2025-01→2026-06, ~3.3 GB, every byte sha-manifested;
   18 GETs replace thousands of 500-prone API calls. [posted: PR #620 body]
-- Ingest: 38,841,305 detail rows → 3,070,851 margin cells (HTS-10 ×
-  country × district × month), 302,318 consumer facts; reconciled
+- Ingest: 38,841,305 detail rows at HTS-10 × country × subcode ×
+  entry district × unlading district × rate provision × month → 3,070,851
+  district-aggregated margin cells at HTS-10 × country × month, plus 302,318
+  consumer facts; reconciled
   exact-integer against the publisher's own in-archive control totals on
   three axes (22 commodity / 18 country / 18 district measures):
   **0 failures in all 18 months**. [read: r3 review prompt / build report,
@@ -141,11 +162,14 @@ All six filings verified open with 0 maintainer comments as of
   Trade API): 108,977 cells exact on all four dollar measures, 16 pairs,
   0 mismatches, 0 gating failures. [read: crosscheck report; posted:
   #615 comment]
-- Generator: every (HTS-10 × country × month) customs-value cell
+- Generator: every positive (HTS-10 × country × month) customs-value cell
   reproduced to the integer dollar on an enforced domain (values ≤ 2⁵³);
-  pilot window 2026-02→2026-06: 3,806,050 entry rows → 44,881,145
+  spatially unrestricted pilot window 2026-02→2026-06: 3,806,050 entry rows → 44,881,145
   weighted entries, weighted customs value $1,467,109,590,515 — equal to
-  the window's margins total exactly. [posted: #615 comment]
+  the all-line window's margins total exactly. The generator filters only by
+  month and positive customs value, not by the five witness lines; no composed
+  rate result over these rows is reported. [posted: #615 comment; read:
+  build_us_import_entries.py lines 111–153 @ `6707ed59`]
 - Assumptions register (shipped beside the data): entry counts from
   CBP FYTD FY2026 mean entry value (coverage 2025-10-01→2026-07-27,
   labeled); lognormal within-cell sizes, σ = 2.6916 solved so the
@@ -157,6 +181,11 @@ All six filings verified open with 0 maintainer comments as of
 - Review arc: 12 adversarial rounds on P1 (publication machinery alone
   took 8), 4 on P2; trade battery 91 → 149 tests; final verdicts
   APPROVE with no findings. [read: this session's review files]
+- The exact component-review prompts, model settings, adjudication rules, and
+  prospective stopping protocol are not preserved in this repo. Treat the
+  round counts and verdicts as retrospective development provenance; the
+  mutation tests, committed reproductions, and pinned outputs carry the
+  evidentiary weight. Protocol publication is an archival prerequisite.
 - Fiscal-year honesty machinery: FYTD-labeled record sets with as-of
   endpoints; fail-closed parsing (HTML entities, impossible dates,
   displaced notes, future endpoints all raise). [read: PR #620 body +
@@ -188,6 +217,15 @@ All six filings verified open with 0 maintainer comments as of
   (cells); dispositions operate per concept-slot (per-concept mismatch
   counts overlap across slots: mfn 594, ieepa 476, s122 4,560, s232
   1,920, s201 7,887; row-level total 15,200).
+- Authoritative dispositions at
+  `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml`
+  are dated 2026-08-03 and partition 15,200 units into 30 entries:
+  8,283 `upstream_engine_gap` units (10 entries) plus 6,917
+  `explained_residual` units (20 entries). Their MFN footprint is 594 = 528
+  column-2 + 66 preference units. The public mirror at the same pin,
+  `dashboard/public/data/dispositions/us-tariff-panel.json`, is stale: dated
+  2026-08-02, 46 entries, with a 462 MFN footprint (396 + 66). It must be
+  regenerated under a synchronization tripwire before archival release.
 - 14 policy records: 10 conformant, 4 excluded:technical, IDs:
   us-tariff-yale:{other, rate_301_cs, stacking_outputs,
   swiss_framework}.
@@ -218,7 +256,7 @@ All six filings verified open with 0 maintainer comments as of
   table (14.75/14.5/14.25/14%, each period's dates) and the schedule's
   expiry compiler's note. Zero by explicit version with the derivation
   in the proof, NOT by absence of a version. The encoded domain begins
-  2026-02-15 (post-expiry).
+  2026-02-15 (post-expiry) temporally; this does not create a spatial guard.
 - Temporal debt semantics per artifact: 48,000 pre-domain intervals =
   debt; boundary-straddling intervals are clipped to the covered
   portion (straddle/clip fields present in the report; 1,200 clip
@@ -227,6 +265,14 @@ All six filings verified open with 0 maintainer comments as of
   largest-remainder allocation; each (line, country, month) stratum
   yields at most two weighted rows; all dollar allocation in integer
   arithmetic; proven-exact domain bound documented in-module.
+- **Rate-versus-amount boundary:** the composition supports posted ad valorem
+  component-rate stacks under the input date supplied. It does not compute the
+  beer column-2 specific duty of 13.2 cents per liter, the beer Section 232
+  amount on declared aluminum-content value, quota position, or sub-monthly
+  timing. The synthetic entries supply none of the specific-duty quantity,
+  aluminum-content value, or quota state and date every allocation on the
+  fifteenth. [read: composition.yaml lines 2214–2282 and 3073–3181 @
+  `dbf09f44`; entry_generator.py lines 325–408 @ `6707ed59`]
 - Review-coverage truth for §6: the three NAMED reviewed arcs are the
   comparison harness (6 rounds to APPROVE), entries P1 (12 rounds) and
   P2 (4 rounds); encoding waves carried lane-level review but NOT every
