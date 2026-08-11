@@ -6,7 +6,7 @@ which tariff line, from where. The public record answers this at the
 margin — monthly totals by line, country, and district — while the
 transaction-level record (the entry summaries importers actually file)
 is either restricted to secure-enclave access or not assembled at all.
-We release the bridge: weighted synthetic entry-line allocations
+We construct the bridge: weighted synthetic entry-line allocations
 whose customs value reproduces the public margins exactly at a stated
 grain, with every assumption below that grain declared. Three scopes
 govern everything in this section and must not blur. The bulk ingest

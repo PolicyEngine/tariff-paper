@@ -1,11 +1,11 @@
 # 6. Provenance engineering
 
-Every number in this paper is recomputable from public artifacts, and
-the machinery that makes that true was built by AI agents. We state
-both facts plainly because together they are the methods section: the
-pipeline's outputs are only trustworthy because its architecture
-assumes its authors — human or model — will err, and gates
-accordingly.
+Every reported result is tied either to a committed pin or to an
+explicitly hash-pinned local receipt, and the machinery was built by AI
+agents under human-directed gates. The distinction matters: the local
+receipts and several review records still require archival inclusion,
+so this draft does not claim that every result is yet publicly
+recomputable.
 
 **The gates.** Corpus documents enter under signed manifests; an
 encoding cannot cite what the corpus does not hold. Every rule change
@@ -19,31 +19,18 @@ from, and the scoreboard numbers quoted in this paper carry their
 snapshot hashes because the live reports refresh as the encoding
 grows.
 
-**The adversary.** The artifacts this paper's numbers rest on — the
-comparison harness, the entries ingest, and the entries generator —
-each passed same-project cross-model adversarial QA before their
-numbers were trusted: a reviewing agent from a different frontier
-model family (an OpenAI GPT-5.6-class reviewer against Anthropic
-Claude-class authoring agents) prompted to refute rather than
-confirm, run per change on those components (six rounds on the
-harness, twelve and four on the two pipeline stages), with each finding closed by a
-code change and a test that fails on the pre-fix implementation —
-mutation-proven, not narrated. The entries pipeline of Section 5 is
-the instructive case: its publication machinery (atomic directory
-replacement with crash recovery) went through eight consecutive review
-rounds, each finding a strictly narrower defect class than the last —
-symlink-target validation before recursive deletion, a race in lock
-takeover, asynchronous exceptions landing after a rename's commit
-point, rename durability ordering under power loss — until the final
-round found the structural invariant the piecewise fixes had been
-approximating: no recovery marker may be removed until every mutation
-it records is durable. The reviewer's last pass swept every marker-
-removal site against that invariant, verified the closing test fails
-on the previous implementation, and returned no findings. We report
-the trajectory rather than just the endpoint because the trajectory is
-the evidence: a review process that converges to zero by narrowing
-finding classes is doing something different from one that runs out of
-patience.
+**The adversary.** The comparison harness, entries ingest, and entries
+generator received same-project cross-model adversarial review. The
+reviews found concrete failures, including vacuous
+comparison, fixed-width overflow, unsafe publication paths, and an
+incorrect durability boundary; the associated regression and mutation
+tests are part of the technical evidence. The round counts and final
+no-finding verdicts are only retrospective development provenance. The
+exact component prompts, model versions and settings, adjudication
+record, and prospective stopping or restart rules were not preserved,
+so the sequence cannot establish convergence or a defect probability.
+Archiving those materials is a prerequisite for treating review as a
+reproducible protocol.
 
 **The division of labor.** Model-written code, model-run reviews,
 machine-checked gates — and human judgment exactly where it is load-
@@ -52,14 +39,14 @@ disposition standard of Section 4, anything that leaves the project
 (upstream reports, this paper), and the decision to ship. We do not
 claim the review regime is external certification — reviewer and
 authors sit inside one project, and a separately governed
-verification protocol is future work. We do claim the artifact trail is complete enough that
-a skeptic need not trust any of it: the encodings, the corpus
-manifests, the comparison harness, the entries pipeline, the review
-verdicts, and the evidence packs (build reports, reconciliation
-records, cross-check reports) are public, pinned, and re-runnable.
+verification protocol is future work. The committed encodings, corpus
+manifests, comparison report, P1 build report, reconciliation records,
+and cross-check report are pinned and inspectable. The disposition
+mirror, P2 output receipts, and component-review protocol have the
+specific release limitations stated below; review verdicts do not
+substitute for those artifacts.
 
-One synthesis sentence, scoped to what this project observed: the
-gate-and-adversary architecture is what allowed agent speed — the
-149-test battery, the per-change panel re-derivations, the twelve
-review rounds — to accumulate as checked artifacts rather than as
-unchecked claims.
+Within this project, the useful products of adversarial review were
+the defects it exposed and the tests and receipts added in response.
+Those artifacts, rather than a trajectory toward a no-finding verdict,
+carry the evidentiary weight.

@@ -1,28 +1,44 @@
 # Data and code availability
 
-Everything this paper reports predates it in public. The encodings
-live in the rulespec-us repository (the tariff composition and its
-authority overlays, with mandatory companion tests); the corpus
-manifests, comparison harness, conformance reports, and disposition
-records in axiom-oracles, with the quoted scoreboard pinned at
-snapshot dc1da3af; the entries pipeline, its 149-test battery, and the
-committed evidence packs (build report, source manifest, eighteen
-per-month reconciliation records, the gated cross-check report) in the
-Microcosm repository, merged as pull requests #620 and #621 with the
-full adversarial review inventories in their descriptions. The Yale
-reference is pinned at commit c4307e51 of Budget-Lab-Yale/
-tariff-rate-tracker; our six upstream filings — five public issues and one patch pull
-request — are on that repository. The Census source archives are public no-auth
-downloads whose URL pattern, sizes, and sha-256 digests appear in the
-committed source manifest; the CBP page bytes our anchors parse from
+The committed replication surface is distributed across the source
+projects. The rulespec-us repository contains the tariff composition,
+authority overlays, and companion tests. Axiom-oracles contains the
+corpus manifests, comparison harness, conformance report, and the
+authoritative disposition source. Microcosm contains the entries code
+and the P1 evidence pack: build report, source manifest, eighteen
+monthly reconciliation records, and gated cross-check report. The Yale
+reference is pinned at commit `c4307e51`. Census archive URLs, sizes,
+and sha-256 digests are in the P1 source manifest, and the CBP page bytes
 are archived beside the facts they ground.
 
-Replication is therefore not a package assembled for this paper but
-the working state of the projects it reports on: re-running the
-conformance derivation at the pinned revisions reproduces the
-scoreboard; re-running the entries build against the manifested
-archives reproduces the artifacts byte-for-byte, a property the review
-regime enforced rather than aspired to.
+Three limitations prevent an archival-replication claim for this draft:
+
+1. The authoritative disposition evidence is
+   `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml`,
+   dated 2026-08-03: 30 entries and an MFN footprint of 594. The public
+   mirror at
+   `dashboard/public/data/dispositions/us-tariff-panel.json` at that same
+   pin is stale, dated 2026-08-02: 46 entries and an MFN footprint of
+   462. It is not evidence for this paper's disposition claims and must
+   be regenerated from the authoritative source under a synchronization
+   tripwire before archival release.
+2. The P2 validation receipt and outputs are currently local rather
+   than committed. Their sha-256 values are
+   `45276e944ff8cb6680e50ba27238d68a5b37da09b0d860db2ccfbd577ec5a03e`
+   (`validation_report.json`),
+   `b3bcad3347d83c3ab9f9b937e1e6133ab002cb9432a2225e37a10e2c5f944a43`
+   (`assumptions.json`), and
+   `fbc64fd807eff3b2c43bfe88a39ccf5740be5a17786c1d110afd75c07c1d0972`
+   (`synthetic_import_entries.parquet`). They must enter the archival
+   package before its release.
+3. Exact component-review prompts, model versions and settings,
+   adjudication records, and prospective stop/restart rules are not
+   preserved. Review-round counts remain development provenance until
+   that protocol is archived.
+
+The committed pins reproduce the comparison and P1 receipts. The local
+P2 hashes make the present outputs checkable on this machine but do not
+replace publication of those artifacts.
 
 **Pinned revisions.** Encoding: rulespec-us
 `dbf09f44eddd00b7ad5520f89371ebe8fdf0b7df`. Engine:
@@ -33,18 +49,18 @@ Budget-Lab-Yale/tariff-rate-tracker
 `c4307e514196618afcbf88cf7fd33746417eeabf` (MIT). Entries pipeline:
 microcosm merge commits `d4b0855157af996bd367146bc200a2f72ee7d15d`
 (ingest) and `6707ed5912d33ff0a340474a1a24f31546c6dec5` (generator).
-An archival release with containerized one-command replication and a
-persistent identifier accompanies submission; until then the commits
-above are the replication interface.
+No archival release accompanies this local draft. Before release, the
+project must also add the fail-closed five-line composition guard and
+negative tests, regenerate and tripwire the disposition mirror, archive
+the P2 outputs and review protocol, and retain the planned containerized
+one-command rebuild and persistent identifier.
 
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 6 were produced by AI agents under the stated
 gates, with human direction of scope, dispositions, upstream
 communication, and publication. This manuscript was drafted by the
-authoring agents from a primary-source-verified fact base; its
-revision record to date comprises one cross-model hostile-referee
-round (GPT-5.6-class) whose twenty findings were addressed, followed
-by same-family verification rounds (a round-diff audit of those
-closures and a fresh red-team pass, Claude-class) whose findings this
-version incorporates. The human author is responsible for all
-claims.
+authoring agents from a primary-source-verified fact base and revised
+through hostile, round-diff, red-team, and fresh-eyes referee passes.
+The component-review reproducibility limit above applies; manuscript
+review cannot substitute for the pinned artifacts and checks reported
+with each claim. The human author is responsible for all claims.

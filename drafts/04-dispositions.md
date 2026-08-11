@@ -58,12 +58,12 @@ with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.
 
 We report both findings as what they are: derivation-backed and, as of
-this writing, unacknowledged. The reports sit in the tracker's issue queue with our four other
-filings (five issues and one patch pull request in all) — a locale-sensitivity bug
+this writing, unacknowledged. The reports sit in the tracker's issue queue with our other
+filings — a locale-sensitivity bug
 that corrupted country matching (with a patch), the measured build
 envelope of Section 3, and a proposal that the project publish its
-panel as a release artifact, which would let every downstream user
-skip the 123 GiB build we measured. None of this is offered as fault-
+panel as a release artifact, which would let downstream users skip the
+resource-intensive build. None of this is offered as fault-
 finding. A reference strong enough to validate against is a reference
 worth strengthening, and the economics of the exchange favor everyone:
 the tracker gave us the spine that made our zero meaningful, and the

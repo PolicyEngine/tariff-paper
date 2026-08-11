@@ -1,51 +1,46 @@
 # 7. Uses and limits
 
-What the pair enables now. The statutory panel and the synthetic
-entries share a contract — the entries' fields conform to the
-composed spine's inputs — so duty computation runs at entry grain — the rate stack in force on
-an entry's date, by authority, with the derivation attached — with
-the composed domain's own boundary stated plainly: the pinned
-composition gates on the five witness lines, so entry-level duty
-computation is currently defined for entries on those lines, and
-extends with the encoding. That supports revenue accounting by
-statutory component under any counterfactual expressible as dated
-rules (repeal an authority, move a termination date, extend a staged
-schedule), source-traceable rate lookup — every value carrying its instrument
-citations — within the stated domain, and calibration: the ingest's 302,318 consumer
-facts publish at five aggregation grains with channel-invariant keys,
-built to serve as calibration targets for population synthesis
-downstream.
+What the pair enables now is deliberately narrower than duty
+assessment. After a caller filters inputs to the five witness lines,
+the composition supports source-traceable, posted ad valorem
+component-rate stack calculations for the supplied date, including
+counterfactual changes expressible as dated rules. The filter is a
+caller obligation: the pinned composition has five predicates but no
+domain guard, and an off-slice call may return a plausible value rather
+than an error. The synthetic pilot supplies the needed identifiers and
+a declared mid-month date, but this paper reports no application of the
+composition to those rows. Separately, the ingest's 302,318 consumer
+facts publish at five aggregation grains with channel-invariant keys
+that can serve as calibration targets downstream.
 
-What the pair does not claim. No effective rates: trade-share
-weighting, exemption utilization, and de minimis composition are
-estimation, deliberately out of the conformance scope of Section 3.
-No incidence and no behavioral response: nothing here says who bears
-a duty or how trade reallocates when one changes; the entries
-reproduce observed margins under declared assumptions and do not
-model responses to counterfactuals. Computed duty at statutory rates
-is not collected revenue: exclusions in litigation, drawback,
-misclassification, and the wind-down mechanics of terminated
-authorities all wedge between the two, and our own comparison treats
-calculated-duty fields as related-never-gating for exactly this
-reason. The synthetic entries are not the restricted transaction
-record: within-cell structure below the margins is assumption, the
-register says which assumption, and analyses that depend on within-
-cell joint distributions (entry-size inequality, importer
-concentration) should not run on them. Four ranges govern use and are stated wherever a claim depends on
-them: the rule history runs to the instruments' own dates; the
-reconciliation of Section 3 covers the five-line witness slice of the
-reference spine, with 48,000 pre-domain interval-cells surfaced as
-temporal debt rather than compared; the margins cover January 2025 through
-June 2026; and entry-level duty computation is defined on the composed spine's
-domain (the five witness lines, February 2026 onward) intersected
-with the pilot allocations (February through June 2026) — a window that ends
-before the July 24 seam and the August revision, which the margins
-record but the pilot does not reach.
+What the pair does not enable is complete duty or revenue accounting.
+The entries lack the quantities needed for beer's column-2 duty of
+13.2 cents per liter, declared aluminum-content value for the beer Section 232
+duty, quota state, and sub-monthly timing. The Section 232 rule exposes
+beer applicability but returns zero in its ad valorem component because
+the content-value basis is unavailable. Every synthetic entry is dated
+on the fifteenth, so it cannot resolve the February 20/24 boundary or
+other intra-month changes. Exclusions, drawback, misclassification, and
+collection wind-down create further wedges between a posted statutory
+rate and collected revenue.
 
-The natural next analyses — distributional incidence of the 2025–26
-stack, tariff-revenue swaps against other instruments — sit one layer
-up, where these statutory computations meet household and firm
-microdata. That layer exists in our stack but is not this paper, and
-conflating the two would launder modeling assumptions through a
-dataset whose claim to exactness is precisely that it added none it
-did not declare.
+Nor do we claim effective rates, incidence, or behavioral response.
+Trade-share weighting, exemption use, and de minimis composition are
+estimation outside Section 3; nothing here says who bears a duty or how
+trade reallocates. The synthetic entries reproduce observed margins
+under declared assumptions but are not restricted transaction data,
+and within-cell analyses such as importer concentration or the true
+entry-size distribution are unsupported. The relevant ranges remain
+separate: reconciliation covers five lines from the encoded temporal
+start, margins cover January 2025 through June 2026, and the
+spatially unrestricted pilot covers February through June 2026. A
+joint application would require their true line-and-time intersection,
+but no such composed result or committed intersection receipt is
+reported here.
+
+The natural next analyses — complete duty calculation, distributional
+incidence, and tariff-revenue counterfactuals — sit one layer up, after
+the fail-closed line guard, missing bases, quota state, finer timing,
+and application receipt are supplied. Conflating that layer with this
+paper would launder modeling assumptions through a dataset whose
+claim to exactness is limited to reaggregation of declared margins.

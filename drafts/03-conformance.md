@@ -116,22 +116,18 @@ A reader who distrusts our dispositions can recompute the raw rate
 from the committed artifacts and re-litigate any cell.
 
 The comparison machinery earned its own scrutiny before we trusted
-its numbers. The harness went through six adversarial review rounds;
-early versions could report vacuous agreement (a slim CI artifact
+its numbers. Adversarial review showed that early harness versions
+could report vacuous agreement (a slim CI artifact
 corrupted totals; an all-zero column compared equal to an all-zero
 column it should never have matched), and the reviews killed those
 with mutation tests — deliberately corrupted inputs a sound harness
 must catch. The final harness binds each panel row to a content
-digest, rebuilds byte-identically, and carries 2,396 tests; its
-closing review swept 220 committed reports for predicate
-disagreements and found none. Mutation tests validate the comparator,
+digest and rebuilds byte-identically. Mutation tests validate the comparator,
 not the law — the legal-correctness burden rests on the instrument
 citations of Section 2 and the derivation standard of Section 4.
 
-We also measured the reference's reproduction cost, since our
-supervised rebuild of it is part of the reconciliation's provenance:
-1 hour 46 minutes wall time and a 123.4 GiB peak memory footprint on
-a 128 GiB workstation, against documentation suggesting a far smaller
-machine — reported upstream, alongside a proposal that the project
-publish its panel as a release artifact so downstream users can skip
-the build entirely.
+We also measured the reference's reproduction cost in a supervised
+local rebuild and reported the unexpectedly large resource envelope
+upstream, alongside a proposal that the project publish its panel as a
+release artifact. Because that measurement receipt is not committed at
+the named pins, this paper does not use its numerical value as evidence.

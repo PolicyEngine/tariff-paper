@@ -32,8 +32,13 @@
 - Added the Data Records relationship table, exact synthetic-entry fields, uniqueness/positive-cell/null/weight semantics, and supported-operation boundary.
 - Re-scoped the five-month pilot as temporally inside the modeled window but spatially unrestricted across all positive HTS-line cells, with no composed result claimed.
 - Hash-pinned the local P2 validation receipt (`45276e94…`) and named its archival inclusion as a release prerequisite.
+- Replaced all affirmative duty-computation and revenue-accounting claims with caller-filtered posted-ad-valorem rate-stack capabilities and named the missing quantity, aluminum-content, quota-state, and sub-monthly inputs.
+- Recast component-review rounds and verdicts as retrospective provenance; the mutation tests and pinned receipts now carry the evidentiary weight, with the missing review protocol stated explicitly.
+- Quarantined the stale 46-entry/462-MFN public disposition mirror in Data and code availability, and listed regeneration plus a synchronization tripwire as a release prerequisite.
+- Removed unarchived harness-test, review-round, and build-envelope counts from the result tables and narrative rather than using local-only values as validation evidence.
 
 ## Next
 
-1. Narrow uses, limits, review claims, and availability/prerequisite language.
-2. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.
+1. Update `research/verification-report.md` with every touched claim and before/after grep receipts.
+2. Run the full forbidden-phrase, numerical, mirror, and draft-synchronization checks; rebuild/check the PDF.
+3. Write the final revision report and close this ledger.

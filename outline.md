@@ -55,12 +55,13 @@ the σ proxy-moment disclosure; FYTD honesty machinery). The estimation/
 law boundary paragraph lives here.
 
 ## 6. Provenance engineering (methods)
-Job: what it takes for every number above to be checkable — and the
-plain statement that AI agents built it behind gates. Slots: signed
+Job: what it takes for each number above to name a committed pin or
+hash-pinned local receipt — and the plain statement that AI agents built
+it behind gates. Slots: signed
 corpus manifests; per-row digest bindings; byte-determinism; the
-12-round adversarial review arc with mutant-proven closures (149-test
-battery); windowless publication + the durability-boundary invariant as
-a worked example of review convergence; snapshot-pinned scoreboards.
+retrospective adversarial review arc with mutation tests; the explicit
+prompt/settings/adjudication/stopping-record gap; snapshot-pinned
+scoreboards. Review trajectories do not establish convergence.
 
 ## 7. Uses and limits
 Job: what the pair enables now (caller-filtered posted-ad-valorem
@@ -77,7 +78,8 @@ practice; law-as-code: OpenFisca, Catala/Merigoux; Yale tracker itself
 as the nearest neighbor and reference oracle).
 
 ## Data and code availability
-Everything already public: rulespec-us, axiom-oracles (pinned
-dc1da3af), microcosm #620/#621 merges with in-branch evidence packs,
-Yale pin c4307e51. This section mostly writes itself — the replication
-package predates the paper.
+Committed pins: rulespec-us, axiom-oracles, Microcosm P1, and Yale.
+Explicit limitations: stale public disposition mirror; local-only P2
+outputs; incomplete component-review protocol. Archive only after the
+mirror tripwire, fail-closed line guard, P2 inclusion, protocol record,
+containerized rebuild, and persistent identifier are complete.

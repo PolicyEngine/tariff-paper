@@ -406,25 +406,21 @@ A reader who distrusts our dispositions can recompute the raw rate
 from the committed artifacts and re-litigate any cell.
 
 The comparison machinery earned its own scrutiny before we trusted
-its numbers. The harness went through six adversarial review rounds;
-early versions could report vacuous agreement (a slim CI artifact
+its numbers. Adversarial review showed that early harness versions
+could report vacuous agreement (a slim CI artifact
 corrupted totals; an all-zero column compared equal to an all-zero
 column it should never have matched), and the reviews killed those
 with mutation tests — deliberately corrupted inputs a sound harness
 must catch. The final harness binds each panel row to a content
-digest, rebuilds byte-identically, and carries 2,396 tests; its
-closing review swept 220 committed reports for predicate
-disagreements and found none. Mutation tests validate the comparator,
+digest and rebuilds byte-identically. Mutation tests validate the comparator,
 not the law — the legal-correctness burden rests on the instrument
 citations of Section 2 and the derivation standard of Section 4.
 
-We also measured the reference's reproduction cost, since our
-supervised rebuild of it is part of the reconciliation's provenance:
-1 hour 46 minutes wall time and a 123.4 GiB peak memory footprint on
-a 128 GiB workstation, against documentation suggesting a far smaller
-machine — reported upstream, alongside a proposal that the project
-publish its panel as a release artifact so downstream users can skip
-the build entirely.
+We also measured the reference's reproduction cost in a supervised
+local rebuild and reported the unexpectedly large resource envelope
+upstream, alongside a proposal that the project publish its panel as a
+release artifact. Because that measurement receipt is not committed at
+the named pins, this paper does not use its numerical value as evidence.
 
 # 4. When the oracle disagrees: dispositions with legal derivations
 
@@ -486,12 +482,12 @@ with the note's cross-reference to the Russia and Belarus additional-
 duty headings compounding the gap. Filed upstream likewise.
 
 We report both findings as what they are: derivation-backed and, as of
-this writing, unacknowledged. The reports sit in the tracker's issue queue with our four other
-filings (five issues and one patch pull request in all) — a locale-sensitivity bug
+this writing, unacknowledged. The reports sit in the tracker's issue queue with our other
+filings — a locale-sensitivity bug
 that corrupted country matching (with a patch), the measured build
 envelope of Section 3, and a proposal that the project publish its
-panel as a release artifact, which would let every downstream user
-skip the 123 GiB build we measured. None of this is offered as fault-
+panel as a release artifact, which would let downstream users skip the
+resource-intensive build. None of this is offered as fault-
 finding. A reference strong enough to validate against is a reference
 worth strengthening, and the economics of the exchange favor everyone:
 the tracker gave us the spine that made our zero meaningful, and the
@@ -519,7 +515,7 @@ which tariff line, from where. The public record answers this at the
 margin — monthly totals by line, country, and district — while the
 transaction-level record (the entry summaries importers actually file)
 is either restricted to secure-enclave access or not assembled at all.
-We release the bridge: weighted synthetic entry-line allocations
+We construct the bridge: weighted synthetic entry-line allocations
 whose customs value reproduces the public margins exactly at a stated
 grain, with every assumption below that grain declared. Three scopes
 govern everything in this section and must not blur. The bulk ingest
@@ -656,12 +652,12 @@ does not supply.
 
 # 6. Provenance engineering
 
-Every number in this paper is recomputable from public artifacts, and
-the machinery that makes that true was built by AI agents. We state
-both facts plainly because together they are the methods section: the
-pipeline's outputs are only trustworthy because its architecture
-assumes its authors — human or model — will err, and gates
-accordingly.
+Every reported result is tied either to a committed pin or to an
+explicitly hash-pinned local receipt, and the machinery was built by AI
+agents under human-directed gates. The distinction matters: the local
+receipts and several review records still require archival inclusion,
+so this draft does not claim that every result is yet publicly
+recomputable.
 
 **The gates.** Corpus documents enter under signed manifests; an
 encoding cannot cite what the corpus does not hold. Every rule change
@@ -675,31 +671,18 @@ from, and the scoreboard numbers quoted in this paper carry their
 snapshot hashes because the live reports refresh as the encoding
 grows.
 
-**The adversary.** The artifacts this paper's numbers rest on — the
-comparison harness, the entries ingest, and the entries generator —
-each passed same-project cross-model adversarial QA before their
-numbers were trusted: a reviewing agent from a different frontier
-model family (an OpenAI GPT-5.6-class reviewer against Anthropic
-Claude-class authoring agents) prompted to refute rather than
-confirm, run per change on those components (six rounds on the
-harness, twelve and four on the two pipeline stages), with each finding closed by a
-code change and a test that fails on the pre-fix implementation —
-mutation-proven, not narrated. The entries pipeline of Section 5 is
-the instructive case: its publication machinery (atomic directory
-replacement with crash recovery) went through eight consecutive review
-rounds, each finding a strictly narrower defect class than the last —
-symlink-target validation before recursive deletion, a race in lock
-takeover, asynchronous exceptions landing after a rename's commit
-point, rename durability ordering under power loss — until the final
-round found the structural invariant the piecewise fixes had been
-approximating: no recovery marker may be removed until every mutation
-it records is durable. The reviewer's last pass swept every marker-
-removal site against that invariant, verified the closing test fails
-on the previous implementation, and returned no findings. We report
-the trajectory rather than just the endpoint because the trajectory is
-the evidence: a review process that converges to zero by narrowing
-finding classes is doing something different from one that runs out of
-patience.
+**The adversary.** The comparison harness, entries ingest, and entries
+generator received same-project cross-model adversarial review. The
+reviews found concrete failures, including vacuous
+comparison, fixed-width overflow, unsafe publication paths, and an
+incorrect durability boundary; the associated regression and mutation
+tests are part of the technical evidence. The round counts and final
+no-finding verdicts are only retrospective development provenance. The
+exact component prompts, model versions and settings, adjudication
+record, and prospective stopping or restart rules were not preserved,
+so the sequence cannot establish convergence or a defect probability.
+Archiving those materials is a prerequisite for treating review as a
+reproducible protocol.
 
 **The division of labor.** Model-written code, model-run reviews,
 machine-checked gates — and human judgment exactly where it is load-
@@ -708,69 +691,64 @@ disposition standard of Section 4, anything that leaves the project
 (upstream reports, this paper), and the decision to ship. We do not
 claim the review regime is external certification — reviewer and
 authors sit inside one project, and a separately governed
-verification protocol is future work. We do claim the artifact trail is complete enough that
-a skeptic need not trust any of it: the encodings, the corpus
-manifests, the comparison harness, the entries pipeline, the review
-verdicts, and the evidence packs (build reports, reconciliation
-records, cross-check reports) are public, pinned, and re-runnable.
+verification protocol is future work. The committed encodings, corpus
+manifests, comparison report, P1 build report, reconciliation records,
+and cross-check report are pinned and inspectable. The disposition
+mirror, P2 output receipts, and component-review protocol have the
+specific release limitations stated below; review verdicts do not
+substitute for those artifacts.
 
-One synthesis sentence, scoped to what this project observed: the
-gate-and-adversary architecture is what allowed agent speed — the
-149-test battery, the per-change panel re-derivations, the twelve
-review rounds — to accumulate as checked artifacts rather than as
-unchecked claims.
+Within this project, the useful products of adversarial review were
+the defects it exposed and the tests and receipts added in response.
+Those artifacts, rather than a trajectory toward a no-finding verdict,
+carry the evidentiary weight.
 
 # 7. Uses and limits
 
-What the pair enables now. The statutory panel and the synthetic
-entries share a contract — the entries' fields conform to the
-composed spine's inputs — so duty computation runs at entry grain — the rate stack in force on
-an entry's date, by authority, with the derivation attached — with
-the composed domain's own boundary stated plainly: the pinned
-composition gates on the five witness lines, so entry-level duty
-computation is currently defined for entries on those lines, and
-extends with the encoding. That supports revenue accounting by
-statutory component under any counterfactual expressible as dated
-rules (repeal an authority, move a termination date, extend a staged
-schedule), source-traceable rate lookup — every value carrying its instrument
-citations — within the stated domain, and calibration: the ingest's 302,318 consumer
-facts publish at five aggregation grains with channel-invariant keys,
-built to serve as calibration targets for population synthesis
-downstream.
+What the pair enables now is deliberately narrower than duty
+assessment. After a caller filters inputs to the five witness lines,
+the composition supports source-traceable, posted ad valorem
+component-rate stack calculations for the supplied date, including
+counterfactual changes expressible as dated rules. The filter is a
+caller obligation: the pinned composition has five predicates but no
+domain guard, and an off-slice call may return a plausible value rather
+than an error. The synthetic pilot supplies the needed identifiers and
+a declared mid-month date, but this paper reports no application of the
+composition to those rows. Separately, the ingest's 302,318 consumer
+facts publish at five aggregation grains with channel-invariant keys
+that can serve as calibration targets downstream.
 
-What the pair does not claim. No effective rates: trade-share
-weighting, exemption utilization, and de minimis composition are
-estimation, deliberately out of the conformance scope of Section 3.
-No incidence and no behavioral response: nothing here says who bears
-a duty or how trade reallocates when one changes; the entries
-reproduce observed margins under declared assumptions and do not
-model responses to counterfactuals. Computed duty at statutory rates
-is not collected revenue: exclusions in litigation, drawback,
-misclassification, and the wind-down mechanics of terminated
-authorities all wedge between the two, and our own comparison treats
-calculated-duty fields as related-never-gating for exactly this
-reason. The synthetic entries are not the restricted transaction
-record: within-cell structure below the margins is assumption, the
-register says which assumption, and analyses that depend on within-
-cell joint distributions (entry-size inequality, importer
-concentration) should not run on them. Four ranges govern use and are stated wherever a claim depends on
-them: the rule history runs to the instruments' own dates; the
-reconciliation of Section 3 covers the five-line witness slice of the
-reference spine, with 48,000 pre-domain interval-cells surfaced as
-temporal debt rather than compared; the margins cover January 2025 through
-June 2026; and entry-level duty computation is defined on the composed spine's
-domain (the five witness lines, February 2026 onward) intersected
-with the pilot allocations (February through June 2026) — a window that ends
-before the July 24 seam and the August revision, which the margins
-record but the pilot does not reach.
+What the pair does not enable is complete duty or revenue accounting.
+The entries lack the quantities needed for beer's column-2 duty of
+13.2 cents per liter, declared aluminum-content value for the beer Section 232
+duty, quota state, and sub-monthly timing. The Section 232 rule exposes
+beer applicability but returns zero in its ad valorem component because
+the content-value basis is unavailable. Every synthetic entry is dated
+on the fifteenth, so it cannot resolve the February 20/24 boundary or
+other intra-month changes. Exclusions, drawback, misclassification, and
+collection wind-down create further wedges between a posted statutory
+rate and collected revenue.
 
-The natural next analyses — distributional incidence of the 2025–26
-stack, tariff-revenue swaps against other instruments — sit one layer
-up, where these statutory computations meet household and firm
-microdata. That layer exists in our stack but is not this paper, and
-conflating the two would launder modeling assumptions through a
-dataset whose claim to exactness is precisely that it added none it
-did not declare.
+Nor do we claim effective rates, incidence, or behavioral response.
+Trade-share weighting, exemption use, and de minimis composition are
+estimation outside Section 3; nothing here says who bears a duty or how
+trade reallocates. The synthetic entries reproduce observed margins
+under declared assumptions but are not restricted transaction data,
+and within-cell analyses such as importer concentration or the true
+entry-size distribution are unsupported. The relevant ranges remain
+separate: reconciliation covers five lines from the encoded temporal
+start, margins cover January 2025 through June 2026, and the
+spatially unrestricted pilot covers February through June 2026. A
+joint application would require their true line-and-time intersection,
+but no such composed result or committed intersection receipt is
+reported here.
+
+The natural next analyses — complete duty calculation, distributional
+incidence, and tariff-revenue counterfactuals — sit one layer up, after
+the fail-closed line guard, missing bases, quota state, finer timing,
+and application receipt are supplied. Conflating that layer with this
+paper would launder modeling assumptions through a dataset whose
+claim to exactness is limited to reaggregation of declared margins.
 
 # 8. Related work
 
@@ -856,29 +834,45 @@ lean on the dataset's novelty.
 
 # Data and code availability
 
-Everything this paper reports predates it in public. The encodings
-live in the rulespec-us repository (the tariff composition and its
-authority overlays, with mandatory companion tests); the corpus
-manifests, comparison harness, conformance reports, and disposition
-records in axiom-oracles, with the quoted scoreboard pinned at
-snapshot dc1da3af; the entries pipeline, its 149-test battery, and the
-committed evidence packs (build report, source manifest, eighteen
-per-month reconciliation records, the gated cross-check report) in the
-Microcosm repository, merged as pull requests #620 and #621 with the
-full adversarial review inventories in their descriptions. The Yale
-reference is pinned at commit c4307e51 of Budget-Lab-Yale/
-tariff-rate-tracker; our six upstream filings — five public issues and one patch pull
-request — are on that repository. The Census source archives are public no-auth
-downloads whose URL pattern, sizes, and sha-256 digests appear in the
-committed source manifest; the CBP page bytes our anchors parse from
+The committed replication surface is distributed across the source
+projects. The rulespec-us repository contains the tariff composition,
+authority overlays, and companion tests. Axiom-oracles contains the
+corpus manifests, comparison harness, conformance report, and the
+authoritative disposition source. Microcosm contains the entries code
+and the P1 evidence pack: build report, source manifest, eighteen
+monthly reconciliation records, and gated cross-check report. The Yale
+reference is pinned at commit `c4307e51`. Census archive URLs, sizes,
+and sha-256 digests are in the P1 source manifest, and the CBP page bytes
 are archived beside the facts they ground.
 
-Replication is therefore not a package assembled for this paper but
-the working state of the projects it reports on: re-running the
-conformance derivation at the pinned revisions reproduces the
-scoreboard; re-running the entries build against the manifested
-archives reproduces the artifacts byte-for-byte, a property the review
-regime enforced rather than aspired to.
+Three limitations prevent an archival-replication claim for this draft:
+
+1. The authoritative disposition evidence is
+   `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml`,
+   dated 2026-08-03: 30 entries and an MFN footprint of 594. The public
+   mirror at
+   `dashboard/public/data/dispositions/us-tariff-panel.json` at that same
+   pin is stale, dated 2026-08-02: 46 entries and an MFN footprint of
+   462. It is not evidence for this paper's disposition claims and must
+   be regenerated from the authoritative source under a synchronization
+   tripwire before archival release.
+2. The P2 validation receipt and outputs are currently local rather
+   than committed. Their sha-256 values are
+   `45276e944ff8cb6680e50ba27238d68a5b37da09b0d860db2ccfbd577ec5a03e`
+   (`validation_report.json`),
+   `b3bcad3347d83c3ab9f9b937e1e6133ab002cb9432a2225e37a10e2c5f944a43`
+   (`assumptions.json`), and
+   `fbc64fd807eff3b2c43bfe88a39ccf5740be5a17786c1d110afd75c07c1d0972`
+   (`synthetic_import_entries.parquet`). They must enter the archival
+   package before its release.
+3. Exact component-review prompts, model versions and settings,
+   adjudication records, and prospective stop/restart rules are not
+   preserved. Review-round counts remain development provenance until
+   that protocol is archived.
+
+The committed pins reproduce the comparison and P1 receipts. The local
+P2 hashes make the present outputs checkable on this machine but do not
+replace publication of those artifacts.
 
 **Pinned revisions.** Encoding: rulespec-us
 `dbf09f44eddd00b7ad5520f89371ebe8fdf0b7df`. Engine:
@@ -889,21 +883,21 @@ Budget-Lab-Yale/tariff-rate-tracker
 `c4307e514196618afcbf88cf7fd33746417eeabf` (MIT). Entries pipeline:
 microcosm merge commits `d4b0855157af996bd367146bc200a2f72ee7d15d`
 (ingest) and `6707ed5912d33ff0a340474a1a24f31546c6dec5` (generator).
-An archival release with containerized one-command replication and a
-persistent identifier accompanies submission; until then the commits
-above are the replication interface.
+No archival release accompanies this local draft. Before release, the
+project must also add the fail-closed five-line composition guard and
+negative tests, regenerate and tripwire the disposition mirror, archive
+the P2 outputs and review protocol, and retain the planned containerized
+one-command rebuild and persistent identifier.
 
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 6 were produced by AI agents under the stated
 gates, with human direction of scope, dispositions, upstream
 communication, and publication. This manuscript was drafted by the
-authoring agents from a primary-source-verified fact base; its
-revision record to date comprises one cross-model hostile-referee
-round (GPT-5.6-class) whose twenty findings were addressed, followed
-by same-family verification rounds (a round-diff audit of those
-closures and a fresh red-team pass, Claude-class) whose findings this
-version incorporates. The human author is responsible for all
-claims.
+authoring agents from a primary-source-verified fact base and revised
+through hostile, round-diff, red-team, and fresh-eyes referee passes.
+The component-review reproducibility limit above applies; manuscript
+review cannot substitute for the pinned artifacts and checks reported
+with each claim. The human author is responsible for all claims.
 
 ## Table 1 — Conformance scoreboard at the pinned snapshot (§3)
 
@@ -926,9 +920,7 @@ reference Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 | Tripwired scope exclusions | 4 |
 | Reference-attributed units, classified with evidence | 8,283 |
 | Boundary-straddle clip events recorded | 1,200 |
-| Comparison-harness tests at close | 2,396 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |
-| Reference build, measured | 6,368 s wall; 123.4 GiB peak footprint |
 
 ## Table 2 — Entries pipeline validation (§5)
 
@@ -950,7 +942,5 @@ pending archival inclusion.
 | Generator identity, all-line pilot window 2026-02…06 | $1,467,109,590,515 weighted = margins total exactly |
 | Spatially unrestricted pilot allocation rows / weighted entries | 3,806,050 / 44,881,145 |
 | Informal-share proxy calibration (σ = 2.6916) | share Δ 2.6×10⁻⁵; mean $32,689 vs $32,916 anchor |
-| Adversarial review at merge | P1: 12 rounds ending APPROVE, no findings; P2: 4 rounds ending APPROVE |
-| Trade test battery at merge | 149 |
 
 # References
