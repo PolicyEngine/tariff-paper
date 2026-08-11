@@ -29,8 +29,8 @@ return plausible values rather than errors. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.
-We publish the pins and validation receipts and identify the remaining
-synchronization and archival prerequisites.
+We report the committed pins, hash-pin the local P2 outputs, and identify
+the remaining synchronization and archival prerequisites.
 
 # 1. Why 2026 broke tariff lookup
 

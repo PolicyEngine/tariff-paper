@@ -560,6 +560,21 @@ Availability now distinguishes committed pins, hash-pinned local P2
 receipts, the stale public mirror, and the missing component-review protocol
 instead of claiming universal public recomputability (`paper.md:835–890`).
 
+**Final availability residual — committed versus local outputs.**
+
+Before (`paper.md@d2ab108:32–33`):
+
+> “We publish the pins and validation receipts and identify the remaining
+> synchronization and archival prerequisites.”
+
+After (`paper.md:32–33`):
+
+> “We report the committed pins, hash-pin the local P2 outputs, and identify
+> the remaining synchronization and archival prerequisites.”
+
+This makes the abstract agree with the local/uncommitted P2 limitation at
+`paper.md:859–875`; it does not represent a new artifact claim.
+
 ### C3. Round-6 grep and synchronization specification
 
 The closing pass is defined over the living claim surfaces only — `paper.md`,
@@ -620,8 +635,8 @@ pandoc paper.md --citeproc --pdf-engine=xelatex -V mainfont=Palatino \
   --include-in-header=build/pdf-preamble.tex --verbose -o build/paper.pdf
 ```
 
-Receipt: 24 US-letter pages; 167,143 bytes; sha-256
-`86e62008590db028b5dfc44285ea6176ae34559b1d9356ef43d8d8dc0a99115f`.
+Receipt: 24 US-letter pages; 167,152 bytes; sha-256
+`c3f03de66de171ddbefbcb7fa754c65e48cc097c37066f79155828910fe0d54e`.
 `pdffonts` reports embedded Palatino Roman/Bold/Italic and Latin Modern Mono
 faces. The final XeLaTeX pass reported no overfull boxes and no unresolved
 citations; only non-fatal underfull-box notices remained. An all-page contact
@@ -630,3 +645,35 @@ collisions, malformed lists, or unreadable tables. Text extraction recovered
 the F1 row counts and grains, F2 mirror warning, M1 no-guard and pilot-scope
 language, M2 non-capabilities, and M3 semantics. The living-source forbidden-
 phrase pattern also returned no match against the extracted PDF.
+
+### C5. Final replay
+
+The complete pass was repeated on 2026-08-11 after the final abstract and PDF
+correction. All source-repository evidence was read with `git show <pin>:<path>`
+so later branch heads could not change the receipt.
+
+```text
+pinned_object_presence=PASS
+F1_replay=38,841,305 detail; 3,070,851 margins; 302,318 facts; 0 failures
+F2_authoritative=30 entries; 10/8,283 + 20/6,917 = 15,200; MFN 528+66=594
+F2_public_mirror=46 entries; MFN 396+66=462
+comparison_replay=5 lines; 240 countries; 39,600 comparisons;
+                  24,400 matches; 15,200 mismatches; 0 errors
+P2_replay=889,169/889,169 cells; 3,806,050 rows; 44,881,145 weighted entries;
+          $1,467,109,590,515; exact=true; all three declared hashes match
+living_source_negative_grep=PASS
+living_source_required_positive_grep=PASS
+pdf_negative_grep=PASS
+pdf_required_positive_grep=PASS
+draft_sync=PASS
+authorship_front_matter=PASS
+venue_plan=PASS
+diff_check=PASS
+independent_final_claim_audit=PASS
+independent_final_receipt_audit=PASS
+```
+
+The independent claim and receipt audits found the same availability
+overstatement, quoted above. Their post-fix checks found no further stale or
+overbroad claim across F1, F2, M1, M2, M3, the seven minors, or the stylistic
+findings; the rebuilt PDF hash and page-one render also passed independently.
