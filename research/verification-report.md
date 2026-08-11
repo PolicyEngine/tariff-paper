@@ -346,3 +346,263 @@ position against it explicitly.
   as "no formal citation found as of 2026-08-07," not "uncited."
 - All eleven journal/report DOIs used in Part B were resolved via Crossref content
   negotiation on 2026-08-07 (titles, containers, volumes, pages match the entries).
+
+## C. Revision round 6 artifact verification
+
+Executed offline on 2026-08-11. The manuscript baseline was
+`2845fd46044997d11d06d02af25db1ce3a9db7d7`. No remote was queried and no
+source repository was modified. This section binds every round-6 repair to
+the exact local object or hash used to verify it.
+
+### C1. Pins and machine receipts
+
+| Finding or touched claim | Exact evidence | Receipt |
+|---|---|---|
+| F1 detail versus margins grains | `microcosm@d4b0855157af996bd367146bc200a2f72ee7d15d:docs/evidence/us-import-entry-margins/build_report.json`; `tools/build_us_import_entry_margins.py`; `packages/populace-build/src/populace/build/us_runtime/us_trade/imdb_bulk.py` | `detail_rows = 38,841,305`; `margin_rows = 3,070,851`; `fact_rows = 302,318`; window `2025-01` through `2026-06`, 18 months, reconciliation failures 0. The detail key is HTS-10, country, country subcode, entry district, unlading district, rate provision, year, and month. The margins table groups detail by HTS-10 and country and adds period; district is a separate control record. |
+| F2 authoritative disposition partition | `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml` | Updated `2026-08-03`; 30 entries; 15,200 case references and 15,200 distinct cases; 10 `upstream_engine_gap` entries / 8,283 units; 20 `explained_residual` entries / 6,917 units. The MFN case union is 594 = 528 column-2 + 66 preference units. |
+| F2 stale public mirror | `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dashboard/public/data/dispositions/us-tariff-panel.json` | Updated `2026-08-02`; 46 entries; MFN case union 462 = 396 column-2 + 66 preference units. It is explicitly excluded as evidence pending regeneration and a synchronization tripwire. |
+| Comparison totals and witness scope | `axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:reports/axiom-yale-us-tariff-panel-all-2026-08-03.json` | Five covered lines, 240 countries, 39,600 comparisons, 24,400 matches, 15,200 mismatches, MFN mismatches 594, error count 0. All tariff-composition comparisons are on the five-line slice. |
+| M1 composition mechanism | `rulespec-us@dbf09f44eddd00b7ad5520f89371ebe8fdf0b7df:us/policies/cbp/us-tariff-duty/composition.yaml` | Five exact-line predicates appear at lines 691–799, but no top-level disjunction guards the composition. `mfn_ad_valorem_rate` ends in `else: 0` at line 2282; the in-window Section 122 formula applies the blanket rate to anything other than lines A/B at lines 2984–2996; the total explicitly sums components at lines 3804–3821. Off-slice inputs can therefore yield plausible scalar rates instead of errors. |
+| M1 pilot scope and dependency audit | `microcosm@6707ed5912d33ff0a340474a1a24f31546c6dec5:tools/build_us_import_entries.py`, lines 111–153 | The generator filters only the month window and positive `con_val_mo`; it has no HTS-line filter. No manuscript result applies the tariff composition to the pilot, so the all-line construction totals remain valid only under the new spatially unrestricted label. No unpublished five-line-intersection result was introduced. |
+| M2 rate-versus-amount boundary | `composition.yaml` at the rulespec pin, lines 2214–2282 and 3073–3181; generator code at the Microcosm pin, lines 378–403 | Beer column 2 is `13.2¢/liter` and is expressly outside the MFN ad valorem output. Beer Section 232 applicability is exposed, but the ad valorem component returns zero while the aluminum-content basis is unavailable. The synthetic schema supplies no specific-duty quantity, aluminum-content value, or quota state and assigns day 15 to every row. |
+| M3 engine operational semantics | `axiom-rules-engine@ffd8213271947b0189a9dd61a055c1e0e78908a0:docs/rulespec.md`, lines 77–83; `docs/bitemporal.md`, lines 60–65; `src/model.rs`, lines 410–418; `src/engine.rs`, lines 11–46 | Bounds are inclusive; lookup uses query-period start and greatest applicable `effective_from`; gaps error; equal-start ties fall through to document order and are not legal precedence. Formula branches and explicit component addition determine precedence/stacking. Runtime errors cover unknown references, missing inputs/versions/values, type or scalar/judgment mismatch, and division by zero. `Rate` is a scalar output, not money. |
+| M3 Data Records and entry semantics | `build_us_import_entry_margins.py`, lines 47–69 at `d4b0855`; `entry_generator.py`, lines 325–408 and 411–514 at `6707ed59` | P1 publishes detail, HTS-10 × country × month margins, district controls, reconciliation, manifest, consumer artifact, and build report. P2 emits the 14 fields listed in §5 plus assumptions and validation sidecars. Input keys must be unique; only positive cells emit; output nulls and non-positive values/weights fail; `weight` is integer multiplicity; weighted customs value reaggregates exactly. |
+| P2 touched numerical claims | Local P1-authenticated `validation_report.json`, `assumptions.json`, and parquet produced by the pinned generator | Five months (`2026-02` through `2026-06`); 889,169 / 889,169 cells exact; 3,806,050 allocation rows; 44,881,145 weighted entries; weighted customs value $1,467,109,590,515; `exact: true`. SHA-256: validation `45276e944ff8cb6680e50ba27238d68a5b37da09b0d860db2ccfbd577ec5a03e`; assumptions `b3bcad3347d83c3ab9f9b937e1e6133ab002cb9432a2225e37a10e2c5f944a43`; parquet `fbc64fd807eff3b2c43bfe88a39ccf5740be5a17786c1d110afd75c07c1d0972`. These remain an archival prerequisite, not a claimed committed artifact. |
+| Minor: Section 201 mechanism and trace endpoint | `composition.yaml` lines 3065–3071; pinned comparison report case `family-8541420010-0076` | The modeled Section 201 component has one operative explicit-zero version beginning `2026-02-15`; historical stages are proof atoms. The separate solar/Canada `2026-02-24` case returns Axiom/expected MFN 0, IEEPA 0, Section 201 0, Section 122 0.1, total 0.1. |
+| Minor: record-level coverage | `axiom-oracles@dc1da3af:conformance/detail/us-tariff-yale.json` | 14 policy records: 10 in scope and all 10 have `covered: true`; 4 are `excluded:technical`. This is distinct from the report's 20,400 covered interval-cells out of 68,400 in-scope interval-cells. |
+
+The arithmetic was recomputed rather than copied: `15,200 = 8,283 +
+6,917`; `594 = 528 + 66`; and the stale mirror's `462 = 396 + 66`.
+
+### C2. Before/after quotation receipts
+
+Line numbers on the left are from `paper.md@2845fd4`; current line numbers
+are from `paper.md` after commits through `a9124ab`.
+
+**F1 — observational unit.**
+
+Before (`paper.md@2845fd4:896`):
+
+> `| Margin cells (HTS-10 × country × district × month) | 3,070,851 |`
+
+After (`paper.md:937–938`):
+
+> `| Full-grain detail rows (HTS-10 × country × subcode × entry district × unlading district × rate provision × month) | 38,841,305 |`
+> `| District-aggregated margin cells (HTS-10 × country × month) | 3,070,851 |`
+
+The downstream prose also changed from “detail rows: tariff line × partner
+country × customs district × month” (`@2845fd4:524–526`) to the full key
+at current lines 559–562.
+
+**F2 — authoritative evidence and mirror quarantine.**
+
+Before (`paper.md@2845fd4:345–347`):
+
+> “The full waterfall at the pinned snapshot (`dc1da3af`, 2026-08-03;
+> reference at `c4307e51`; encoding at `dbf09f44`; engine at
+> `ffd82132`).”
+
+After (`paper.md:349–355`):
+
+> “The comparison totals below come from the pinned report
+> `axiom-oracles@…:reports/axiom-yale-us-tariff-panel-all-2026-08-03.json`;
+> the disposition entry, class, and footprint claims come from the
+> authoritative source `axiom-oracles@…:dispositions/us-tariff-panel.yaml`.”
+
+The previously unstated mirror conflict is now explicit at
+`paper.md:850–858`: authoritative `2026-08-03`, 30 entries, MFN 594;
+public mirror `2026-08-02`, 46 entries, MFN 462; regeneration and a
+synchronization tripwire are required.
+
+**M1 — false executable gate.**
+
+Before (`paper.md@2845fd4:685–688`):
+
+> “the pinned composition gates on the five witness lines, so entry-level
+> duty computation is currently defined for entries on those lines.”
+
+After (`paper.md:708–716`):
+
+> “The filter is a caller obligation: the pinned composition has five
+> predicates but no domain guard, and an off-slice call may return a
+> plausible value rather than an error.”
+
+The formal statement now gives the actual fallthrough and calls for a
+fail-closed guard and negative tests (`paper.md:214–223`).
+
+**M1 — pilot spatial scope.**
+
+Before (`paper.md@2845fd4:565–569`):
+
+> “February through June 2026 — chosen to sit inside the composed
+> statutory spine's domain — 3,806,050 entry rows…”
+
+After (`paper.md:600–608`):
+
+> “every synthetic date (the fifteenth) is inside the composition's modeled
+> temporal window. Spatially, however, the generator is unrestricted: it
+> applies no HTS-line filter… These are data-construction totals, not results
+> from applying the tariff composition.”
+
+**M2 — duty and revenue overclaim.**
+
+Before (`paper.md@2845fd4:604–611`, `681–689`):
+
+> “the panel of Section 3 and these entries compose into duty computation
+> at the grain where duties are assessed.”
+> “That supports revenue accounting by statutory component…”
+
+After (`paper.md:643–651`, `708–730`):
+
+> “Applying the statutory composition requires first filtering to the five
+> witness lines and returns only a posted ad valorem component-rate stack.”
+> “What the pair does not enable is complete duty or revenue accounting.”
+
+The replacement names the absent specific-duty quantities,
+aluminum-content value, quota state, and sub-monthly timing, including the
+beer `13.2 cents per liter` example.
+
+**M3 — operational semantics.**
+
+Before (`paper.md@2845fd4:219–234`):
+
+> “for a (tariff line, partner country, calendar date) triple inside the
+> encoded domain, the ex-post statutory rate stack…”
+
+After (`paper.md:202–235`):
+
+> “The engine's operational semantics are part of the claim…”
+
+The new table states query-time, version-selection, equal-start, branch,
+stacking, type, error, and rate-versus-money behavior, followed immediately
+by the caller-enforced five-line precondition.
+
+**M3 — Data Records.**
+
+Before (`paper.md@2845fd4:510–517`):
+
+> “Two scopes govern everything in this section… the margins ingest covers
+> eighteen months at line-by-country-by-district-by-month grain.”
+
+After (`paper.md:518–552`):
+
+> “Three scopes govern everything in this section and must not blur.”
+> “**Data records and relationships.** The artifact is a small relational
+> system, not a single flat file.”
+
+The added record table and field paragraph specify files, observational
+keys, relationships, all emitted fields, weight interpretation, duplicate,
+null, zero, and supported-operation semantics.
+
+**Minor 2 — Section 201 mechanism.**
+
+Before (`paper.md@2845fd4:451–452`):
+
+> “Our encoding carries the staged schedule and its end…”
+
+After (`paper.md:457–460`):
+
+> “our Section 201 component's operative version is an explicit zero. Its
+> proof atoms document the historical stages and the expiry; the stages
+> themselves are not executable versions in that component.”
+
+**Minor 3 — worked-trace discontinuity.**
+
+Before (`paper.md@2845fd4:278–280`):
+
+> “the pinned report carries the numeric endpoint: at the February 24, 2026
+> probe for solar cells from Canada…”
+
+After (`paper.md:281–284`):
+
+> “A separate boundary probe changes both the partner and date: at the
+> February 24, 2026 probe for solar cells from Canada…”
+
+**Minors 4–6 — witness design, coverage objects, and full partition.**
+
+Before:
+
+> “one tariff line per major authority family” (`paper.md@2845fd4:23`)
+> “covered equals in-scope” (`paper.md@2845fd4:389`)
+> “8,283 units carry reference-attributed dispositions” with the complement
+> implicit (`paper.md@2845fd4:368–369`).
+
+After:
+
+> “five tariff lines are a witness slice jointly selected so that every
+> in-scope authority binds somewhere” (`paper.md:17–18`)
+> “All ten in-scope policy-construct records have `covered: true`… This
+> record field is distinct from the covered interval-cell term”
+> (`paper.md:396–399`)
+> “15,200 = 8,283 `upstream_engine_gap` units in 10 entries + 6,917
+> `explained_residual` units in 20 entries” (`paper.md:372–373`).
+
+**Minor 7 and style — review evidence, public artifacts, and primary
+contribution.**
+
+Before:
+
+> “the trajectory is the evidence” (`paper.md@2845fd4:655–656`)
+> “the evidence packs … are public, pinned, and re-runnable”
+> (`paper.md@2845fd4:667–671`)
+> “This paper's contributions are three” (`paper.md@2845fd4:132`).
+
+After:
+
+> “The round counts and final no-finding verdicts are only retrospective
+> development provenance” (`paper.md:679–684`)
+> “Those artifacts, rather than a trajectory toward a no-finding verdict,
+> carry the evidentiary weight” (`paper.md:701–704`)
+> “The paper's primary contribution is a representation and validation
+> regime” (`paper.md:119–120`).
+
+Availability now distinguishes committed pins, hash-pinned local P2
+receipts, the stale public mirror, and the missing component-review protocol
+instead of claiming universal public recomputability (`paper.md:835–890`).
+
+### C3. Round-6 grep and synchronization specification
+
+The closing pass is defined over the living claim surfaces only — `paper.md`,
+`drafts/*.md`, `facts/ground-truth.md`, `outline.md`, `PLAN.md`, and
+`PROGRESS.md`. Historical referee and round-diff reports are retained as
+records of what earlier versions said and are not rewritten.
+
+Required negative grep:
+
+```text
+gates on the five | inside the composed | spine's domain |
+so duty computation | supports revenue accounting |
+trajectory is the evidence | every number ... public |
+public, pinned, and re-runnable | one tariff line per major authority |
+covered equals in-scope | Our encoding carries the staged schedule |
+accompanies submission
+```
+
+Required positive grep:
+
+```text
+38,841,305 | 3,070,851 | authoritative source | 15,200 = 8,283 |
+6,917 | MFN footprint | 46 entries | 462 | no domain guard |
+off-slice | spatially unrestricted | posted ad valorem |
+13.2 cents per liter | aluminum-content value | quota state |
+sub-monthly timing | operational semantics | Data records and relationships |
+retrospective development provenance | synchronization tripwire
+```
+
+The final validation step must also compare each section draft byte-for-byte
+with its assembled `paper.md` section (ignoring only the separator newline),
+run `git diff --check`, rebuild `build/paper.pdf`, and record the resulting
+commit and PDF receipt in the round-6 final report.
+
+First execution on 2026-08-11, before PDF rebuild:
+
+```text
+negative_grep=PASS
+positive_grep=PASS
+draft_sync=PASS
+diff_check=PASS
+```
+
+The negative grep returned no living-source matches. Every required positive
+term appeared at least once, and every mirrored draft matched its assembled
+section after normalizing only trailing separator newlines.

@@ -36,9 +36,11 @@
 - Recast component-review rounds and verdicts as retrospective provenance; the mutation tests and pinned receipts now carry the evidentiary weight, with the missing review protocol stated explicitly.
 - Quarantined the stale 46-entry/462-MFN public disposition mirror in Data and code availability, and listed regeneration plus a synchronization tripwire as a release prerequisite.
 - Removed unarchived harness-test, review-round, and build-envelope counts from the result tables and narrative rather than using local-only values as validation evidence.
+- Added the round-6 section to `research/verification-report.md`: exact pin/hash receipts, a touched-claim ledger, and quoted baseline/current lines for F1, F2, M1, M2, M3, all minors, and the style corrections.
+- Completed the first living-source grep and draft-synchronization pass: negative grep PASS, required-positive grep PASS, all section/table mirrors PASS, and `git diff --check` PASS.
 
 ## Next
 
-1. Update `research/verification-report.md` with every touched claim and before/after grep receipts.
-2. Run the full forbidden-phrase, numerical, mirror, and draft-synchronization checks; rebuild/check the PDF.
+1. Rebuild and inspect `build/paper.pdf`; record its receipt.
+2. Re-run the final forbidden-phrase, numerical, mirror, and draft-synchronization checks at the committed manuscript state.
 3. Write the final revision report and close this ledger.
