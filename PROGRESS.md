@@ -23,11 +23,13 @@
 - Verified M1 directly in `composition.yaml@dbf09f44`: five predicates but no domain guard, MFN off-slice fallback zero, in-window Section 122 fallback 10 percent, and additive total. Verified the generator at `6707ed59` has no HTS-line filter.
 - Audited manuscript dependencies: no reported result applies the composition to the 3,806,050-row pilot, so the generator totals survive only when labeled all-line and spatially unrestricted; no locally recomputed intersection number will be introduced.
 - Recorded the Axiom-side guard/tests, disposition-mirror synchronization, and review-protocol archive as named prerequisites in `PLAN.md`.
+- Reframed the abstract and contribution hierarchy around rules-as-code conformance, with the synthetic entries as an enabling artifact rather than a complete duty or revenue result.
+- Added pinned engine operational semantics and errors; replaced the false five-line gating claim with the actual caller precondition and off-slice fallthrough consequence.
+- Corrected the Section 201 implementation description and made the Canada/February 24 endpoint an explicitly separate boundary probe from the Malaysia/February 22 trace.
 
 ## Next
 
-1. Rewrite the abstract and formal-method section around the actual five-line precondition, bounded rate output, and explicit operational semantics.
-2. Correct the conformance/disposition evidence chain, terminology, partition, worked examples, and Section 201 description.
-3. Correct the data grains; add Data Records, field/weight/null/zero semantics, and re-scope the all-line pilot.
-4. Narrow uses, limits, review claims, and availability/prerequisite language.
-5. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.
+1. Correct the conformance/disposition evidence chain, terminology, and exact partition.
+2. Correct the data grains; add Data Records, field/weight/null/zero semantics, and re-scope the all-line pilot.
+3. Narrow uses, limits, review claims, and availability/prerequisite language.
+4. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.

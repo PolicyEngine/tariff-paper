@@ -8,42 +8,29 @@ link-citations: true
 
 # Abstract
 
-When a tariff can be legally dead before it stops being collected,
-"what is the statutory rate?" needs a date, an instrument, and a
-proof. We encode the 2025–26 United States tariff stack as dated,
-executable rules — the schedule's column rates by revision plus the
-overlays imposed under Sections 232, 301, 201, 338, and 122 and under
-IEEPA, including the IEEPA termination — at the legal-date semantics
-under which a rule's version history answers for each day. Every rule
-version cites its Federal Register instrument or tariff-schedule
-provision with a verbatim excerpt, and terminations are themselves
-encoded law rather than deletions. We reconcile the encoding
-cell-by-cell against the leading open reference, Yale Budget Lab's
-tariff-rate-tracker [@yaletracker_repo], on a five-line witness slice
-of the tracker's spine — one tariff line per major authority family,
-crossed with all 240 partners and the tracker's full 2025–26 date
-intervals: at the pinned snapshot, 39,600 probe-date comparisons resolve to
-24,400 exact matches and 15,200 discrepancies, every one of which is closed by an evidence-
-backed disposition — zero remain unexplained and zero are open against
-our encoding, with the full waterfall (the witness-line design, coverage, temporal
-debt, and four excluded reference constructs) reported in Section 3;
-extending the reconciliation from the witness slice to the full
-schedule is stated future work. The
-reconciliation surfaced two author-attributed, derivation-backed, and
-as-yet maintainer-unacknowledged reference defects — a safeguard rate
-carried past its proclamation's staged schedule and missing column-2
-handling for four countries — reported upstream with the legal
-derivations. Separately, we release margin-exact synthetic customs
-entries: eighteen months of Census import margins reconciled to the
-integer dollar against the publisher's own control totals with zero
-failures, and, over a five-month pilot window, weighted entry-line
-allocations whose customs value reproduces every line-by-country-by-
-month cell exactly, with every distributional assumption registered
-beside the data. AI agents built the encodings and datasets behind compile, test, and
-oracle gates, with the comparison harness and entries pipelines under
-same-project cross-model adversarial review run until passes with no
-findings; all code,
-corpora, and evidence are public at pinned revisions.
+Tariff rates can cease legally before collection ends, so a statutory
+rate needs a date, an instrument, and a derivation. We encode the
+2025–26 United States tariff stack as versioned, instrument-cited
+executable rules and reconcile their outputs cell by cell against Yale
+Budget Lab's open tariff-rate tracker [@yaletracker_repo]. The primary
+contribution is the rules-as-code and cross-implementation conformance
+method. Its five tariff lines are a witness slice jointly selected so
+that every in-scope authority binds somewhere, not an estimate of the
+full schedule; every disagreement at the pinned snapshot receives an
+evidence-backed disposition. The exercise also produces two proposed
+reference corrections, each supported by a legal derivation and still
+awaiting maintainer response. An enabling data artifact converts
+official monthly import margins into synthetic, weighted customs-entry
+lines that reaggregate exactly, with assumptions recorded beside the
+data. The implementation has material boundaries. The composition
+contains five line predicates but no fail-closed domain guard, so
+callers must restrict it to the witness slice: unsupported lines can
+return plausible values rather than errors. Its output is a posted ad
+valorem component-rate stack under declared synthetic timing, not a
+complete duty amount or revenue account; the inputs omit specific-duty
+quantities, aluminum-content value, quota state, and sub-monthly timing.
+We publish the pins and validation receipts and identify the remaining
+synchronization and archival prerequisites.
 
 # 1. Why 2026 broke tariff lookup
 
@@ -129,23 +116,19 @@ When rates change by proclamation monthly, die in two stages, and
 expire into seams that begin the next program the same morning, the
 derivation *is* the data.
 
-This paper's contributions are three, stated plainly. First, a
-representation: the 2025–26 stack encoded as instrument-cited,
-version-dated executable rules whose termination and revision events
-are themselves rules, with mandatory boundary tests (Section 2).
-Second, a validation regime: a cross-implementation reconciliation
-against the leading open reference, executed depth-first on a
-five-line witness slice of its spine, with an unforgiving predicate, a disposition standard that prices reference-
-attributed claims at a legal derivation, and a fully disclosed
-waterfall — which in passing produced what we believe is the first
-external research engagement with the reference's internals, and two
-upstream defect reports (Sections 3–4). Third, a dataset: public,
-margin-exact synthetic customs entry-line allocations with a
-declared assumptions register, filling a gap the restricted
-transaction data leave open (Section 5). The paper is a methods-and-
-data contribution; the downstream analyses these enable — revenue
-accounting under counterfactual rule histories, distributional
-incidence — are deliberately out of scope (Section 7).
+The paper's primary contribution is a representation and validation
+regime: the 2025–26 stack encoded as instrument-cited, version-dated
+rules, then reconciled against a separately developed reference on a
+five-line witness slice with mandatory boundary tests, a strict
+predicate, an evidence standard for every disposition, and a disclosed
+waterfall (Sections 2–4). The slice is jointly selected so that every
+in-scope authority binds somewhere; it is not one independently
+representative line per authority family. A second, enabling
+contribution is a margin-exact synthetic customs-entry dataset with a
+declared assumptions register (Section 5). The paper does not estimate
+the schedule-wide tariff burden, complete duties, or customs revenue.
+Applications that add the missing bases and state — and distributional
+incidence analyses built on them — remain future work (Section 7).
 
 # 2. What a tariff change is, formally
 
@@ -216,35 +199,54 @@ downstream user never faces the silent question of which revision's
 line structure a number refers to; the revision boundary is in the
 derivation.
 
-What the composed function computes, exactly: for a (tariff line,
-partner country, calendar date) triple inside the encoded domain, the
-ex-post statutory rate stack under legal-date semantics — each
-authority's posted ad valorem contribution per the versions in force
-that day, as the instruments read after the fact. Four things the
-function deliberately does not resolve, because the inputs do not
-determine them: intra-day boundaries (the instruments themselves
-specify 12:00 versus 12:01 a.m. entry cutoffs; a date-grain panel
-adopts the day), quota position (tariff-rate-quota lines depend on
-cumulative entries to date), entry-specific facts (in-transit
-exceptions, claimed exclusions), and knowledge-time (a version's
-`effective_from` is legal-valid time; retroactive instruments are
-encoded when published, so the panel is an ex-post record, not a
-reconstruction of what was knowable on each day). Analyses needing
-those distinctions need more state than this function's signature,
-and Section 7 repeats the warning where it bites.
+The engine's operational semantics are part of the claim, not an
+implementation footnote. At the pinned engine revision `ffd82132`, they
+are:
+
+| Operation | Runtime rule | Consequence for this paper |
+|---|---|---|
+| Query time | Compare inclusive version bounds at the query period's start. | A day-grain query uses that day's start; intra-day legal cutoffs are not represented. |
+| Version selection | Among applicable versions, select the greatest `effective_from`; a gap raises a missing-version error. Equal-start ties fall through to document order. | The encoding avoids relying on an equal-start tie as legal precedence. |
+| Branch precedence | Evaluate the formula's authored, nested conditionals. The engine has no general tariff-authority hierarchy solver. | Exceptions and priority must be explicit inside each component formula. |
+| Stacking | Add the component outputs explicitly in the composition formula. | No duty stacks merely because two instruments coexist. |
+| Types and errors | Enforce declared scalar-versus-judgment shapes and reject unknown outputs, parameters, relations, or units; missing inputs, versions, or values; type mismatches; and division by zero. | `Rate` labels the composition's scalar output; it does not supply a duty base or turn a rate into money. |
+
+The caller precondition is equally important. The composition defines
+exact-line predicates for five witness lines and uses them within
+components, but it does not require their disjunction as a top-level
+domain guard. Outside the slice, the MFN component can fall through to
+zero and, during the Section 122 window, a non-exempt line can receive
+the blanket surcharge; their sum can therefore look plausible rather
+than error. All tariff-composition comparisons in Sections 3–4
+restrict the input to the true five-line intersection. A fail-closed
+guard and negative off-slice tests are prerequisites for archival
+release.
+
+Within that caller-enforced slice, the composed function maps a
+(tariff line, partner country, query period) triple to the ex-post,
+posted ad valorem component-rate stack under legal-date semantics. It
+does not compute specific duties requiring physical quantities,
+Section 232 duties requiring declared aluminum-content value, quota
+position, or sub-monthly timing. Nor does it resolve entry-specific
+facts such as in-transit exceptions or claimed exclusions, or
+knowledge-time: `effective_from` records legal-valid time, so a
+retroactive instrument enters the ex-post record when encoded. Those
+uses need inputs and state absent from this function, and Section 7
+repeats the boundary.
 
 The full stack composes from these pieces. A composition module wires
 the column rates of the tariff schedule to the authority overlays —
 the Section 232 aluminum program (the witness composition's 232
 family), the Section 301 families including the forced-labor program, the per-country IEEPA reciprocal modules and
 their fentanyl-order siblings, Section 122, Section 201, Section 338 —
-and the engine evaluates the composed rate for a (line, country, date)
-triple by resolving every overlay's version in force. Nothing in the
+and the engine evaluates the composed rate for a caller-restricted
+(line, country, period) triple by resolving every overlay's version in
+force. Nothing in the
 pipeline is hand-transcribed from a secondary source: the corpus
 snapshot for this work comprises 138 signed versions — 47 Federal
 Register instruments, 44 tariff-schedule revision snapshots, and 47
 chapter-99 and general-note extractions — and every operative number
-in the panel traces to one of them.
+on the evaluated witness paths traces to one of them.
 
 We do not claim this representation is novel as an idea; executable
 encodings of statutes have a literature (Section 8), and dated
@@ -262,12 +264,14 @@ Section 3, from Malaysia on February 22, 2026 — and read the actual
 rules at the pin rather than a stylized version of them. The
 column-rate module contributes the line's general rate per the
 tariff-schedule revision in force. The Section 201 component is an
-explicit zero: the encoded domain begins February 15, 2026, nine days
-after the safeguard's staged schedule expired, so the rule's single
-version is a zero — and its proof atoms quote the entire derivation
-of that zero, the extension proclamation's staged table (14.75, 14.5,
-14.25, 14 percent, each period dated) and the schedule's own
-compiler's note that the safeguard has expired [@proc10339_2022].
+explicit zero: its only operative version in the modeled temporal
+window begins February 15, 2026, nine days after the safeguard's
+staged schedule expired. The historical stages are not executable
+versions in this component; its proof atoms document the derivation of
+the operative zero by quoting the extension proclamation's staged
+table (14.75, 14.5, 14.25, 14 percent, each period dated) and the
+schedule's compiler's note that the safeguard has expired
+[@proc10339_2022].
 The operative formula is a constant; the legal argument for the
 constant travels with it, which is the representation's point. The
 IEEPA component resolves through the termination rule shown above:
@@ -275,9 +279,9 @@ from February 20 the termination's zero governs [@eo14389_2026], so
 the legal-date answer carries no IEEPA contribution — while the
 collection cutoff two days later [@csms67834313_2026] is, per the
 scope note, outside this function's semantics. Every step is a
-version lookup carrying instrument citations, and the pinned report
-carries the numeric endpoint: at the February 24, 2026 probe for
-solar cells from Canada, both implementations return column rate
+version lookup carrying instrument citations. A separate boundary
+probe changes both the partner and date: at the February 24, 2026 probe
+for solar cells from Canada, the pinned report shows both implementations return column rate
 zero, IEEPA zero, Section 201 zero, Section 122 at 0.10 — a total of
 exactly 10 percent, the balance-of-payments surcharge standing alone
 atop an otherwise-terminated stack. The "two defensible answers" of

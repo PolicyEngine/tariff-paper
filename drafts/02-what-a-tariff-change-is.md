@@ -67,35 +67,54 @@ downstream user never faces the silent question of which revision's
 line structure a number refers to; the revision boundary is in the
 derivation.
 
-What the composed function computes, exactly: for a (tariff line,
-partner country, calendar date) triple inside the encoded domain, the
-ex-post statutory rate stack under legal-date semantics — each
-authority's posted ad valorem contribution per the versions in force
-that day, as the instruments read after the fact. Four things the
-function deliberately does not resolve, because the inputs do not
-determine them: intra-day boundaries (the instruments themselves
-specify 12:00 versus 12:01 a.m. entry cutoffs; a date-grain panel
-adopts the day), quota position (tariff-rate-quota lines depend on
-cumulative entries to date), entry-specific facts (in-transit
-exceptions, claimed exclusions), and knowledge-time (a version's
-`effective_from` is legal-valid time; retroactive instruments are
-encoded when published, so the panel is an ex-post record, not a
-reconstruction of what was knowable on each day). Analyses needing
-those distinctions need more state than this function's signature,
-and Section 7 repeats the warning where it bites.
+The engine's operational semantics are part of the claim, not an
+implementation footnote. At the pinned engine revision `ffd82132`, they
+are:
+
+| Operation | Runtime rule | Consequence for this paper |
+|---|---|---|
+| Query time | Compare inclusive version bounds at the query period's start. | A day-grain query uses that day's start; intra-day legal cutoffs are not represented. |
+| Version selection | Among applicable versions, select the greatest `effective_from`; a gap raises a missing-version error. Equal-start ties fall through to document order. | The encoding avoids relying on an equal-start tie as legal precedence. |
+| Branch precedence | Evaluate the formula's authored, nested conditionals. The engine has no general tariff-authority hierarchy solver. | Exceptions and priority must be explicit inside each component formula. |
+| Stacking | Add the component outputs explicitly in the composition formula. | No duty stacks merely because two instruments coexist. |
+| Types and errors | Enforce declared scalar-versus-judgment shapes and reject unknown outputs, parameters, relations, or units; missing inputs, versions, or values; type mismatches; and division by zero. | `Rate` labels the composition's scalar output; it does not supply a duty base or turn a rate into money. |
+
+The caller precondition is equally important. The composition defines
+exact-line predicates for five witness lines and uses them within
+components, but it does not require their disjunction as a top-level
+domain guard. Outside the slice, the MFN component can fall through to
+zero and, during the Section 122 window, a non-exempt line can receive
+the blanket surcharge; their sum can therefore look plausible rather
+than error. All tariff-composition comparisons in Sections 3–4
+restrict the input to the true five-line intersection. A fail-closed
+guard and negative off-slice tests are prerequisites for archival
+release.
+
+Within that caller-enforced slice, the composed function maps a
+(tariff line, partner country, query period) triple to the ex-post,
+posted ad valorem component-rate stack under legal-date semantics. It
+does not compute specific duties requiring physical quantities,
+Section 232 duties requiring declared aluminum-content value, quota
+position, or sub-monthly timing. Nor does it resolve entry-specific
+facts such as in-transit exceptions or claimed exclusions, or
+knowledge-time: `effective_from` records legal-valid time, so a
+retroactive instrument enters the ex-post record when encoded. Those
+uses need inputs and state absent from this function, and Section 7
+repeats the boundary.
 
 The full stack composes from these pieces. A composition module wires
 the column rates of the tariff schedule to the authority overlays —
 the Section 232 aluminum program (the witness composition's 232
 family), the Section 301 families including the forced-labor program, the per-country IEEPA reciprocal modules and
 their fentanyl-order siblings, Section 122, Section 201, Section 338 —
-and the engine evaluates the composed rate for a (line, country, date)
-triple by resolving every overlay's version in force. Nothing in the
+and the engine evaluates the composed rate for a caller-restricted
+(line, country, period) triple by resolving every overlay's version in
+force. Nothing in the
 pipeline is hand-transcribed from a secondary source: the corpus
 snapshot for this work comprises 138 signed versions — 47 Federal
 Register instruments, 44 tariff-schedule revision snapshots, and 47
 chapter-99 and general-note extractions — and every operative number
-in the panel traces to one of them.
+on the evaluated witness paths traces to one of them.
 
 We do not claim this representation is novel as an idea; executable
 encodings of statutes have a literature (Section 8), and dated
@@ -113,12 +132,14 @@ Section 3, from Malaysia on February 22, 2026 — and read the actual
 rules at the pin rather than a stylized version of them. The
 column-rate module contributes the line's general rate per the
 tariff-schedule revision in force. The Section 201 component is an
-explicit zero: the encoded domain begins February 15, 2026, nine days
-after the safeguard's staged schedule expired, so the rule's single
-version is a zero — and its proof atoms quote the entire derivation
-of that zero, the extension proclamation's staged table (14.75, 14.5,
-14.25, 14 percent, each period dated) and the schedule's own
-compiler's note that the safeguard has expired [@proc10339_2022].
+explicit zero: its only operative version in the modeled temporal
+window begins February 15, 2026, nine days after the safeguard's
+staged schedule expired. The historical stages are not executable
+versions in this component; its proof atoms document the derivation of
+the operative zero by quoting the extension proclamation's staged
+table (14.75, 14.5, 14.25, 14 percent, each period dated) and the
+schedule's compiler's note that the safeguard has expired
+[@proc10339_2022].
 The operative formula is a constant; the legal argument for the
 constant travels with it, which is the representation's point. The
 IEEPA component resolves through the termination rule shown above:
@@ -126,9 +147,9 @@ from February 20 the termination's zero governs [@eo14389_2026], so
 the legal-date answer carries no IEEPA contribution — while the
 collection cutoff two days later [@csms67834313_2026] is, per the
 scope note, outside this function's semantics. Every step is a
-version lookup carrying instrument citations, and the pinned report
-carries the numeric endpoint: at the February 24, 2026 probe for
-solar cells from Canada, both implementations return column rate
+version lookup carrying instrument citations. A separate boundary
+probe changes both the partner and date: at the February 24, 2026 probe
+for solar cells from Canada, the pinned report shows both implementations return column rate
 zero, IEEPA zero, Section 201 zero, Section 122 at 0.10 — a total of
 exactly 10 percent, the balance-of-payments surcharge standing alone
 atop an otherwise-terminated stack. The "two defensible answers" of

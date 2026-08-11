@@ -82,20 +82,16 @@ When rates change by proclamation monthly, die in two stages, and
 expire into seams that begin the next program the same morning, the
 derivation *is* the data.
 
-This paper's contributions are three, stated plainly. First, a
-representation: the 2025–26 stack encoded as instrument-cited,
-version-dated executable rules whose termination and revision events
-are themselves rules, with mandatory boundary tests (Section 2).
-Second, a validation regime: a cross-implementation reconciliation
-against the leading open reference, executed depth-first on a
-five-line witness slice of its spine, with an unforgiving predicate, a disposition standard that prices reference-
-attributed claims at a legal derivation, and a fully disclosed
-waterfall — which in passing produced what we believe is the first
-external research engagement with the reference's internals, and two
-upstream defect reports (Sections 3–4). Third, a dataset: public,
-margin-exact synthetic customs entry-line allocations with a
-declared assumptions register, filling a gap the restricted
-transaction data leave open (Section 5). The paper is a methods-and-
-data contribution; the downstream analyses these enable — revenue
-accounting under counterfactual rule histories, distributional
-incidence — are deliberately out of scope (Section 7).
+The paper's primary contribution is a representation and validation
+regime: the 2025–26 stack encoded as instrument-cited, version-dated
+rules, then reconciled against a separately developed reference on a
+five-line witness slice with mandatory boundary tests, a strict
+predicate, an evidence standard for every disposition, and a disclosed
+waterfall (Sections 2–4). The slice is jointly selected so that every
+in-scope authority binds somewhere; it is not one independently
+representative line per authority family. A second, enabling
+contribution is a margin-exact synthetic customs-entry dataset with a
+declared assumptions register (Section 5). The paper does not estimate
+the schedule-wide tariff burden, complete duties, or customs revenue.
+Applications that add the missing bases and state — and distributional
+incidence analyses built on them — remain future work (Section 7).
