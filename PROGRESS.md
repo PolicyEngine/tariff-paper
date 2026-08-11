@@ -2,7 +2,7 @@
 
 ## State
 
-- Status: manuscript, PDF, and final claim audit complete; closure report pending.
+- Status: revision round 6 complete.
 - Baseline: `2845fd46044997d11d06d02af25db1ce3a9db7d7` on `master`; worktree clean at intake.
 - Scope: paper-side repairs for referee findings F1, F2, M1, M2, M3, and all remaining minors.
 - Hard gates: local commits only; no push, network, preprint, submission, contact, external-repository edits, authorship changes, or venue-slot changes.
@@ -40,8 +40,9 @@
 - Completed the first living-source grep and draft-synchronization pass: negative grep PASS, required-positive grep PASS, all section/table mirrors PASS, and `git diff --check` PASS.
 - Rebuilt `build/paper.pdf` as a 24-page, font-embedded US-letter artifact; added a minimal PDF preamble so exact pins and hashes wrap rather than clip, eliminated all overfull boxes, visually inspected every page plus full-size risk pages, and recorded final sha-256 `c3f03de66de171ddbefbcb7fa754c65e48cc097c37066f79155828910fe0d54e`.
 - Corrected the last independent-audit residual in the abstract: committed pins are reported, while local P2 outputs are only hash-pinned. Repeated artifact replay, living-source and PDF greps, draft synchronization, front-matter preservation, and whitespace checks; all passed.
+- Wrote the final report to `research/revision-round-6-report.md`, including the finding-to-commit-to-receipt table and `VERDICT: REVISION COMPLETE`.
 
 ## Next
 
-1. Commit the final availability wording and replay receipt.
-2. Write the final revision report and close this ledger.
+1. No further paper-side round-6 work remains.
+2. Before any future archival release, complete the four named prerequisites in `PLAN.md`; they are outside this paper-side task and remain gated on Max.
