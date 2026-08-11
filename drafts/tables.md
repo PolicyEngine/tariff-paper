@@ -2,8 +2,11 @@
 
 ## Table 1 — Conformance scoreboard at the pinned snapshot (§3)
 
-Source: axiom-oracles report `dc1da3af` (2026-08-03); reference =
-Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
+Sources: comparison report
+`axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:reports/axiom-yale-us-tariff-panel-all-2026-08-03.json`;
+authoritative dispositions
+`axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml`;
+reference Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 
 | Quantity | Value |
 |---|---|
@@ -11,8 +14,8 @@ Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 | In-scope interval-cells | 68,400 = 20,400 covered + 48,000 temporal debt |
 | Probe-date comparisons | 39,600 (33 probes per line-partner) |
 | Exact matches / mismatches (raw) | 24,400 / 15,200 (61.6% raw) |
-| Disposition entries partitioning the 15,200 | 30 (each unit in exactly one) |
-| In-scope policies covered | 10 / 10 |
+| Authoritative disposition partition | 30 entries: 10 / 8,283 upstream-engine-gap + 20 / 6,917 explained-residual = 15,200 units |
+| In-scope policy records with `covered: true` | 10 / 10 |
 | Unexplained disagreements | 0 |
 | Open disagreements attributed to the encoding | 0 |
 | Tripwired scope exclusions | 4 |

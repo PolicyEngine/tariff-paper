@@ -33,7 +33,7 @@ are roughly 0.025 percent of the lines behind the reference's
 277-million-row panel, every number below is exact within the slice
 and says nothing outside it, and extending the same machinery across
 the schedule is the recorded next stage of this program. We chose
-depth-first deliberately — the two reference defects of Section 4
+depth-first deliberately — the two reference-attributed findings of Section 4
 were found by exhausting five lines, not by sampling many — and the
 paper's claims are written at the slice's scale throughout.
 
@@ -56,9 +56,13 @@ declared semantic difference — and a *tripwired exclusion* removes a
 reference construct from scope entirely behind a machine-checked guard
 that fails the build if the excluded construct's footprint moves.
 
-The full waterfall at the pinned snapshot
-(`dc1da3af`, 2026-08-03; reference at `c4307e51`; encoding at
-`dbf09f44`; engine at `ffd82132`):
+The comparison totals below come from the pinned report
+`axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:reports/axiom-yale-us-tariff-panel-all-2026-08-03.json`;
+the disposition entry, class, and footprint claims come from the
+authoritative source
+`axiom-oracles@dc1da3af067c50fa7138458faf3703b4b9efd7cb:dispositions/us-tariff-panel.yaml`,
+updated 2026-08-03. The reference is pinned at `c4307e51`, the encoding
+at `dbf09f44`, and the engine at `ffd82132`:
 
 - The reference panel materializes 277,303,920 rows; the reconciled
   slice is the five witness lines crossed with 240 partners over the
@@ -72,21 +76,23 @@ The full waterfall at the pinned snapshot
   × 240 partners × 33 probes): 24,400 exact matches (61.6 percent
   raw) and 15,200 mismatches, with zero evaluation errors.
 - Every one of the 15,200 enters a disposition; none remain
-  unexplained, and none are open against our encoding. The disposition
+  unexplained, and none are open against our encoding. The authoritative
   file partitions them into 30 entries — every mismatched unit appears
-  in exactly one, by construction — whose classes are legible families:
-  an IEEPA metals-exclusion layer (13 entries), the column-2 reference
-  gap of Section 4 (4 entries plus combinations), a Section 232
-  aluminum-content basis on beer, a free-trade-agreement preference
-  layer, a Section 122 metal exclusion, and the Section 201 safeguard
-  expiry of Section 4; 8,283 units carry reference-attributed
-  dispositions under Section 4's standard, and each entry records its
-  concept, case selector, and instrument citations. At the
+  in exactly one — and the class arithmetic closes explicitly:
+  **15,200 = 8,283 `upstream_engine_gap` units in 10 entries + 6,917
+  `explained_residual` units in 20 entries.** Its families include the
+  IEEPA metals-exclusion layer, the column-2 reference gap of Section 4,
+  a Section 232 aluminum-content basis on beer, a free-trade-agreement
+  preference layer, a Section 122 metal exclusion, and the Section 201
+  safeguard expiry of Section 4; each entry records its concept, case
+  selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
   Section 232 slots (594, 476, 1,920) — concept counts overlap where
   one cell mismatches several concepts, so they exceed the 15,200
-  distinct units. Section 4 walks the two reference-attributed classes
+  distinct units. In the authoritative dispositions, the MFN footprint
+  is 594 units: 528 in the column-2 family plus 66 in the preference
+  family. Section 4 walks the two reference-attributed classes
   we escalated upstream; the remaining classes are recorded cell-by-
   cell in the same artifacts.
 - Four reference constructs are excluded by tripwire, by name: the
@@ -97,12 +103,12 @@ The full waterfall at the pinned snapshot
   deliberately does not mirror), each with a guard that reds the build
   if its footprint becomes nonzero.
 
-Table 1 consolidates the waterfall. Ten of the reference's fourteen
-policy constructs are therefore
-covered and conformant; four are excluded with tripwires; and the
-conformance predicate — covered equals in-scope, unexplained equals
-zero, open encoding-attributed equals zero — holds on the covered
-slice. We report the 61.6 percent raw match rate as prominently as the
+Table 1 consolidates the waterfall. All ten in-scope policy-construct
+records have `covered: true`; four other records are excluded with
+tripwires. This record field is distinct from the covered interval-cell
+term defined above. The conformance predicate — all in-scope policy
+records covered, unexplained equals zero, open encoding-attributed
+equals zero — holds on the witness slice. We report the 61.6 percent raw match rate as prominently as the
 zero because the two numbers mean different things: the raw rate is
 what falls out before any human judgment; the zero is what survives
 after every judgment is recorded, attributed, and exposed to audit.

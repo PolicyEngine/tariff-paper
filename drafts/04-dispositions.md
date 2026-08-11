@@ -30,8 +30,10 @@ subheading and its related note … have expired." The reference
 carries a flat 14.5 percent on the affected lines past the terminal
 date, which is wrong on two axes at once — 14.5 was the *second*
 year's rate, stale since February 2024, and every rate is expired
-after February 2026. Our encoding carries the staged schedule and
-its end, citing the proclamation's table; the disagreement's recorded footprint is the
+after February 2026. For the modeled temporal window, our Section 201
+component's operative version is an explicit zero. Its proof atoms
+document the historical stages and the expiry; the stages themselves
+are not executable versions in that component. The disagreement's recorded footprint is the
 affected lines after the schedule moves, enumerated in the disposition
 artifact (the Section 201 concept slot's 7,887 mismatched units of
 Section 3 are dominated by this class). The derivation —

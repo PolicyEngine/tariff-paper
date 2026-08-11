@@ -26,10 +26,11 @@
 - Reframed the abstract and contribution hierarchy around rules-as-code conformance, with the synthetic entries as an enabling artifact rather than a complete duty or revenue result.
 - Added pinned engine operational semantics and errors; replaced the false five-line gating claim with the actual caller precondition and off-slice fallthrough consequence.
 - Corrected the Section 201 implementation description and made the Canada/February 24 endpoint an explicitly separate boundary probe from the Malaysia/February 22 trace.
+- Bound the 30-entry disposition partition and 594-unit MFN footprint to the authoritative YAML's full pinned reference, including the exact 15,200 = 8,283 + 6,917 class receipt.
+- Separated the policy-record `covered: true` field from covered interval-cells and corrected the Section 201 component account in the disposition narrative.
 
 ## Next
 
-1. Correct the conformance/disposition evidence chain, terminology, and exact partition.
-2. Correct the data grains; add Data Records, field/weight/null/zero semantics, and re-scope the all-line pilot.
-3. Narrow uses, limits, review claims, and availability/prerequisite language.
-4. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.
+1. Correct the data grains; add Data Records, field/weight/null/zero semantics, and re-scope the all-line pilot.
+2. Narrow uses, limits, review claims, and availability/prerequisite language.
+3. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.
