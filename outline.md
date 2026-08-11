@@ -45,8 +45,9 @@ publish-the-panel proposal #26). Framing gate: Max approves this
 section's tone before anything outward.
 
 ## 5. Synthetic customs entries from official margins
-Job: the dataset descriptor core. Slots: entries facts (bulk-file
-sourcing doctrine + 18 sha-manifested archives; 38.8M rows → 3.07M
+Job: the dataset descriptor core. Slots: entries facts and Data Records
+(bulk-file sourcing doctrine + 18 sha-manifested archives; 38.8M
+full-grain detail rows → 3.07M district-aggregated line × country × month
 cells; exact-integer reconciliation ×3 axes, 0 failures ×18 months;
 dual-channel cross-check 108,977 cells 0 mismatches; generator
 exactness $1,467,109,590,515 pilot identity; assumptions register with
@@ -62,10 +63,11 @@ battery); windowless publication + the durability-boundary invariant as
 a worked example of review convergence; snapshot-pinned scoreboards.
 
 ## 7. Uses and limits
-Job: what the pair enables now (entry-level duty computation composed
-with the statutory spine; calibration targets) and what it does not
+Job: what the pair enables now (caller-filtered posted-ad-valorem
+rate-stack applications; calibration targets) and what it does not
 claim (no effective rates, no incidence, no behavioral response — the
-wedge analyses are downstream work). Every scope carve-out volunteered.
+wedge analyses are downstream work; complete duty and revenue accounting
+also require missing bases and state). Every scope carve-out volunteered.
 
 ## 8. Related work
 Slots: research-lane outputs (QJE 2020 statutory-schedule construction;

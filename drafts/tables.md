@@ -27,20 +27,23 @@ reference Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 
 ## Table 2 — Entries pipeline validation (§5)
 
-Sources: build report + reconciliation records + cross-check report,
-committed in-branch (microcosm #620); generator validation report
-(microcosm #621).
+Sources: `microcosm@d4b0855157af996bd367146bc200a2f72ee7d15d:docs/evidence/us-import-entry-margins/`
+(build report, reconciliation records, and cross-check report); generator
+code at `microcosm@6707ed5912d33ff0a340474a1a24f31546c6dec5` and the
+local, P1-authenticated validation receipt with sha-256
+`45276e944ff8cb6680e50ba27238d68a5b37da09b0d860db2ccfbd577ec5a03e`,
+pending archival inclusion.
 
 | Check | Result |
 |---|---|
 | Source archives (2025-01…2026-06) | 18, ~3.3 GB, all sha-256 manifested |
-| Detail rows parsed | 38,841,305 |
-| Margin cells (HTS-10 × country × district × month) | 3,070,851 |
+| Full-grain detail rows (HTS-10 × country × subcode × entry district × unlading district × rate provision × month) | 38,841,305 |
+| District-aggregated margin cells (HTS-10 × country × month) | 3,070,851 |
 | Consumer facts published (5 grains) | 302,318 |
 | Exact-integer reconciliation vs publisher control totals | 3 axes × 18 months: **0 failures** |
 | Cross-check vs second official channel (API) | 108,977 cells, 16 pairs: **0 mismatches** |
-| Generator identity, pilot window 2026-02…06 | $1,467,109,590,515 weighted = margins total exactly |
-| Pilot entry rows / weighted entries | 3,806,050 / 44,881,145 |
+| Generator identity, all-line pilot window 2026-02…06 | $1,467,109,590,515 weighted = margins total exactly |
+| Spatially unrestricted pilot allocation rows / weighted entries | 3,806,050 / 44,881,145 |
 | Informal-share proxy calibration (σ = 2.6916) | share Δ 2.6×10⁻⁵; mean $32,689 vs $32,916 anchor |
 | Adversarial review at merge | P1: 12 rounds ending APPROVE, no findings; P2: 4 rounds ending APPROVE |
 | Trade test battery at merge | 149 |

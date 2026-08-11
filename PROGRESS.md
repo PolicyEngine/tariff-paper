@@ -28,9 +28,12 @@
 - Corrected the Section 201 implementation description and made the Canada/February 24 endpoint an explicitly separate boundary probe from the Malaysia/February 22 trace.
 - Bound the 30-entry disposition partition and 594-unit MFN footprint to the authoritative YAML's full pinned reference, including the exact 15,200 = 8,283 + 6,917 class receipt.
 - Separated the policy-record `covered: true` field from covered interval-cells and corrected the Section 201 component account in the disposition narrative.
+- Corrected F1 in prose and Table 2: 38,841,305 rows belong to the full detail grain; 3,070,851 belongs to district-aggregated HTS-10 × country × month margins.
+- Added the Data Records relationship table, exact synthetic-entry fields, uniqueness/positive-cell/null/weight semantics, and supported-operation boundary.
+- Re-scoped the five-month pilot as temporally inside the modeled window but spatially unrestricted across all positive HTS-line cells, with no composed result claimed.
+- Hash-pinned the local P2 validation receipt (`45276e94…`) and named its archival inclusion as a release prerequisite.
 
 ## Next
 
-1. Correct the data grains; add Data Records, field/weight/null/zero semantics, and re-scope the all-line pilot.
-2. Narrow uses, limits, review claims, and availability/prerequisite language.
-3. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.
+1. Narrow uses, limits, review claims, and availability/prerequisite language.
+2. Update `research/verification-report.md`, perform before/after and forbidden-phrase greps, rebuild/check the PDF, and write the final report.

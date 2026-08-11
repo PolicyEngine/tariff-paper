@@ -80,5 +80,6 @@ in this paper repository:
   final verdicts are development provenance, not a reproducible validation
   protocol.
 - **Release package:** retain the existing containerized one-command rebuild
-  and persistent-identifier gate. No archival release accompanies the current
-  local draft.
+  and persistent-identifier gate. Include the P2 parquet, assumptions register,
+  and validation receipt now available only as local hash-pinned artifacts.
+  No archival release accompanies the current local draft.
