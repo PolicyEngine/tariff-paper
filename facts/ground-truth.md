@@ -382,11 +382,10 @@ written; any NEW code (P3/P4, the archival replication release) imports
   UNCHANGED in this revision — the spine publishes statutory rate
   TABLES at full schedule, not full-schedule duty computation.
 - Landed as rulespec-us PRs #1267 (ch 01–25), #1275 (26–50), #1276
-  (51–75), #1280 (76–89), #1284 (90–98), #1286/#1287 (chapter 99
-  sub-shards a/b); sub-shard c (#1288, 563 lines incl. 9903) OPEN in
-  CI at revision time — merged main holds 13,227 of 13,790 lines until
-  it lands; the paper's full-schedule counts describe the complete
-  generation and pin post-merge. Each PR: subset manifests via
+  (51–75), #1280 (76–89), #1284 (90–98), #1286/#1287/#1288 (chapter 99
+  sub-shards a/b/c; #1288 MERGED 2026-08-13, spine-completing merge
+  `f062088fb` — all 13,790 lines on main, reproducer --check green
+  over the complete 200-file set). Each PR: subset manifests via
   `sign-applied-files --manual-exception rulespec-us#1190`
   (deterministic-generator provenance class), append-only
   oracle-coverage ledger entries, regenerated reverse index.

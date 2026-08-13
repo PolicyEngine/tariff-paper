@@ -1032,13 +1032,11 @@ scorecard repository [@scorecard_repo] at `f9e7acf` under
 `data/pe/diagnostics/`, with the derivation annotation under
 `sources/`; the weight bases with hash receipts, the 2025 recipe-build
 log, the Census archive manifest chain, and the statistical-membership
-map live in the project lane pending the archival release. The Section 7 generated schedule lands in the rules repository under
-`us/policies/usitc/us-tariff-duty/lines/generated/` with its
-reproducer (`tools/generate_hts_rate_tables.py`), whose check mode
-re-derives and byte-compares every committed file; twelve of the
-thirteen shards (13,227 of 13,790 lines) are merged, with the final
-chapter-99 shard in review at `b4873afc`, at which head the check
-passes over all 200 committed files. The full-schedule provisions
+map live in the project lane pending the archival release. The Section 7 generated schedule ships in the rules repository under
+`us/policies/usitc/us-tariff-duty/lines/generated/` at merge
+`f062088f`, with its reproducer
+(`tools/generate_hts_rate_tables.py`), whose check mode re-derives and
+byte-compares all 200 committed files. The full-schedule provisions
 feedstock is corpus version
 `2026-08-09-usitc-hts-2026-rev15-full-schedule`.
 
