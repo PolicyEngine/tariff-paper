@@ -1,4 +1,4 @@
-# 5. Synthetic customs entries from official margins
+# 6. Synthetic customs entries from official margins
 
 The statutory panel answers what the rate was. Applying it to trade
 requires the other half: what crossed the border, at what value, in
@@ -84,7 +84,7 @@ carrying how many identical entries each row represents. The identity constraint
 weighted customs value reproduces every line-by-country-by-month cell
 to the integer dollar. The arithmetic earns the word exact: cross-
 cell aggregations run in arbitrary-precision Python integers (the
-review of Section 6 caught and killed a fixed-width accumulation that
+review of Section 7 caught and killed a fixed-width accumulation that
 could wrap), cell values are validated at or below 2^53 so their
 parquet representation is exactly representable, and the build
 asserts the reproduction at run time rather than trusting the

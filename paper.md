@@ -1,7 +1,7 @@
 ---
 title: "Executable tariff law: a conformance-tested statutory panel and synthetic customs entries for the 2025–26 trade shock"
 author: "[Author slots — working draft, local only]"
-date: 2026-08-07
+date: 2026-08-13
 bibliography: research/references.bib
 link-citations: true
 ---
@@ -15,17 +15,27 @@ executable rules and reconcile their outputs cell by cell against Yale
 Budget Lab's open tariff-rate tracker [@yaletracker_repo]. The primary
 contribution is the rules-as-code and cross-implementation conformance
 method. Its five tariff lines are a witness slice jointly selected so
-that every in-scope authority binds somewhere, not an estimate of the
-full schedule; every disagreement at the pinned snapshot receives an
-evidence-backed disposition. The exercise also produces two proposed
-reference corrections, each supported by a legal derivation and still
-awaiting maintainer response. An enabling data artifact converts
+that every in-scope authority binds somewhere; every disagreement in
+the five-line reconciliation receives an evidence-backed disposition.
+The schedule's rate columns then extend to all 13,790 rated lines as
+deterministically generated, per-cell provision-grounded tables, gated
+on reproducing the hand-built witness line modules' encoded rates
+exactly. The same discipline applied across implementations shows that
+the 1.6-point April–June 2026 gap between Yale Budget Lab's and the
+Tax Policy Center's daily average-rate series is mostly the
+import-weight vintage — 1.34 of the 1.62 points; rerunning Yale's own
+pipeline on 2025 weights lands within 0.08 points of TPC — a
+reconciliation we find published by neither organization. The exercise
+also produces two proposed reference corrections, each supported by a
+legal derivation and still awaiting maintainer response. An enabling data artifact converts
 official monthly import margins into synthetic, weighted customs-entry
 lines that reaggregate exactly, with assumptions recorded beside the
 data. The implementation has material boundaries. The composition
 contains five line predicates but no fail-closed domain guard, so
 callers must restrict it to the witness slice: unsupported lines can
-return plausible values rather than errors. Its output is a posted ad
+return plausible values rather than errors. The generated tables
+publish posted rates and dispositions at full coverage, but their
+application to entries is declared, deferred work. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.
@@ -125,10 +135,10 @@ waterfall (Sections 2–4). The slice is jointly selected so that every
 in-scope authority binds somewhere; it is not one independently
 representative line per authority family. A second, enabling
 contribution is a margin-exact synthetic customs-entry dataset with a
-declared assumptions register (Section 5). The paper does not estimate
+declared assumptions register (Section 6). The paper does not estimate
 the schedule-wide tariff burden, complete duties, or customs revenue.
 Applications that add the missing bases and state — and distributional
-incidence analyses built on them — remain future work (Section 7).
+incidence analyses built on them — remain future work (Section 8).
 
 # 2. What a tariff change is, formally
 
@@ -231,7 +241,7 @@ position, or sub-monthly timing. Nor does it resolve entry-specific
 facts such as in-transit exceptions or claimed exclusions, or
 knowledge-time: `effective_from` records legal-valid time, so a
 retroactive instrument enters the ex-post record when encoded. Those
-uses need inputs and state absent from this function, and Section 7
+uses need inputs and state absent from this function, and Section 8
 repeats the boundary.
 
 The full stack composes from these pieces. A composition module wires
@@ -249,7 +259,7 @@ chapter-99 and general-note extractions — and every operative number
 on the evaluated witness paths traces to one of them.
 
 We do not claim this representation is novel as an idea; executable
-encodings of statutes have a literature (Section 8), and dated
+encodings of statutes have a literature (Section 9), and dated
 parameters are standard in tax microsimulation. The claim is about
 fit: 2025–26 tariff law is the environment where the alternatives
 visibly fail, because the thing being represented changed character.
@@ -323,7 +333,7 @@ are roughly 0.025 percent of the lines behind the reference's
 277-million-row panel, every number below is exact within the slice
 and says nothing outside it, and extending the same machinery across
 the schedule is the recorded next stage of this program. We chose
-depth-first deliberately — the two reference-attributed findings of Section 4
+depth-first deliberately — the two reference-attributed findings of Section 5
 were found by exhausting five lines, not by sampling many — and the
 paper's claims are written at the slice's scale throughout.
 
@@ -341,7 +351,7 @@ intervals, placed at interval boundaries and their neighbors — at the
 reference's default legal-date convention; a *match* is exact
 equality across every concept slot. A *disposition* closes a mismatched comparison
 unit with a recorded claim — an encoding defect (which must then be fixed),
-a reference-attributed discrepancy (Section 4's standard), or a
+a reference-attributed discrepancy (Section 5's standard), or a
 declared semantic difference — and a *tripwired exclusion* removes a
 reference construct from scope entirely behind a machine-checked guard
 that fails the build if the excluded construct's footprint moves.
@@ -361,7 +371,7 @@ at `dbf09f44`, and the engine at `ffd82132`:
   240 partners × 57 intervals) split into 20,400 covered and 48,000
   temporal-debt cells — our encoded rule history begins 2026-02-15,
   later than the tracker's panel start, and the debt is the surfaced
-  difference, carried into Section 7's usage limits.
+  difference, carried into Section 8's usage limits.
 - The covered intervals yield 39,600 probe-date comparisons (5 lines
   × 240 partners × 33 probes): 24,400 exact matches (61.6 percent
   raw) and 15,200 mismatches, with zero evaluation errors.
@@ -371,10 +381,10 @@ at `dbf09f44`, and the engine at `ffd82132`:
   in exactly one — and the class arithmetic closes explicitly:
   **15,200 = 8,283 `upstream_engine_gap` units in 10 entries + 6,917
   `explained_residual` units in 20 entries.** Its families include the
-  IEEPA metals-exclusion layer, the column-2 reference gap of Section 4,
+  IEEPA metals-exclusion layer, the column-2 reference gap of Section 5,
   a Section 232 aluminum-content basis on beer, a free-trade-agreement
   preference layer, a Section 122 metal exclusion, and the Section 201
-  safeguard expiry of Section 4; each entry records its concept, case
+  safeguard expiry of Section 5; each entry records its concept, case
   selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
@@ -382,7 +392,7 @@ at `dbf09f44`, and the engine at `ffd82132`:
   one cell mismatches several concepts, so they exceed the 15,200
   distinct units. In the authoritative dispositions, the MFN footprint
   is 594 units: 528 in the column-2 family plus 66 in the preference
-  family. Section 4 walks the two reference-attributed classes
+  family. Section 5 walks the two reference-attributed classes
   we escalated upstream; the remaining classes are recorded cell-by-
   cell in the same artifacts.
 - Four reference constructs are excluded by tripwire, by name: the
@@ -414,7 +424,7 @@ with mutation tests — deliberately corrupted inputs a sound harness
 must catch. The final harness binds each panel row to a content
 digest and rebuilds byte-identically. Mutation tests validate the comparator,
 not the law — the legal-correctness burden rests on the instrument
-citations of Section 2 and the derivation standard of Section 4.
+citations of Section 2 and the derivation standard of Section 5.
 
 We also measured the reference's reproduction cost in a supervised
 local rebuild and reported the unexpectedly large resource envelope
@@ -422,7 +432,77 @@ upstream, alongside a proposal that the project publish its panel as a
 release artifact. Because that measurement receipt is not committed at
 the named pins, this paper does not use its numerical value as evidence.
 
-# 4. When the oracle disagrees: dispositions with legal derivations
+# 4. Why the two public trackers disagree with each other
+
+Two organizations publish daily average United States tariff rates
+from independent pipelines: Yale Budget Lab's tracker
+[@yaletracker_repo] and the Tax Policy Center's tariff series
+[@tpctracker]. Over April–June 2026 their headline series sit 1.6
+percentage points apart — Yale's weighted effective statutory rate
+averages 11.08 percent, TPC's all-goods series 9.46 percent. Both numbers circulate in policy discussion, and we find no published
+reconciliation from either organization.
+
+Most of the gap — 1.34 of the 1.62 points — is the weight vintage.
+We reran Yale's daily-series stage on
+their own built rate panel (repository state `c4307e51`, built
+locally), twice, identical in every respect except the import-weights
+file. Both weight bases come from Yale's own recipe — their
+`build_import_weights.R`, bypassing only its GTAP step —
+applied to sha-manifested Census import-merchandise archives: a 2024
+base totaling \$3,119.3 billion, within 0.15 percent of their published
+denominator, and a 2025 base totaling \$3,242.5 billion. On the 2024
+base, the rerun averages 10.72 percent over the window (Table 3) (unweighted
+means over the 91 calendar days April 1 through June 30, identical for
+every series compared here); on the 2025 base, 9.38 percent. Rebasing
+the weights moves the series by −1.34 points, stable across the
+window's four revision segments (1.38, 1.35, 1.35, 1.32), and the
+2025-weight leg lands within 0.08 points of TPC's published series.
+The two bases join the panel at slightly different coverage — 94.7
+percent of the 2024 base value matches against 96.4 percent of the
+2025 base — so the −1.34 bundles basket composition with a small
+join-coverage differential we did not separate. Everything that still
+separates the 2025-weight leg from TPC's published series —
+trade-remedy scope, effective-layer treatment, and any residual
+difference between our rebuilt 2025 base and TPC's own volumes — nets
+to 0.08 points in this window. We cannot decompose that net further,
+and offsetting individual differences are not ruled out.
+
+The rerun on Yale's own 2024 base doubles as a validation leg: it
+reproduces their published series within 0.2 to 0.6 points in months
+containing no schedule revision, and sits 0.36 points below it on the
+window mean. That net is consistent with two identified causes acting
+in opposite directions, which we did not separately quantify: their
+June 9 publication vintage predates their own Brazil Section 301 and
+Section 338 encodings, which our panel build includes and which push
+the rerun upward where they bind; and our weight bases are built in a
+single pass where their production pipeline re-keys weights per
+schedule revision under the 484(f) statistical reclassifications,
+which accounts for the downward remainder. Neither cause disturbs the
+decomposition, which compares the two legs to each other on identical
+code and panel.
+
+Both organizations chose defensibly. Yale's fixed-2024 basket is
+documented and motivated: it prices the statutory burden on a pre-shock
+basket — Laspeyres-type fixed-base weighting — and their pipeline carries
+dedicated machinery to keep that basket joinable across schedule
+revisions. TPC's notes disclose 2025 volumes excluding antidumping and
+countervailing duties without stating a rationale; 2025 was already a
+tariff-distorted year, so that base carries first-round substitution in
+its weights. A reader comparing the headlines sees a 1.6-point
+disagreement that is mostly a weight-vintage choice, made independently
+and reasonably on each side. Both leg outputs and the derivation are
+committed [@scorecard_repo]; the finding is author-attributed, and the
+derivation was sent to both maintainers, with no responses at this
+writing.
+
+The decomposition also fixes what an average-rate construct must
+declare to be comparable: the rate concept (posted statutory, effective
+statutory, or realized collections), the weight base and its vintage,
+and the scope of trade-remedy duties. Section 5's dispositions apply
+the same discipline line by line; this section applies it
+series by series.
+
+# 5. When the oracle disagrees: dispositions with legal derivations
 
 A conformance run that ends in disagreement forces a choice with three
 honest outcomes: the encoding is wrong (fix it), the reference is
@@ -507,7 +587,7 @@ a counter-derivation would convert them to encoding bugs. Either
 outcome improves the public record, which is the point of validating
 in the open.
 
-# 5. Synthetic customs entries from official margins
+# 6. Synthetic customs entries from official margins
 
 The statutory panel answers what the rate was. Applying it to trade
 requires the other half: what crossed the border, at what value, in
@@ -593,7 +673,7 @@ carrying how many identical entries each row represents. The identity constraint
 weighted customs value reproduces every line-by-country-by-month cell
 to the integer dollar. The arithmetic earns the word exact: cross-
 cell aggregations run in arbitrary-precision Python integers (the
-review of Section 6 caught and killed a fixed-width accumulation that
+review of Section 7 caught and killed a fixed-width accumulation that
 could wrap), cell values are validated at or below 2^53 so their
 parquet representation is exactly representable, and the build
 asserts the reproduction at run time rather than trusting the
@@ -650,7 +730,7 @@ returns only a posted ad valorem component-rate stack. Complete duty or
 revenue accounting additionally requires bases and state this dataset
 does not supply.
 
-# 6. Provenance engineering
+# 7. Provenance engineering
 
 Every reported result is tied either to a committed pin or to an
 explicitly hash-pinned local receipt, and the machinery was built by AI
@@ -687,7 +767,7 @@ reproducible protocol.
 **The division of labor.** Model-written code, model-run reviews,
 machine-checked gates — and human judgment exactly where it is load-
 bearing: scope decisions (what counts as law versus estimation), the
-disposition standard of Section 4, anything that leaves the project
+disposition standard of Section 5, anything that leaves the project
 (upstream reports, this paper), and the decision to ship. We do not
 claim the review regime is external certification — reviewer and
 authors sit inside one project, and a separately governed
@@ -703,7 +783,59 @@ the defects it exposed and the tests and receipts added in response.
 Those artifacts, rather than a trajectory toward a no-finding verdict,
 carry the evidentiary weight.
 
-# 7. Uses and limits
+## Deterministic generation at schedule scale
+
+The witness slice's hand-built line modules extend to the full
+schedule by generation rather than authorship. A deterministic
+generator reads the corpus-pinned Revision 15 snapshot — the exact
+bytes, hash-pinned, that the corpus retains for that release — and
+emits per-chapter rule modules covering every rated line: 13,790 lines
+across 98 chapters, as general and column-2 rate tables over ad valorem
+and Free lines and total-partition disposition tables over all of them
+(ad valorem 6,247, Free 5,795, specific 777, conditional 548, compound
+326, component-valued 93, column-2-only 4). A line whose column text is
+a specific, compound, or component-valued duty gets an explicit
+classification and no rate cell; the machinery refuses to force-parse
+what it cannot represent. The same refusal caught the schedule's own
+data repair: the one column-2 change between the 2025 basic edition
+and Revision 15 across 11,504 common base lines is a trailing-slash
+typo the publisher fixed, which the partition classified as
+conditional rather than misreading as a rate.
+
+Every table cell carries a proof atom citing its line's provision with
+a verbatim body-line excerpt — 48,479 atoms across the full schedule —
+validated
+against a corpus version that normalizes all 29,845 HTS-numbered rows
+of the pinned snapshot to per-line provisions. The generation is gated
+three ways: the generated cells must reproduce the encoded rates of the three
+hand-built witness line modules that carry rate cells exactly, with
+expectations parsed from those modules rather than from any secondary
+record; emitting twice must
+produce identical bytes; and the base general-rate column must show
+zero changes between the 2025 basic edition and Revision 15, which it
+does across 11,504 common base lines. A single dated version per line
+therefore rests on a verified endpoint comparison for those lines'
+general column; chapter 99's action headings and the 66 base lines
+born mid-window carry the snapshot's value at a nominal date, with
+per-revision versioning recorded as composition-layer work. One structural fact stays out of statutory parameter
+space deliberately: the map from ten-digit statistical lines to their
+rate-bearing ancestors is emitted as a generated data artifact, held
+for the archival release, because its synthetic integer keys appear
+nowhere in provision text and therefore cannot meet the grounding
+standard the rate cells meet.
+
+Two findings from building the feedstock bear on anyone consuming the
+schedule programmatically. The USITC's live export endpoint accepts a
+release parameter and silently ignores it — a January 2025 request
+returns headings that did not exist until April 2025 — so frozen
+vintages exist only where someone retained them; the corpus retains
+the full revision series for 2025 and 2026 as pinned snapshots. And applying a line's rate to an
+entry remains composition-layer work each module declares as a
+deferred output: the tables publish what the schedule says, at full
+coverage, and do not alter the five-line witness composition of
+Sections 2–3.
+
+# 8. Uses and limits
 
 What the pair enables now is deliberately narrower than duty
 assessment. After a caller filters inputs to the five witness lines,
@@ -712,7 +844,13 @@ component-rate stack calculations for the supplied date, including
 counterfactual changes expressible as dated rules. The filter is a
 caller obligation: the pinned composition has five predicates but no
 domain guard, and an off-slice call may return a plausible value rather
-than an error. The synthetic pilot supplies the needed identifiers and
+than an error. The generated schedule tables of Section 7 change the
+lookup boundary, not the computation boundary: any rated line's disposition, and its posted general or column-2
+rate where that column is ad valorem or Free, are now published,
+proof-grounded outputs, but wiring those tables into the composition —
+so an arbitrary entry's duty stack computes under a domain guard — is
+declared, deferred work on every generated module, not something this
+paper reports. The synthetic pilot supplies the needed identifiers and
 a declared mid-month date, but this paper reports no application of the
 composition to those rows. Separately, the ingest's 302,318 consumer
 facts publish at five aggregation grains with channel-invariant keys
@@ -750,7 +888,7 @@ and application receipt are supplied. Conflating that layer with this
 paper would launder modeling assumptions through a dataset whose
 claim to exactness is limited to reaggregation of declared margins.
 
-# 8. Related work
+# 9. Related work
 
 **Tariff-rate data for the trade-war literature.** The empirical
 literature on the 2018–19 tariffs built its rate data by hand, wave by
@@ -793,7 +931,7 @@ cross-implementation conformance regime. We find no formal citation of the tool 
 (a web-bounded search; the tool is four months old), which suggests —
 though a negative search cannot establish — that Section 3's
 reconciliation is the first external research engagement with the
-tracker's internals; Section 4's
+tracker's internals; Section 5's
 derivation-backed defect reports are what that engagement produces
 when a disagreement survives audit.
 
@@ -889,8 +1027,23 @@ negative tests, regenerate and tripwire the disposition mirror, archive
 the P2 outputs and review protocol, and retain the planned containerized
 one-command rebuild and persistent identifier.
 
+The Section 4 decomposition's leg outputs are committed in the public
+scorecard repository [@scorecard_repo] at `f9e7acf` under
+`data/pe/diagnostics/`, with the derivation annotation under
+`sources/`; the weight bases with hash receipts, the 2025 recipe-build
+log, the Census archive manifest chain, and the statistical-membership
+map live in the project lane pending the archival release. The Section 7 generated schedule lands in the rules repository under
+`us/policies/usitc/us-tariff-duty/lines/generated/` with its
+reproducer (`tools/generate_hts_rate_tables.py`), whose check mode
+re-derives and byte-compares every committed file; twelve of the
+thirteen shards (13,227 of 13,790 lines) are merged, with the final
+chapter-99 shard in review at `b4873afc`, at which head the check
+passes over all 200 committed files. The full-schedule provisions
+feedstock is corpus version
+`2026-08-09-usitc-hts-2026-rev15-full-schedule`.
+
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
-described in Section 6 were produced by AI agents under the stated
+described in Section 7 were produced by AI agents under the stated
 gates, with human direction of scope, dispositions, upstream
 communication, and publication. This manuscript was drafted by the
 authoring agents from a primary-source-verified fact base and revised
@@ -898,6 +1051,8 @@ through hostile, round-diff, red-team, and fresh-eyes referee passes.
 The component-review reproducibility limit above applies; manuscript
 review cannot substitute for the pinned artifacts and checks reported
 with each claim. The human author is responsible for all claims.
+
+# Tables (wire into sections at final assembly)
 
 ## Table 1 — Conformance scoreboard at the pinned snapshot (§3)
 
@@ -922,7 +1077,7 @@ reference Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 | Boundary-straddle clip events recorded | 1,200 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |
 
-## Table 2 — Entries pipeline validation (§5)
+## Table 2 — Entries pipeline validation (§6)
 
 Sources: `microcosm@d4b0855157af996bd367146bc200a2f72ee7d15d:docs/evidence/us-import-entry-margins/`
 (build report, reconciliation records, and cross-check report); generator
@@ -943,4 +1098,28 @@ pending archival inclusion.
 | Spatially unrestricted pilot allocation rows / weighted entries | 3,806,050 / 44,881,145 |
 | Informal-share proxy calibration (σ = 2.6916) | share Δ 2.6×10⁻⁵; mean $32,689 vs $32,916 anchor |
 
-# References
+## Table 3 — Tracker decomposition, April–June 2026 daily means (§4)
+
+Both legs
+run Yale's daily-series stage on Yale's built panel (`c4307e51`),
+identical except the import-weights file; weight bases built with
+Yale's own recipe over sha-manifested Census import archives.
+
+| Series | Weight base | Mean rate |
+|---|---|---|
+| Yale, published | 2024 (theirs) | 11.08% |
+| Rerun leg | 2024 (rebuilt, \$3,119.3B) | 10.72% |
+| Rerun leg | 2025 (rebuilt, \$3,242.5B) | 9.38% |
+| TPC, published | 2025 (theirs, ex-AD/CVD) | 9.46% |
+
+Weight-vintage effect −1.34 points; residual against TPC 0.08 points.
+All four rows are unweighted means over the 91 calendar days
+2026-04-01 through 2026-06-30. Sources: Yale published series at their
+2026-06-09 release; TPC all-goods series from the published Datawrapper
+feed (aO4iG, version 44); rerun legs committed as
+`data/pe/diagnostics/daily_overall_weights{2024,2025}.csv`
+[@scorecard_repo] at `f9e7acf`. The validation leg (2024 base) tracks the published
+Yale series within 0.2–0.6 points in months containing no schedule
+revision and sits 0.36 points below it on the window mean; the
+departure is consistent with publication vintage and single-pass
+versus per-revision weight keying, acting in opposite directions.

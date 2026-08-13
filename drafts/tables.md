@@ -23,7 +23,7 @@ reference Budget-Lab-Yale/tariff-rate-tracker @ `c4307e51`.
 | Boundary-straddle clip events recorded | 1,200 |
 | Corpus versions grounding the encoding | 138 (47 FR + 44 HTS + 47 notes) |
 
-## Table 2 — Entries pipeline validation (§5)
+## Table 2 — Entries pipeline validation (§6)
 
 Sources: `microcosm@d4b0855157af996bd367146bc200a2f72ee7d15d:docs/evidence/us-import-entry-margins/`
 (build report, reconciliation records, and cross-check report); generator
@@ -43,3 +43,29 @@ pending archival inclusion.
 | Generator identity, all-line pilot window 2026-02…06 | $1,467,109,590,515 weighted = margins total exactly |
 | Spatially unrestricted pilot allocation rows / weighted entries | 3,806,050 / 44,881,145 |
 | Informal-share proxy calibration (σ = 2.6916) | share Δ 2.6×10⁻⁵; mean $32,689 vs $32,916 anchor |
+
+## Table 3 — Tracker decomposition, April–June 2026 daily means (§4)
+
+Both legs
+run Yale's daily-series stage on Yale's built panel (`c4307e51`),
+identical except the import-weights file; weight bases built with
+Yale's own recipe over sha-manifested Census import archives.
+
+| Series | Weight base | Mean rate |
+|---|---|---|
+| Yale, published | 2024 (theirs) | 11.08% |
+| Rerun leg | 2024 (rebuilt, \$3,119.3B) | 10.72% |
+| Rerun leg | 2025 (rebuilt, \$3,242.5B) | 9.38% |
+| TPC, published | 2025 (theirs, ex-AD/CVD) | 9.46% |
+
+Weight-vintage effect −1.34 points; residual against TPC 0.08 points.
+All four rows are unweighted means over the 91 calendar days
+2026-04-01 through 2026-06-30. Sources: Yale published series at their
+2026-06-09 release; TPC all-goods series from the published Datawrapper
+feed (aO4iG, version 44); rerun legs committed as
+`data/pe/diagnostics/daily_overall_weights{2024,2025}.csv`
+[@scorecard_repo] at `f9e7acf`. The validation leg (2024 base) tracks the published
+Yale series within 0.2–0.6 points in months containing no schedule
+revision and sits 0.36 points below it on the window mean; the
+departure is consistent with publication vintage and single-pass
+versus per-revision weight keying, acting in opposite directions.

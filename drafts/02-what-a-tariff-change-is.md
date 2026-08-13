@@ -99,7 +99,7 @@ position, or sub-monthly timing. Nor does it resolve entry-specific
 facts such as in-transit exceptions or claimed exclusions, or
 knowledge-time: `effective_from` records legal-valid time, so a
 retroactive instrument enters the ex-post record when encoded. Those
-uses need inputs and state absent from this function, and Section 7
+uses need inputs and state absent from this function, and Section 8
 repeats the boundary.
 
 The full stack composes from these pieces. A composition module wires
@@ -117,7 +117,7 @@ chapter-99 and general-note extractions — and every operative number
 on the evaluated witness paths traces to one of them.
 
 We do not claim this representation is novel as an idea; executable
-encodings of statutes have a literature (Section 8), and dated
+encodings of statutes have a literature (Section 9), and dated
 parameters are standard in tax microsimulation. The claim is about
 fit: 2025–26 tariff law is the environment where the alternatives
 visibly fail, because the thing being represented changed character.

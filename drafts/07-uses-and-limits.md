@@ -1,4 +1,4 @@
-# 7. Uses and limits
+# 8. Uses and limits
 
 What the pair enables now is deliberately narrower than duty
 assessment. After a caller filters inputs to the five witness lines,
@@ -7,7 +7,13 @@ component-rate stack calculations for the supplied date, including
 counterfactual changes expressible as dated rules. The filter is a
 caller obligation: the pinned composition has five predicates but no
 domain guard, and an off-slice call may return a plausible value rather
-than an error. The synthetic pilot supplies the needed identifiers and
+than an error. The generated schedule tables of Section 7 change the
+lookup boundary, not the computation boundary: any rated line's disposition, and its posted general or column-2
+rate where that column is ad valorem or Free, are now published,
+proof-grounded outputs, but wiring those tables into the composition —
+so an arbitrary entry's duty stack computes under a domain guard — is
+declared, deferred work on every generated module, not something this
+paper reports. The synthetic pilot supplies the needed identifiers and
 a declared mid-month date, but this paper reports no application of the
 composition to those rows. Separately, the ingest's 302,318 consumer
 facts publish at five aggregation grains with channel-invariant keys

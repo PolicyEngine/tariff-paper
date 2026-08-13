@@ -33,7 +33,7 @@ are roughly 0.025 percent of the lines behind the reference's
 277-million-row panel, every number below is exact within the slice
 and says nothing outside it, and extending the same machinery across
 the schedule is the recorded next stage of this program. We chose
-depth-first deliberately — the two reference-attributed findings of Section 4
+depth-first deliberately — the two reference-attributed findings of Section 5
 were found by exhausting five lines, not by sampling many — and the
 paper's claims are written at the slice's scale throughout.
 
@@ -51,7 +51,7 @@ intervals, placed at interval boundaries and their neighbors — at the
 reference's default legal-date convention; a *match* is exact
 equality across every concept slot. A *disposition* closes a mismatched comparison
 unit with a recorded claim — an encoding defect (which must then be fixed),
-a reference-attributed discrepancy (Section 4's standard), or a
+a reference-attributed discrepancy (Section 5's standard), or a
 declared semantic difference — and a *tripwired exclusion* removes a
 reference construct from scope entirely behind a machine-checked guard
 that fails the build if the excluded construct's footprint moves.
@@ -71,7 +71,7 @@ at `dbf09f44`, and the engine at `ffd82132`:
   240 partners × 57 intervals) split into 20,400 covered and 48,000
   temporal-debt cells — our encoded rule history begins 2026-02-15,
   later than the tracker's panel start, and the debt is the surfaced
-  difference, carried into Section 7's usage limits.
+  difference, carried into Section 8's usage limits.
 - The covered intervals yield 39,600 probe-date comparisons (5 lines
   × 240 partners × 33 probes): 24,400 exact matches (61.6 percent
   raw) and 15,200 mismatches, with zero evaluation errors.
@@ -81,10 +81,10 @@ at `dbf09f44`, and the engine at `ffd82132`:
   in exactly one — and the class arithmetic closes explicitly:
   **15,200 = 8,283 `upstream_engine_gap` units in 10 entries + 6,917
   `explained_residual` units in 20 entries.** Its families include the
-  IEEPA metals-exclusion layer, the column-2 reference gap of Section 4,
+  IEEPA metals-exclusion layer, the column-2 reference gap of Section 5,
   a Section 232 aluminum-content basis on beer, a free-trade-agreement
   preference layer, a Section 122 metal exclusion, and the Section 201
-  safeguard expiry of Section 4; each entry records its concept, case
+  safeguard expiry of Section 5; each entry records its concept, case
   selector, and instrument citations. At the
   concept level the mismatches sit in the Section 201 slot (7,887),
   the Section 122 slot (4,560), and the column-rate, IEEPA, and
@@ -92,7 +92,7 @@ at `dbf09f44`, and the engine at `ffd82132`:
   one cell mismatches several concepts, so they exceed the 15,200
   distinct units. In the authoritative dispositions, the MFN footprint
   is 594 units: 528 in the column-2 family plus 66 in the preference
-  family. Section 4 walks the two reference-attributed classes
+  family. Section 5 walks the two reference-attributed classes
   we escalated upstream; the remaining classes are recorded cell-by-
   cell in the same artifacts.
 - Four reference constructs are excluded by tripwire, by name: the
@@ -124,7 +124,7 @@ with mutation tests — deliberately corrupted inputs a sound harness
 must catch. The final harness binds each panel row to a content
 digest and rebuilds byte-identically. Mutation tests validate the comparator,
 not the law — the legal-correctness burden rests on the instrument
-citations of Section 2 and the derivation standard of Section 4.
+citations of Section 2 and the derivation standard of Section 5.
 
 We also measured the reference's reproduction cost in a supervised
 local rebuild and reported the unexpectedly large resource envelope

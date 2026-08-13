@@ -290,3 +290,111 @@ fact keys byte-frozen as designed. The paper's pinned merge commits and
 in-branch evidence paths are historical records and stay correct as
 written; any NEW code (P3/P4, the archival replication release) imports
 `microcosm.*` and cuts worktrees from renamed main.
+
+## Tracker-vs-tracker decomposition (2026-08-09 runs; VERIFIED)
+
+- Window: April–June 2026 daily means. Yale Budget Lab published
+  weighted effective statutory rate 11.08%; TPC all-goods series 9.46%
+  (Datawrapper aO4iG v44; raw values are PERCENT, divided by 100 in our
+  adapter). Gap ≈ 1.6pp.
+- Method: Yale's own daily-series stage and own built rate panel (their
+  repo @ `c4307e51`, built locally), run twice, identical except the
+  import-weights file supplied via their `config/local_paths.yaml`
+  `import_weights:` hook. Weight bases built with THEIR
+  `src/io/build_import_weights.R --no-gtap` over sha-manifested Census
+  IMDB monthly archives: 2024 base $3,119.3B (their published
+  denominator ≈ $3,123.8B), 2025 base $3,242.5B (347,709 hs10×country
+  rows).
+- Result: 2024 weights → 10.72%; 2025 weights → 9.38%. Weight-vintage
+  effect −1.34pp; residual vs TPC's 9.46% = 0.08pp. The remaining
+  construct differences (AD/CVD scope and effective-layer treatment)
+  wash in this window.
+- Validation leg: the 2024-weight rerun reproduces Yale's published
+  series within 0.2–0.6pp in stable months. Departures traced: (a)
+  their 2026-06-09 publication vintage predates their Brazil §301/§338
+  encodings (our panel = full `c4307e51`); (b) our single-pass weight
+  build vs their per-revision 484(f) re-keying in shock months.
+- Artifacts: both leg outputs + the derivation annotation committed in
+  PolicyEngine/policyengine-scorecard under `data/pe/diagnostics/`
+  (daily_overall_weights2024.csv, daily_overall_weights2025.csv);
+  weight bases + logs in the P5 lane (`_tariff-p5/stage1/`).
+- Status: author-attributed. Both maintainers notified 2026-08-12
+  (Ricco/Yale, Wong/TPC — verified sent); no responses at revision
+  time. NEVER present as maintainer-confirmed until a reply lands.
+- Referee-recomputed from the committed leg CSVs (2026-08-13): under
+  unweighted means over the 91 calendar days 2026-04-01..06-30, legs
+  reproduce exactly (10.7201 / 9.3757; difference 1.3444; residual
+  0.0843); bridge closes 11.08 − 0.36 − 1.34 + 0.08 = 9.46. Leg-vs-leg
+  gap by revision segment: 1.38 / 1.35 / 1.35 / 1.32. Join coverage:
+  2024 base matches 94.74% of base value ($2,955.34B of $3,119.32B),
+  2025 base 96.43% ($3,126.72B of $3,242.52B) — the −1.34 bundles
+  basket composition with this small coverage differential,
+  undecomposed. Validation leg sits 0.36 BELOW the published series on
+  the window mean (the two identified causes act in OPPOSITE
+  directions; not separately quantified). Panel-side columns
+  byte-identical between the leg CSVs.
+- Yale's fixed-2024 basket is documented and motivated in their weights
+  doc (pre-shock Laspeyres; 484(f) re-keying machinery); TPC's notes
+  disclose 2025 volumes ex-AD/CVD without stating a rationale. Neither
+  org publishes a weight-vintage reconciliation; ours appears to be the
+  first quantification (verified only as: none found in their repos,
+  docs, or published series as of 2026-08-09).
+
+## Full-schedule generated rate spine (landed 2026-08-10..13; VERIFIED)
+
+- Corpus feedstock: version
+  `2026-08-09-usitc-hts-2026-rev15-full-schedule` (axiom-corpus PR
+  #595, merge-commit): all 29,845 HTS-numbered rows of the pinned
+  Revision 15 snapshot (sha `59a76c12…`) as per-line provisions +
+  document root; provision bodies byte-identical to the witness-chapter
+  version for all 1,706 overlapping citation paths (reproducer-gated).
+  Sol adversarial review, 3 rounds to APPROVE.
+- The live USITC API cannot serve vintages: `reststop/exportList`
+  accepts and silently ignores `release=` (proven: heading 9903.02.01,
+  born April 2025, returned for "2025HTSRev1"). Frozen vintages exist
+  ONLY as corpus snapshots.
+- Spine: 13,790 rated lines across 98 chapters, emitted as 100
+  generated rulespec modules (chapter 99 as three sub-shards: 9901 +
+  9902 first half / 9902 second half / 9903–9999). Per-line general and
+  column-2 rate tables (ad valorem + Free; Free = 0) and total-partition
+  disposition tables: ad_valorem 6,247 / free 5,795 / specific 777 /
+  conditional 548 / compound 326 / component 93 / empty 4 (column-2-only
+  records). Non-ad-valorem lines carry explicit markers, never silent
+  zeros.
+- Grounding: per-cell proof atoms citing `us/statute/hts/<htsno>` with
+  verbatim body-line excerpts (48,479 atoms; full-batch proof validation
+  196/196 under the pinned toolchain; full validate battery (compile +
+  companion tests + grounding) 98/98 locally before landing.
+- Gates: witness identity (generated cells reproduce the 3 hand-built
+  witness modules' encoded rates exactly; expectations parsed from
+  those YAMLs, never memory); double-emit determinism; window
+  stability (0 general-column diffs on 11,504 common base lines,
+  2025-basic ↔ 2026-rev15; the single column-2 diff is USITC's own
+  source-text repair on 2909.19.18.00, caught as `conditional` by the
+  partition, not force-parsed).
+- Membership: 19,948/19,949 ten-digit statistical lines map to their
+  rate-bearing ancestor (1 unowned: 9802.00.91.00, ch-98 special
+  regime). The hts10→rate-line map ships as a generated DATA artifact
+  (spine.json), deliberately NOT as a statutory parameter table — its
+  synthetic integer keys are not groundable in provision text.
+- Applied per-entry duty is a declared deferred output on every module
+  (composition-layer work); the five-line witness composition is
+  UNCHANGED in this revision — the spine publishes statutory rate
+  TABLES at full schedule, not full-schedule duty computation.
+- Landed as rulespec-us PRs #1267 (ch 01–25), #1275 (26–50), #1276
+  (51–75), #1280 (76–89), #1284 (90–98), #1286/#1287 (chapter 99
+  sub-shards a/b); sub-shard c (#1288, 563 lines incl. 9903) OPEN in
+  CI at revision time — merged main holds 13,227 of 13,790 lines until
+  it lands; the paper's full-schedule counts describe the complete
+  generation and pin post-merge. Each PR: subset manifests via
+  `sign-applied-files --manual-exception rulespec-us#1190`
+  (deterministic-generator provenance class), append-only
+  oracle-coverage ledger entries, regenerated reverse index.
+- CI-scale facts for §7-class claims: the us-shard validate leg under
+  the production (unindexed) resolver costs roughly 6–10 s per cited
+  path; single PRs exceeding ~3,000 cited lines hit GitHub's 6-hour
+  job cap (observed thrice). A resolver memoization (60+ min →
+  27.5 s per module locally; sol-reviewed to APPROVE over 3 rounds) is
+  structurally unpinnable until the repo's strict toolchain cutover
+  (encode pins must live on encode main; encode main requires bound
+  releases the repo cannot yet bind).

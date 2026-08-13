@@ -1,4 +1,4 @@
-# 4. When the oracle disagrees: dispositions with legal derivations
+# 5. When the oracle disagrees: dispositions with legal derivations
 
 A conformance run that ends in disagreement forces a choice with three
 honest outcomes: the encoding is wrong (fix it), the reference is

@@ -1,4 +1,4 @@
-# 8. Related work
+# 9. Related work
 
 **Tariff-rate data for the trade-war literature.** The empirical
 literature on the 2018–19 tariffs built its rate data by hand, wave by
@@ -41,7 +41,7 @@ cross-implementation conformance regime. We find no formal citation of the tool 
 (a web-bounded search; the tool is four months old), which suggests —
 though a negative search cannot establish — that Section 3's
 reconciliation is the first external research engagement with the
-tracker's internals; Section 4's
+tracker's internals; Section 5's
 derivation-backed defect reports are what that engagement produces
 when a disagreement survives audit.
 

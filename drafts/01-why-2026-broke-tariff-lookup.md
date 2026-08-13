@@ -91,7 +91,7 @@ waterfall (Sections 2–4). The slice is jointly selected so that every
 in-scope authority binds somewhere; it is not one independently
 representative line per authority family. A second, enabling
 contribution is a margin-exact synthetic customs-entry dataset with a
-declared assumptions register (Section 5). The paper does not estimate
+declared assumptions register (Section 6). The paper does not estimate
 the schedule-wide tariff burden, complete duties, or customs revenue.
 Applications that add the missing bases and state — and distributional
-incidence analyses built on them — remain future work (Section 7).
+incidence analyses built on them — remain future work (Section 8).
