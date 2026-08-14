@@ -1101,13 +1101,15 @@ composition layer (one hundred generated chapter compositions, their
 companion tests and program specifications, the composition generator,
 and the gate evidence bundle including the identity grids, the
 independent differential report, and the hundred-module validation
-record) is landing in the rules repository through a reviewed
-three-batch merge series — the first batch, containing all three
-witness chapters, is merged as of this draft, and the series pin
-records at completion; the schedule-scale evaluation caches, the
-three-construct series, and the tracker reconciliation outputs live in
-the project lane with hash receipts, held for the archival release
-alongside the weight bases.
+record) ships in the rules repository under
+`us/policies/cbp/us-tariff-schedule/generated/` at the
+series-completing merge `747d54f5`, landed as three reviewed batch
+merges with its generator
+(`tools/generate_schedule_compositions.py`), whose check mode
+re-derives and byte-compares all 300 committed files; the
+schedule-scale evaluation caches, the three-construct series, and the
+tracker reconciliation outputs live in the project lane with hash
+receipts, held for the archival release alongside the weight bases.
 
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 7 were produced by AI agents under the stated
