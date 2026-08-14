@@ -102,3 +102,62 @@ entry remains composition-layer work each module declares as a
 deferred output: the tables publish what the schedule says, at full
 coverage, and do not alter the five-line witness composition of
 Sections 2–3.
+
+## Composition at schedule scale and its measured boundary
+
+The composition layer then extends the same way: a second
+deterministic generator emits one composition per chapter — one
+hundred modules — each importing its chapter's generated tables and
+replicating the witness composition's authority components, proof
+atoms, declared-entry surface, and effective windows verbatim, with
+chapter routing left in entry preparation. Keeping one hundred
+same-inventory siblings distinct under the repository's static gates
+takes a documented lossless serialization (per-chapter redundant
+parentheses and temporal-key spelling for substantive formulas,
+chapter-prefixed names for four scalar-literal parameters whose bare
+values admit no parenthesization, one directory per chapter), and the
+generator asserts reverse-substitution equality against witness bytes
+for every transformed rule. Four gates held: the full battery
+validates one hundred of one hundred modules; independently compiled
+generated compositions reproduce the hand-built witness on
+ninety-cell country-by-date grids for both non-pilot witness chapters
+with zero component or total deltas; an independent second parser,
+sharing nothing with the first path but the pinned snapshot bytes,
+re-derives all 48,479 table cells and all 13,790 rated lines exactly,
+and fails on a single mutated cell; and double emission is
+byte-identical.
+
+Evaluating the composed schedule economy-wide is what turns the
+witness's scope boundary from a caveat into a measurement. Weighted
+by the rebuilt 2024 import basket, the encoded law's statutory stack
+averages 12.34 percent over April–June 2026 (12.07 on 2025 weights,
+against 6.81 percent realized collections), on 83.4 percent of basket
+value — the remainder being specific, compound, and conditional cells
+the machinery classifies rather than force-parses. The by-authority
+decomposition then shows exactly where encoding ends: the balance-of-
+payments surcharge and the pre-termination emergency layers, which
+attach by origin or economy-wide, appear at full statutory incidence,
+while the line-list actions — the China Section 301 lists, the
+Section 232 derivative annexes, Sections 201 and 338 — contribute
+essentially nothing beyond the witness lines, because the witness
+encodes their incidence as five literal line equalities. A replay of
+the certified oracle slice through this evaluation path reproduces
+all 1,300 extract comparisons exactly, so the boundary is in the
+encoded incidence, not the evaluation.
+
+Against the tracker rerun of Section 4, every point of the distance
+has a name and a magnitude. The unencoded line-list layer carries
+6.58 points of the window mean on the tracker's own decomposition
+columns; the surcharge's exemption and stacking structure, which the
+five-line witness never exercised, accounts for 7.03 points of
+overapplication in our flat-incidence evaluation; basket composition
+and ad valorem equivalents for the excluded cells net to 1.16 points.
+Subtracting the two overapplication wedges and adding the unencoded
+layer reproduces the rerun series mean to within a hundredth of a
+point (10.72 versus 10.72). Table 4 reports the constructs with these
+disclosures. The incidence layer — membership tables for the action
+lists and the surcharge's exemption structure, generated from the
+corpus-retained chapter 99 notes under the same gate ladder — is the
+declared next stage; until it lands, the average-rate comparisons
+stay concept-separated, now with the separation quantified instead of
+asserted.

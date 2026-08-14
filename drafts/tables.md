@@ -69,3 +69,28 @@ Yale series within 0.2–0.6 points in months containing no schedule
 revision and sits 0.36 points below it on the window mean; the
 departure is consistent with publication vintage and single-pass
 versus per-revision weight keying, acting in opposite directions.
+
+## Table 4 — Three average-rate constructs from the composed schedule, April–June 2026 (§7)
+
+| Construct | Window mean | Coverage and scope |
+|---|---:|---|
+| Encoded statutory, fixed-2024 weights | 12.34% | 83.4% of basket value available; 16.6% excluded (specific/compound/conditional cells, classified not force-parsed) |
+| Encoded statutory, 2025 weights | 12.07% | 86.4% available; 13.6% excluded |
+| Ex-post collections | 6.81% | calculated duties over customs value, Census monthly |
+| Yale published (effective statutory, fixed-2024) | 11.08% | full basket with ad valorem equivalents and exemption-adjusted incidence |
+| TPC published (statutory, 2025 ex-AD/CVD) | 9.46% | published all-goods series |
+
+By-authority decomposition of the encoded fixed-2024 mean: surcharge
+(Section 122) 10.00 points at flat statutory incidence; MFN base 2.34
+points; emergency-power layers zero in-window (terminated
+2026-02-24); line-list actions effectively zero beyond the five
+witness lines. Boundary quantification against the tracker rerun's
+own decomposition columns: unencoded line-list layer (301, 232
+derivative, 201, 338) 6.58 points; surcharge exemption/stacking wedge
+7.03 points; basket and ad-valorem-equivalent residual 1.16 points;
+subtracting the two wedges and adding the unencoded layer reproduces
+the rerun mean to a hundredth of a point. Notes: the encoded stack
+carries no antidumping or countervailing duties; rates are statutory
+posted, with no effective-layer ad valorem equivalents for excluded
+cells; evaluation replays the certified oracle slice exactly (1,300
+of 1,300 comparisons).

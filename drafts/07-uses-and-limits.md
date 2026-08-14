@@ -42,7 +42,12 @@ start, margins cover January 2025 through June 2026, and the
 spatially unrestricted pilot covers February through June 2026. A
 joint application would require their true line-and-time intersection,
 but no such composed result or committed intersection receipt is
-reported here.
+reported here. The Section 7 schedule-scale averages inherit the same
+discipline from the other side: they are exact evaluations of the
+encoded scope, with the unencoded action-incidence layer quantified
+against the tracker's decomposition rather than filled in, and they
+become comparable to the published trackers only when that layer is
+encoded under the same gates.
 
 The natural next analyses — complete duty calculation, distributional
 incidence, and tariff-revenue counterfactuals — sit one layer up, after

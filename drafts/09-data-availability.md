@@ -66,7 +66,18 @@ map live in the project lane pending the archival release. The Section 7 generat
 (`tools/generate_hts_rate_tables.py`), whose check mode re-derives and
 byte-compares all 200 committed files. The full-schedule provisions
 feedstock is corpus version
-`2026-08-09-usitc-hts-2026-rev15-full-schedule`.
+`2026-08-09-usitc-hts-2026-rev15-full-schedule`. The Section 7
+composition layer (one hundred generated chapter compositions, their
+companion tests and program specifications, the composition generator,
+and the gate evidence bundle including the identity grids, the
+independent differential report, and the hundred-module validation
+record) is landing in the rules repository through a reviewed
+three-batch merge series — the first batch, containing all three
+witness chapters, is merged as of this draft, and the series pin
+records at completion; the schedule-scale evaluation caches, the
+three-construct series, and the tracker reconciliation outputs live in
+the project lane with hash receipts, held for the archival release
+alongside the weight bases.
 
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 7 were produced by AI agents under the stated

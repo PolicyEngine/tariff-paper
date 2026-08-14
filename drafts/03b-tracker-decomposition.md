@@ -17,9 +17,10 @@ file. Both weight bases come from Yale's own recipe — their
 applied to sha-manifested Census import-merchandise archives: a 2024
 base totaling \$3,119.3 billion, within 0.15 percent of their published
 denominator, and a 2025 base totaling \$3,242.5 billion. On the 2024
-base, the rerun averages 10.72 percent over the window (Table 3) (unweighted
+base, the rerun averages 10.72 percent over the window — unweighted
 means over the 91 calendar days April 1 through June 30, identical for
-every series compared here); on the 2025 base, 9.38 percent. Rebasing
+every series compared here — and on the 2025 base, 9.38 percent
+(Table 3). Rebasing
 the weights moves the series by −1.34 points, stable across the
 window's four revision segments (1.38, 1.35, 1.35, 1.32), and the
 2025-weight leg lands within 0.08 points of TPC's published series.

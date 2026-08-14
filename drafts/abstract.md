@@ -26,8 +26,12 @@ data. The implementation has material boundaries. The composition
 contains five line predicates but no fail-closed domain guard, so
 callers must restrict it to the witness slice: unsupported lines can
 return plausible values rather than errors. The generated tables
-publish posted rates and dispositions at full coverage, but their
-application to entries is declared, deferred work. Its output is a posted ad
+publish posted rates and dispositions at full coverage, and one
+hundred generated per-chapter compositions evaluate the statutory
+stack economy-wide under identity, differential, and replay gates; the
+action-incidence layer that remains unencoded is quantified against
+the tracker's own decomposition — 6.6 points of the window mean —
+rather than filled in. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.
