@@ -137,10 +137,15 @@ waterfall (Sections 2–4). The slice is jointly selected so that every
 in-scope authority binds somewhere; it is not one independently
 representative line per authority family. A second, enabling
 contribution is a margin-exact synthetic customs-entry dataset with a
-declared assumptions register (Section 6). The paper does not estimate
-the schedule-wide tariff burden, complete duties, or customs revenue.
-Applications that add the missing bases and state — and distributional
-incidence analyses built on them — remain future work (Section 8).
+declared assumptions register (Section 6). The paper computes an
+import-weighted average of the encoded statutory scope across the full
+schedule (Section 7), but does not estimate the complete schedule-wide
+tariff burden, complete duties, or customs revenue: action-list
+incidence, surcharge exemptions, and non-ad-valorem equivalents remain
+unencoded, and Section 7 quantifies that boundary rather than filling
+it. Applications that add the missing bases and state — and
+distributional incidence analyses built on them — remain future work
+(Section 8).
 # 2. What a tariff change is, formally
 
 Every rule in our encoding is a list of dated versions. A version has
@@ -826,11 +831,11 @@ schedule programmatically. The USITC's live export endpoint accepts a
 release parameter and silently ignores it — a January 2025 request
 returns headings that did not exist until April 2025 — so frozen
 vintages exist only where someone retained them; the corpus retains
-the full revision series for 2025 and 2026 as pinned snapshots. And applying a line's rate to an
-entry remains composition-layer work each module declares as a
-deferred output: the tables publish what the schedule says, at full
-coverage, and do not alter the five-line witness composition of
-Sections 2–3.
+the full revision series for 2025 and 2026 as pinned snapshots. And at the table stage, applying a
+line's rate to an entry was composition-layer work each module declared
+as a deferred output: the tables publish what the schedule says, at
+full coverage, and leave the five-line witness composition of Sections
+2–3 untouched. The next subsection lands that deferred layer.
 
 ## Composition at schedule scale and its measured boundary
 
@@ -859,9 +864,9 @@ byte-identical.
 Evaluating the composed schedule economy-wide is what turns the
 witness's scope boundary from a caveat into a measurement. Weighted
 by the rebuilt 2024 import basket, the encoded law's statutory stack
-averages 12.34 percent over April–June 2026 (12.07 on 2025 weights,
-against 6.81 percent realized collections), on 83.4 percent of basket
-value — the remainder being specific, compound, and conditional cells
+averages 12.34 percent over April–June 2026 (12.07 on 2025 weights;
+realized collections, a different construct entirely, run 6.81
+percent), on 83.4 percent of basket value — the remainder being specific, compound, and conditional cells
 the machinery classifies rather than force-parses. The by-authority
 decomposition then shows exactly where encoding ends: the balance-of-
 payments surcharge and the pre-termination emergency layers, which
@@ -874,22 +879,30 @@ the certified oracle slice through this evaluation path reproduces
 all 1,300 extract comparisons exactly, so the boundary is in the
 encoded incidence, not the evaluation.
 
-Against the tracker rerun of Section 4, every point of the distance
-has a name and a magnitude. The unencoded line-list layer carries
-6.58 points of the window mean on the tracker's own decomposition
-columns; the surcharge's exemption and stacking structure, which the
-five-line witness never exercised, accounts for 7.03 points of
-overapplication in our flat-incidence evaluation; basket composition
-and ad valorem equivalents for the excluded cells net to 1.16 points.
-Subtracting the two overapplication wedges and adding the unencoded
-layer reproduces the rerun series mean to within a hundredth of a
-point (10.72 versus 10.72). Table 4 reports the constructs with these
-disclosures. The incidence layer — membership tables for the action
-lists and the surcharge's exemption structure, generated from the
-corpus-retained chapter 99 notes under the same gate ladder — is the
-declared next stage; until it lands, the average-rate comparisons
-stay concept-separated, now with the separation quantified instead of
-asserted.
+Set beside the tracker rerun of Section 4 — reported alongside, not
+as a like-for-like comparison — the distance decomposes into two
+independently measured wedges and one balancing residual. The
+unencoded line-list layer carries 6.58 points of the window mean on
+the tracker's own decomposition columns, and the surcharge's
+exemption and stacking structure, which the five-line witness never
+exercised, accounts for 7.03 points of overapplication in our
+flat-incidence evaluation: both magnitudes come from the tracker's
+per-authority columns, not from fitting. The remaining 1.16 points is
+a balancing residual by construction — the shared-scope difference
+minus the surcharge wedge — bundling basket composition, ad valorem
+equivalents for the excluded cells, and anything else; the resulting
+closure to the rerun mean (10.72) is therefore an accounting
+identity, not an independent gate, and the evidence bundle records it
+as report-only. What the decomposition establishes is bounded but
+real: the two dominant, independently measured wedges are the
+unencoded incidence layer itself, in both directions. Table 4 reports
+the constructs with these disclosures. The incidence layer —
+membership tables for the action lists and the surcharge's exemption
+structure, generated from the corpus-retained chapter 99 notes under
+the same gate ladder — is the declared next stage; until it lands,
+the average-rate series stay concept-separated, with the two
+dominant separations independently quantified and the remainder
+carried as a named residual.
 # 8. Uses and limits
 
 What the pair enables now is deliberately narrower than duty
@@ -1199,8 +1212,8 @@ versus per-revision weight keying, acting in opposite directions.
 | Encoded statutory, fixed-2024 weights | 12.34% | 83.4% of basket value available; 16.6% excluded (specific/compound/conditional cells, classified not force-parsed) |
 | Encoded statutory, 2025 weights | 12.07% | 86.4% available; 13.6% excluded |
 | Ex-post collections | 6.81% | calculated duties over customs value, Census monthly |
-| Yale published (effective statutory, fixed-2024) | 11.08% | full basket with ad valorem equivalents and exemption-adjusted incidence |
-| TPC published (statutory, 2025 ex-AD/CVD) | 9.46% | published all-goods series |
+| Yale published (effective statutory, fixed-2024) | 11.08% | non-comparable reference series: full basket with ad valorem equivalents and exemption-adjusted incidence |
+| TPC published (statutory, 2025 ex-AD/CVD) | 9.46% | non-comparable reference series: published all-goods scope |
 
 By-authority decomposition of the encoded fixed-2024 mean: surcharge
 (Section 122) 10.00 points at flat statutory incidence; MFN base 2.34
@@ -1210,8 +1223,11 @@ witness lines. Boundary quantification against the tracker rerun's
 own decomposition columns: unencoded line-list layer (301, 232
 derivative, 201, 338) 6.58 points; surcharge exemption/stacking wedge
 7.03 points; basket and ad-valorem-equivalent residual 1.16 points;
-subtracting the two wedges and adding the unencoded layer reproduces
-the rerun mean to a hundredth of a point. Notes: the encoded stack
+the line-list and surcharge wedges are independently measured on the
+tracker's per-authority columns; the basket/AVE figure is a balancing
+residual by construction, so the resulting closure to the rerun mean
+is an accounting identity, recorded report-only in the evidence
+bundle. Notes: the encoded stack
 carries no antidumping or countervailing duties; rates are statutory
 posted, with no effective-layer ad valorem equivalents for excluded
 cells; evaluation replays the certified oracle slice exactly (1,300
