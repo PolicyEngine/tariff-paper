@@ -95,8 +95,13 @@ declared assumptions register (Section 6). The paper computes an
 import-weighted average of the encoded statutory scope across the full
 schedule (Section 7), but does not estimate the complete schedule-wide
 tariff burden, complete duties, or customs revenue. The action-incidence
-layer is encoded. Entry-level utilization, entry status, partial value,
-the non-metal Section 232 family, and non-ad-valorem equivalents remain
-outside the reported scope. Applications that add the missing bases and state — and
+layer is membership-encoded and evaluated for the China Section 301
+lists, Section 232 steel and aluminum, Section 201, and the Section 122
+exemption structure; four further families — Brazil and forced-labor
+Section 301, the 2024 China action, and the solar China action — carry
+encoded membership but were fed as false in the reported evaluation.
+Entry-level utilization, entry status, partial value, the non-metal
+Section 232 family, and non-ad-valorem equivalents remain outside the
+reported scope. Applications that add the missing bases and state — and
 distributional incidence analyses built on them — remain future work
 (Section 8).

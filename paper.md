@@ -5,7 +5,6 @@ date: 2026-08-13
 bibliography: research/references.bib
 link-citations: true
 ---
-
 # Abstract
 
 Tariff rates can cease legally before collection ends, so a statutory
@@ -37,16 +36,19 @@ return plausible values rather than errors. The generated tables
 publish posted rates and dispositions at full coverage, and one
 hundred generated per-chapter compositions evaluate the statutory
 stack economy-wide under identity, differential, and replay gates. The
-encoded action-incidence layer closes the Section 301 comparison to two
-hundredths of a percentage point; the remaining separation from the
-tracker is named entry-level facts and a scope difference in the
-Section 232 family. Its output is a posted ad
+membership-encoded action-incidence layer closes the Section 301
+comparison to two hundredths of a percentage point; the separations
+that remain are reported, not closed — a Section 122 wedge decomposed
+into named but unquantified entry-level facts, a Section 232 scope
+difference against the tracker's wider family, four action families
+whose membership is encoded but not yet fed to the evaluation, and a
+residual line-list layer under one point that bundles vintage and
+basket differences. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.
 We report the committed pins, hash-pin the local P2 outputs, and identify
 the remaining synchronization and archival prerequisites.
-
 # 1. Why 2026 broke tariff lookup
 
 On February 20, 2026, the additional ad valorem duties imposed under
@@ -144,12 +146,16 @@ declared assumptions register (Section 6). The paper computes an
 import-weighted average of the encoded statutory scope across the full
 schedule (Section 7), but does not estimate the complete schedule-wide
 tariff burden, complete duties, or customs revenue. The action-incidence
-layer is encoded. Entry-level utilization, entry status, partial value,
-the non-metal Section 232 family, and non-ad-valorem equivalents remain
-outside the reported scope. Applications that add the missing bases and state — and
+layer is membership-encoded and evaluated for the China Section 301
+lists, Section 232 steel and aluminum, Section 201, and the Section 122
+exemption structure; four further families — Brazil and forced-labor
+Section 301, the 2024 China action, and the solar China action — carry
+encoded membership but were fed as false in the reported evaluation.
+Entry-level utilization, entry status, partial value, the non-metal
+Section 232 family, and non-ad-valorem equivalents remain outside the
+reported scope. Applications that add the missing bases and state — and
 distributional incidence analyses built on them — remain future work
 (Section 8).
-
 # 2. What a tariff change is, formally
 
 Every rule in our encoding is a list of dated versions. A version has
@@ -307,7 +313,6 @@ exactly 10 percent, the balance-of-payments surcharge standing alone
 atop an otherwise-terminated stack. The "two defensible answers" of
 Section 1 become two different, explicit functions — and this paper's
 panel computes the legal-date one.
-
 # 3. Cross-implementation reconciliation against an independent tracker
 
 An encoding of tariff law can be internally consistent and wrong. The
@@ -441,7 +446,6 @@ local rebuild and reported the unexpectedly large resource envelope
 upstream, alongside a proposal that the project publish its panel as a
 release artifact. Because that measurement receipt is not committed at
 the named pins, this paper does not use its numerical value as evidence.
-
 # 4. Why the two public trackers disagree with each other
 
 Two organizations publish daily average United States tariff rates
@@ -515,7 +519,6 @@ series by series. We also filed two further author-attributed
 implementation findings upstream: chapter-98 partial-value sequencing
 in the Section 122 path and a phantom civil-aircraft code. Both await a
 maintainer response.
-
 # 5. When the oracle disagrees: dispositions with legal derivations
 
 A conformance run that ends in disagreement forces a choice with three
@@ -600,7 +603,6 @@ grandfathered: acceptance upstream would convert them to fixed cells;
 a counter-derivation would convert them to encoding bugs. Either
 outcome improves the public record, which is the point of validating
 in the open.
-
 # 6. Synthetic customs entries from official margins
 
 The statutory panel answers what the rate was. Applying it to trade
@@ -743,7 +745,6 @@ composition requires first filtering to the five witness lines and
 returns only a posted ad valorem component-rate stack. Complete duty or
 revenue accounting additionally requires bases and state this dataset
 does not supply.
-
 # 7. Provenance engineering
 
 Every reported result is tied either to a committed pin or to an
@@ -878,8 +879,9 @@ Its five literal line equalities left most listed actions outside the
 schedule calculation even though the rate tables were complete. Replay
 of the certified witness slice reproduced all 1,300 extract comparisons
 exactly. The missing incidence was therefore a composition boundary,
-not an evaluation error. The next layer removes that boundary while
-keeping the witness as an oracle.
+not an evaluation error. The next layer narrows that boundary to named entry-level facts and
+four still-unfed action families while keeping the witness as an
+oracle.
 
 ## Encoding the action-incidence layer
 
@@ -926,8 +928,10 @@ percent against the tracker's 5.168 percent. That −0.856-point
 residual compares our metal scope with its all-Section 232 family,
 which also includes autos, light trucks, parts, copper, semiconductors,
 medium- and heavy-duty vehicles and buses, and the wood family.
-Section 201 is zero against 0.080 percent because our slot fires only
-on crystalline-silicon photovoltaic membership.
+Section 201 is zero against 0.080 percent because the solar action's
+membership, though encoded, was fed as false in this evaluation
+alongside the Brazil, forced-labor, and 2024 China actions; the
+difference is an evaluation-feed limitation, not a scope comparison.
 
 Section 122 is 6.435 percent against 2.969 percent, a difference of
 3.47 points. This wedge is not closed. It is decomposed into declared
@@ -937,7 +941,6 @@ percent of value; USMCA and CAFTA entry status; partial-value facts;
 and transit status. The remaining unencoded line-list layer is 0.92
 percentage point, down from 6.58. These are accounting labels, not an
 independent validation of closure.
-
 # 8. Uses and limits
 
 What the pair enables now is deliberately narrower than duty
@@ -946,8 +949,11 @@ posted ad valorem component-rate calculations on its guarded caller
 surface. The generated schedule compositions now accept action-
 membership inputs for arbitrary rated lines, with their posted general
 or column-2 rate where that rate is ad valorem or Free. The action-
-incidence layer is encoded, but the entry-level facts that determine
-some exemptions and value bases are not inferred. The synthetic pilot
+incidence layer is membership-encoded and evaluated for the principal
+families, but four families (Brazil and forced-labor Section 301, the
+2024 China action, solar) were fed as false in the reported run, and
+the entry-level facts that determine some exemptions and value bases
+are not inferred. The synthetic pilot
 supplies the needed identifiers and a declared mid-month date, but this
 paper reports no application of the composition to those rows.
 Separately, the ingest's 302,318 consumer
@@ -980,8 +986,9 @@ but no such composed result or committed intersection receipt is
 reported here. The Section 7 schedule-scale averages inherit the same
 discipline from the other side: they are exact evaluations of the
 encoded scope. What remains outside is entry-level utilization, USMCA
-and CAFTA entry status, partial value, transit status, and the non-metal
-Section 232 family. The paper therefore does not estimate the complete
+and CAFTA entry status, partial value, transit status, the non-metal
+Section 232 family, the four action families fed as false, and the
+vintage and basket differences bundled in the residual line-list layer. The paper therefore does not estimate the complete
 burden.
 
 The natural next analyses — complete duty calculation, distributional
@@ -990,7 +997,6 @@ the fail-closed line guard, missing bases, quota state, finer timing,
 and application receipt are supplied. Conflating that layer with this
 paper would launder modeling assumptions through a dataset whose
 claim to exactness is limited to reaggregation of declared margins.
-
 # 9. Related work
 
 **Tariff-rate data for the trade-war literature.** The empirical
@@ -1072,7 +1078,6 @@ that contract; the claim is bounded by our search (August 2026) and
 Section 1's contribution list is written to survive even if one
 surfaces — the representation and the reconciliation regime do not
 lean on the dataset's novelty.
-
 # Data and code availability
 
 The committed replication surface is distributed across the source
@@ -1171,7 +1176,6 @@ through hostile, round-diff, red-team, and fresh-eyes referee passes.
 The component-review reproducibility limit above applies; manuscript
 review cannot substitute for the pinned artifacts and checks reported
 with each claim. The human author is responsible for all claims.
-
 # Tables (wire into sections at final assembly)
 
 ## Table 1 — Conformance scoreboard at the pinned snapshot (§3)
@@ -1258,7 +1262,7 @@ versus per-revision weight keying, acting in opposite directions.
 |---|---:|---:|---|
 | Section 301 | 1.347% | 1.329% | +0.017 percentage point |
 | Section 232 | 4.313% | 5.168% | −0.856 point; ours is steel and aluminum, while Yale is the all-Section 232 family, including autos, light trucks, parts, copper, semiconductors, medium- and heavy-duty vehicles and buses, and wood |
-| Section 201 | 0.000% | 0.080% | −0.080 point; our slot fires only on crystalline-silicon photovoltaic membership |
+| Section 201 | 0.000% | 0.080% | −0.080 point; solar membership encoded but fed as false in this run (evaluation-feed limitation, with Brazil, forced-labor, and 2024 China) |
 | Section 122 | 6.435% | 2.969% | +3.47 points; not closed: GN6 civil-aircraft utilization, USMCA/CAFTA entry status, partial-value facts, and transit status are declared inputs absent in version 1 |
 
 The General Note 6 input is sensitivity-only and covers 11.1 percent

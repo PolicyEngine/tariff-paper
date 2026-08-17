@@ -84,7 +84,7 @@ versus per-revision weight keying, acting in opposite directions.
 |---|---:|---:|---|
 | Section 301 | 1.347% | 1.329% | +0.017 percentage point |
 | Section 232 | 4.313% | 5.168% | −0.856 point; ours is steel and aluminum, while Yale is the all-Section 232 family, including autos, light trucks, parts, copper, semiconductors, medium- and heavy-duty vehicles and buses, and wood |
-| Section 201 | 0.000% | 0.080% | −0.080 point; our slot fires only on crystalline-silicon photovoltaic membership |
+| Section 201 | 0.000% | 0.080% | −0.080 point; solar membership encoded but fed as false in this run (evaluation-feed limitation, with Brazil, forced-labor, and 2024 China) |
 | Section 122 | 6.435% | 2.969% | +3.47 points; not closed: GN6 civil-aircraft utilization, USMCA/CAFTA entry status, partial-value facts, and transit status are declared inputs absent in version 1 |
 
 The General Note 6 input is sensitivity-only and covers 11.1 percent

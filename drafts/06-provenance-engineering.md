@@ -132,8 +132,9 @@ Its five literal line equalities left most listed actions outside the
 schedule calculation even though the rate tables were complete. Replay
 of the certified witness slice reproduced all 1,300 extract comparisons
 exactly. The missing incidence was therefore a composition boundary,
-not an evaluation error. The next layer removes that boundary while
-keeping the witness as an oracle.
+not an evaluation error. The next layer narrows that boundary to named entry-level facts and
+four still-unfed action families while keeping the witness as an
+oracle.
 
 ## Encoding the action-incidence layer
 
@@ -180,8 +181,10 @@ percent against the tracker's 5.168 percent. That −0.856-point
 residual compares our metal scope with its all-Section 232 family,
 which also includes autos, light trucks, parts, copper, semiconductors,
 medium- and heavy-duty vehicles and buses, and the wood family.
-Section 201 is zero against 0.080 percent because our slot fires only
-on crystalline-silicon photovoltaic membership.
+Section 201 is zero against 0.080 percent because the solar action's
+membership, though encoded, was fed as false in this evaluation
+alongside the Brazil, forced-labor, and 2024 China actions; the
+difference is an evaluation-feed limitation, not a scope comparison.
 
 Section 122 is 6.435 percent against 2.969 percent, a difference of
 3.47 points. This wedge is not closed. It is decomposed into declared

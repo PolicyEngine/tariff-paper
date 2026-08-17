@@ -6,8 +6,11 @@ posted ad valorem component-rate calculations on its guarded caller
 surface. The generated schedule compositions now accept action-
 membership inputs for arbitrary rated lines, with their posted general
 or column-2 rate where that rate is ad valorem or Free. The action-
-incidence layer is encoded, but the entry-level facts that determine
-some exemptions and value bases are not inferred. The synthetic pilot
+incidence layer is membership-encoded and evaluated for the principal
+families, but four families (Brazil and forced-labor Section 301, the
+2024 China action, solar) were fed as false in the reported run, and
+the entry-level facts that determine some exemptions and value bases
+are not inferred. The synthetic pilot
 supplies the needed identifiers and a declared mid-month date, but this
 paper reports no application of the composition to those rows.
 Separately, the ingest's 302,318 consumer
@@ -40,8 +43,9 @@ but no such composed result or committed intersection receipt is
 reported here. The Section 7 schedule-scale averages inherit the same
 discipline from the other side: they are exact evaluations of the
 encoded scope. What remains outside is entry-level utilization, USMCA
-and CAFTA entry status, partial value, transit status, and the non-metal
-Section 232 family. The paper therefore does not estimate the complete
+and CAFTA entry status, partial value, transit status, the non-metal
+Section 232 family, the four action families fed as false, and the
+vintage and basket differences bundled in the residual line-list layer. The paper therefore does not estimate the complete
 burden.
 
 The natural next analyses — complete duty calculation, distributional
