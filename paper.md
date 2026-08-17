@@ -40,10 +40,13 @@ membership-encoded action-incidence layer closes the Section 301
 comparison to two hundredths of a percentage point; the separations
 that remain are reported, not closed — a Section 122 wedge decomposed
 into named but unquantified entry-level facts, a Section 232 scope
-difference against the tracker's wider family, four action families
-whose membership is encoded but not yet fed to the evaluation, and a
-residual line-list layer under one point that bundles vintage and
-basket differences. Its output is a posted ad
+difference against the tracker's wider family, four action families —
+Brazil and forced-labor Section 301, the 2024 China action, and solar
+— whose membership is encoded but was fed as false in this
+evaluation, and a residual line-list layer under one point that
+bundles unencoded and vintage list differences, aircraft-exemption
+utilization, unavailable partial-value facts, and basket and ad valorem
+equivalent differences. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.
@@ -879,9 +882,13 @@ Its five literal line equalities left most listed actions outside the
 schedule calculation even though the rate tables were complete. Replay
 of the certified witness slice reproduced all 1,300 extract comparisons
 exactly. The missing incidence was therefore a composition boundary,
-not an evaluation error. The next layer narrows that boundary to named entry-level facts and
-four still-unfed action families while keeping the witness as an
-oracle.
+not an evaluation error. The next layer narrows that boundary while keeping the witness as an
+oracle; what remains after it is enumerated below — entry-level facts,
+four action families (Brazil and forced-labor Section 301, the 2024
+China action, solar) whose membership was fed as false, the tracker's
+wider Section 232 family, and a residual line-list layer bundling
+unencoded and vintage list differences, aircraft-exemption utilization,
+partial-value facts, and basket and ad valorem equivalent differences.
 
 ## Encoding the action-incidence layer
 

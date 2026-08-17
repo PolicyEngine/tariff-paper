@@ -132,9 +132,13 @@ Its five literal line equalities left most listed actions outside the
 schedule calculation even though the rate tables were complete. Replay
 of the certified witness slice reproduced all 1,300 extract comparisons
 exactly. The missing incidence was therefore a composition boundary,
-not an evaluation error. The next layer narrows that boundary to named entry-level facts and
-four still-unfed action families while keeping the witness as an
-oracle.
+not an evaluation error. The next layer narrows that boundary while keeping the witness as an
+oracle; what remains after it is enumerated below — entry-level facts,
+four action families (Brazil and forced-labor Section 301, the 2024
+China action, solar) whose membership was fed as false, the tracker's
+wider Section 232 family, and a residual line-list layer bundling
+unencoded and vintage list differences, aircraft-exemption utilization,
+partial-value facts, and basket and ad valorem equivalent differences.
 
 ## Encoding the action-incidence layer
 
