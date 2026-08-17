@@ -5,6 +5,7 @@ date: 2026-08-13
 bibliography: research/references.bib
 link-citations: true
 ---
+
 # Abstract
 
 Tariff rates can cease legally before collection ends, so a statutory
@@ -29,21 +30,23 @@ also produces two proposed reference corrections, each supported by a
 legal derivation and still awaiting maintainer response. An enabling data artifact converts
 official monthly import margins into synthetic, weighted customs-entry
 lines that reaggregate exactly, with assumptions recorded beside the
-data. The implementation has material boundaries. The composition
-contains five line predicates but no fail-closed domain guard, so
+data. The implementation has material boundaries. The hand-built
+witness composition contains five line predicates but no fail-closed domain guard, so
 callers must restrict it to the witness slice: unsupported lines can
 return plausible values rather than errors. The generated tables
 publish posted rates and dispositions at full coverage, and one
 hundred generated per-chapter compositions evaluate the statutory
-stack economy-wide under identity, differential, and replay gates; the
-action-incidence layer that remains unencoded is quantified against
-the tracker's own decomposition — 6.6 points of the window mean —
-rather than filled in. Its output is a posted ad
+stack economy-wide under identity, differential, and replay gates. The
+encoded action-incidence layer closes the Section 301 comparison to two
+hundredths of a percentage point; the remaining separation from the
+tracker is named entry-level facts and a scope difference in the
+Section 232 family. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.
 We report the committed pins, hash-pin the local P2 outputs, and identify
 the remaining synchronization and archival prerequisites.
+
 # 1. Why 2026 broke tariff lookup
 
 On February 20, 2026, the additional ad valorem duties imposed under
@@ -140,12 +143,13 @@ contribution is a margin-exact synthetic customs-entry dataset with a
 declared assumptions register (Section 6). The paper computes an
 import-weighted average of the encoded statutory scope across the full
 schedule (Section 7), but does not estimate the complete schedule-wide
-tariff burden, complete duties, or customs revenue: action-list
-incidence, surcharge exemptions, and non-ad-valorem equivalents remain
-unencoded, and Section 7 quantifies that boundary rather than filling
-it. Applications that add the missing bases and state — and
+tariff burden, complete duties, or customs revenue. The action-incidence
+layer is encoded. Entry-level utilization, entry status, partial value,
+the non-metal Section 232 family, and non-ad-valorem equivalents remain
+outside the reported scope. Applications that add the missing bases and state — and
 distributional incidence analyses built on them — remain future work
 (Section 8).
+
 # 2. What a tariff change is, formally
 
 Every rule in our encoding is a list of dated versions. A version has
@@ -303,6 +307,7 @@ exactly 10 percent, the balance-of-payments surcharge standing alone
 atop an otherwise-terminated stack. The "two defensible answers" of
 Section 1 become two different, explicit functions — and this paper's
 panel computes the legal-date one.
+
 # 3. Cross-implementation reconciliation against an independent tracker
 
 An encoding of tariff law can be internally consistent and wrong. The
@@ -436,6 +441,7 @@ local rebuild and reported the unexpectedly large resource envelope
 upstream, alongside a proposal that the project publish its panel as a
 release artifact. Because that measurement receipt is not committed at
 the named pins, this paper does not use its numerical value as evidence.
+
 # 4. Why the two public trackers disagree with each other
 
 Two organizations publish daily average United States tariff rates
@@ -505,7 +511,11 @@ declare to be comparable: the rate concept (posted statutory, effective
 statutory, or realized collections), the weight base and its vintage,
 and the scope of trade-remedy duties. Section 5's dispositions apply
 the same discipline line by line; this section applies it
-series by series.
+series by series. We also filed two further author-attributed
+implementation findings upstream: chapter-98 partial-value sequencing
+in the Section 122 path and a phantom civil-aircraft code. Both await a
+maintainer response.
+
 # 5. When the oracle disagrees: dispositions with legal derivations
 
 A conformance run that ends in disagreement forces a choice with three
@@ -590,6 +600,7 @@ grandfathered: acceptance upstream would convert them to fixed cells;
 a counter-derivation would convert them to encoding bugs. Either
 outcome improves the public record, which is the point of validating
 in the open.
+
 # 6. Synthetic customs entries from official margins
 
 The statutory panel answers what the rate was. Applying it to trade
@@ -732,6 +743,7 @@ composition requires first filtering to the five witness lines and
 returns only a posted ad valorem component-rate stack. Complete duty or
 revenue accounting additionally requires bases and state this dataset
 does not supply.
+
 # 7. Provenance engineering
 
 Every reported result is tied either to a committed pin or to an
@@ -861,66 +873,84 @@ re-derives all 48,479 table cells and all 13,790 rated lines exactly,
 and fails on a single mutated cell; and double emission is
 byte-identical.
 
-Evaluating the composed schedule economy-wide is what turns the
-witness's scope boundary from a caveat into a measurement. Weighted
-by the rebuilt 2024 import basket, the encoded law's statutory stack
-averages 12.34 percent over April–June 2026 (12.07 on 2025 weights;
-realized collections, a different construct entirely, run 6.81
-percent), on 83.4 percent of basket value — the remainder being specific, compound, and conditional cells
-the machinery classifies rather than force-parses. The by-authority
-decomposition then shows exactly where encoding ends: the balance-of-
-payments surcharge and the pre-termination emergency layers, which
-attach by origin or economy-wide, appear at full statutory incidence,
-while the line-list actions — the China Section 301 lists, the
-Section 232 derivative annexes, Sections 201 and 338 — contribute
-essentially nothing beyond the witness lines, because the witness
-encodes their incidence as five literal line equalities. A replay of
-the certified oracle slice through this evaluation path reproduces
-all 1,300 extract comparisons exactly, so the boundary is in the
-encoded incidence, not the evaluation.
+The first economy-wide evaluation made the witness boundary measurable.
+Its five literal line equalities left most listed actions outside the
+schedule calculation even though the rate tables were complete. Replay
+of the certified witness slice reproduced all 1,300 extract comparisons
+exactly. The missing incidence was therefore a composition boundary,
+not an evaluation error. The next layer removes that boundary while
+keeping the witness as an oracle.
 
-Set beside the tracker rerun of Section 4 — reported alongside, not
-as a like-for-like comparison — the distance decomposes into two
-independently measured wedges and one balancing residual. The
-unencoded line-list layer carries 6.58 points of the window mean on
-the tracker's own decomposition columns, and the surcharge's
-exemption and stacking structure, which the five-line witness never
-exercised, accounts for 7.03 points of overapplication in our
-flat-incidence evaluation: both magnitudes come from the tracker's
-per-authority columns, not from fitting. The remaining 1.16 points is
-a balancing residual by construction — the shared-scope difference
-minus the surcharge wedge — bundling basket composition, ad valorem
-equivalents for the excluded cells, and anything else; the resulting
-closure to the rerun mean (10.72) is therefore an accounting
-identity, not an independent gate, and the evidence bundle records it
-as report-only. What the decomposition establishes is bounded but
-real: the two dominant, independently measured wedges are the
-unencoded incidence layer itself, in both directions. Table 4 reports
-the constructs with these disclosures. The incidence layer —
-membership tables for the action lists and the surcharge's exemption
-structure, generated from the corpus-retained chapter 99 notes under
-the same gate ladder — is the declared next stage; until it lands,
-the average-rate series stay concept-separated, with the two
-dominant separations independently quantified and the remainder
-carried as a named residual.
+## Encoding the action-incidence layer
+
+The source is the tariff schedule itself. Chapter 99 notes state which
+ordinary tariff provisions receive each action heading. They are page-
+level provisions in the corpus and can be grounded at the same atom
+standard as a rate cell. The Section 232 note, for example, says that
+its headings apply to articles classifiable in the provisions in its
+lists, then introduces “(iii) Articles of steel.” The aluminum note says
+that a reference to a heading or subheading covers “all its subordinate
+provisions (both legal and statistical).” Those words require four- and
+six-digit scope as well as the eight- and ten-digit numbers used by the
+other lists.
+
+A declarative note grammar identifies the governing subdivision, its
+page-spanning bounds, the action, and the printed code widths. The
+generator emits 25 membership tables with 12,227 grounded rows.
+The tables preserve heading and subheading widths for the primary
+Section 232 scope. A structurally independent second parser uses the
+same pinned notes bytes but neither the generator's prose boundaries
+nor its number recognizer. It reproduced every emitted set exactly.
+We also reconciled the sets against the tracker's membership resources.
+Every difference was assigned to a vintage, partial-value, or
+statistical-level disposition.
+
+The composition generator then replaced five exemplar equalities with
+membership-semantic inputs. It also added a Section 232 steel component
+grounded on heading 9903.82.02. The hand-built five-line witness remains
+unchanged as the oracle. This separation caught a coupling defect: when
+general membership flags were fed into the exemplar slots, the witness
+zeroed Section 122 on Section 301-member lines. That was an artifact of
+the exemplar equalities, not the statute. The fix was made in the
+generated source and gated against the witness slice. The gate
+enumerates every coupling cell and requires equivalence on the witness
+mapping.
+
+Table 4 reports the fully gated round-three evaluation. The fixed-2024
+statutory mean is 14.43 percent, with 83.4 percent of basket value
+covered; the 2025-weight mean is 12.25 percent, with 86.4 percent
+covered. Ex-post collections are 6.81 percent. Section 301 is 1.347
+percent against the tracker's 1.329 percent, a residual of 0.017
+percentage point. Our steel-and-aluminum Section 232 scope is 4.313
+percent against the tracker's 5.168 percent. That −0.856-point
+residual compares our metal scope with its all-Section 232 family,
+which also includes autos, light trucks, parts, copper, semiconductors,
+medium- and heavy-duty vehicles and buses, and the wood family.
+Section 201 is zero against 0.080 percent because our slot fires only
+on crystalline-silicon photovoltaic membership.
+
+Section 122 is 6.435 percent against 2.969 percent, a difference of
+3.47 points. This wedge is not closed. It is decomposed into declared
+entry facts absent from the first version: General Note 6 civil-
+aircraft utilization, which is sensitivity-only and covers 11.1
+percent of value; USMCA and CAFTA entry status; partial-value facts;
+and transit status. The remaining unencoded line-list layer is 0.92
+percentage point, down from 6.58. These are accounting labels, not an
+independent validation of closure.
+
 # 8. Uses and limits
 
 What the pair enables now is deliberately narrower than duty
-assessment. After a caller filters inputs to the five witness lines,
-the composition supports source-traceable, posted ad valorem
-component-rate stack calculations for the supplied date, including
-counterfactual changes expressible as dated rules. The filter is a
-caller obligation: the pinned composition has five predicates but no
-domain guard, and an off-slice call may return a plausible value rather
-than an error. The generated schedule tables of Section 7 change the
-lookup boundary, not the computation boundary: any rated line's disposition, and its posted general or column-2
-rate where that column is ad valorem or Free, are now published,
-proof-grounded outputs, but wiring those tables into the composition —
-so an arbitrary entry's duty stack computes under a domain guard — is
-declared, deferred work on every generated module, not something this
-paper reports. The synthetic pilot supplies the needed identifiers and
-a declared mid-month date, but this paper reports no application of the
-composition to those rows. Separately, the ingest's 302,318 consumer
+assessment. The five-line witness still supports source-traceable,
+posted ad valorem component-rate calculations on its guarded caller
+surface. The generated schedule compositions now accept action-
+membership inputs for arbitrary rated lines, with their posted general
+or column-2 rate where that rate is ad valorem or Free. The action-
+incidence layer is encoded, but the entry-level facts that determine
+some exemptions and value bases are not inferred. The synthetic pilot
+supplies the needed identifiers and a declared mid-month date, but this
+paper reports no application of the composition to those rows.
+Separately, the ingest's 302,318 consumer
 facts publish at five aggregation grains with channel-invariant keys
 that can serve as calibration targets downstream.
 
@@ -949,10 +979,10 @@ joint application would require their true line-and-time intersection,
 but no such composed result or committed intersection receipt is
 reported here. The Section 7 schedule-scale averages inherit the same
 discipline from the other side: they are exact evaluations of the
-encoded scope, with the unencoded action-incidence layer quantified
-against the tracker's decomposition rather than filled in, and they
-become comparable to the published trackers only when that layer is
-encoded under the same gates.
+encoded scope. What remains outside is entry-level utilization, USMCA
+and CAFTA entry status, partial value, transit status, and the non-metal
+Section 232 family. The paper therefore does not estimate the complete
+burden.
 
 The natural next analyses — complete duty calculation, distributional
 incidence, and tariff-revenue counterfactuals — sit one layer up, after
@@ -960,6 +990,7 @@ the fail-closed line guard, missing bases, quota state, finer timing,
 and application receipt are supplied. Conflating that layer with this
 paper would launder modeling assumptions through a dataset whose
 claim to exactness is limited to reaggregation of declared margins.
+
 # 9. Related work
 
 **Tariff-rate data for the trade-war literature.** The empirical
@@ -1041,6 +1072,7 @@ that contract; the claim is bounded by our search (August 2026) and
 Section 1's contribution list is written to survive even if one
 surfaces — the representation and the reconciliation regime do not
 lean on the dataset's novelty.
+
 # Data and code availability
 
 The committed replication surface is distributed across the source
@@ -1123,6 +1155,12 @@ re-derives and byte-compares all 300 committed files; the
 schedule-scale evaluation caches, the three-construct series, and the
 tracker reconciliation outputs live in the project lane with hash
 receipts, held for the archival release alongside the weight bases.
+The action-incidence tables, `tools/generate_incidence_tables.py`, and
+`tools/b16_differential_check.py` ship in rulespec-us at merge
+`956a5474`; the decoupled compositions and
+the heading-9903.82.02 steel component ship at merge `96d5e7c1`.
+Their gate reports and reconciliation evidence are archived in the
+project lane pending archival release.
 
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 7 were produced by AI agents under the stated
@@ -1133,6 +1171,7 @@ through hostile, round-diff, red-team, and fresh-eyes referee passes.
 The component-review reproducibility limit above applies; manuscript
 review cannot substitute for the pinned artifacts and checks reported
 with each claim. The human author is responsible for all claims.
+
 # Tables (wire into sections at final assembly)
 
 ## Table 1 — Conformance scoreboard at the pinned snapshot (§3)
@@ -1209,26 +1248,22 @@ versus per-revision weight keying, acting in opposite directions.
 
 | Construct | Window mean | Coverage and scope |
 |---|---:|---|
-| Encoded statutory, fixed-2024 weights | 12.34% | 83.4% of basket value available; 16.6% excluded (specific/compound/conditional cells, classified not force-parsed) |
-| Encoded statutory, 2025 weights | 12.07% | 86.4% available; 13.6% excluded |
+| Encoded statutory, fixed-2024 weights | 14.43% | 83.4% of basket value available; 16.6% excluded (specific/compound/conditional cells, classified not force-parsed) |
+| Encoded statutory, 2025 weights | 12.25% | 86.4% available; 13.6% excluded |
 | Ex-post collections | 6.81% | calculated duties over customs value, Census monthly |
 | Yale published (effective statutory, fixed-2024) | 11.08% | non-comparable reference series: full basket with ad valorem equivalents and exemption-adjusted incidence |
 | TPC published (statutory, 2025 ex-AD/CVD) | 9.46% | non-comparable reference series: published all-goods scope |
 
-By-authority decomposition of the encoded fixed-2024 mean: surcharge
-(Section 122) 10.00 points at flat statutory incidence; MFN base 2.34
-points; emergency-power layers zero in-window (terminated
-2026-02-24); line-list actions effectively zero beyond the five
-witness lines. Boundary quantification against the tracker rerun's
-own decomposition columns: unencoded line-list layer (301, 232
-derivative, 201, 338) 6.58 points; surcharge exemption/stacking wedge
-7.03 points; basket and ad-valorem-equivalent residual 1.16 points;
-the line-list and surcharge wedges are independently measured on the
-tracker's per-authority columns; the basket/AVE figure is a balancing
-residual by construction, so the resulting closure to the rerun mean
-is an accounting identity, recorded report-only in the evidence
-bundle. Notes: the encoded stack
-carries no antidumping or countervailing duties; rates are statutory
-posted, with no effective-layer ad valorem equivalents for excluded
-cells; evaluation replays the certified oracle slice exactly (1,300
-of 1,300 comparisons).
+| Authority comparison | Ours | Yale | Residual and scope |
+|---|---:|---:|---|
+| Section 301 | 1.347% | 1.329% | +0.017 percentage point |
+| Section 232 | 4.313% | 5.168% | −0.856 point; ours is steel and aluminum, while Yale is the all-Section 232 family, including autos, light trucks, parts, copper, semiconductors, medium- and heavy-duty vehicles and buses, and wood |
+| Section 201 | 0.000% | 0.080% | −0.080 point; our slot fires only on crystalline-silicon photovoltaic membership |
+| Section 122 | 6.435% | 2.969% | +3.47 points; not closed: GN6 civil-aircraft utilization, USMCA/CAFTA entry status, partial-value facts, and transit status are declared inputs absent in version 1 |
+
+The General Note 6 input is sensitivity-only and covers 11.1 percent
+of value. The remaining unencoded line-list layer is 0.92 percentage
+point, down from 6.58 in revision 9. The Section 122 labels decompose
+an accounting wedge; they do not close it. The encoded stack carries
+no antidumping or countervailing duties, and excluded cells receive no
+effective-layer ad valorem equivalents.

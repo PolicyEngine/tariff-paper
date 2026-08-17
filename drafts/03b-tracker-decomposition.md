@@ -67,4 +67,7 @@ declare to be comparable: the rate concept (posted statutory, effective
 statutory, or realized collections), the weight base and its vintage,
 and the scope of trade-remedy duties. Section 5's dispositions apply
 the same discipline line by line; this section applies it
-series by series.
+series by series. We also filed two further author-attributed
+implementation findings upstream: chapter-98 partial-value sequencing
+in the Section 122 path and a phantom civil-aircraft code. Both await a
+maintainer response.

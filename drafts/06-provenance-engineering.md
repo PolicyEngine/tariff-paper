@@ -127,45 +127,67 @@ re-derives all 48,479 table cells and all 13,790 rated lines exactly,
 and fails on a single mutated cell; and double emission is
 byte-identical.
 
-Evaluating the composed schedule economy-wide is what turns the
-witness's scope boundary from a caveat into a measurement. Weighted
-by the rebuilt 2024 import basket, the encoded law's statutory stack
-averages 12.34 percent over April–June 2026 (12.07 on 2025 weights;
-realized collections, a different construct entirely, run 6.81
-percent), on 83.4 percent of basket value — the remainder being specific, compound, and conditional cells
-the machinery classifies rather than force-parses. The by-authority
-decomposition then shows exactly where encoding ends: the balance-of-
-payments surcharge and the pre-termination emergency layers, which
-attach by origin or economy-wide, appear at full statutory incidence,
-while the line-list actions — the China Section 301 lists, the
-Section 232 derivative annexes, Sections 201 and 338 — contribute
-essentially nothing beyond the witness lines, because the witness
-encodes their incidence as five literal line equalities. A replay of
-the certified oracle slice through this evaluation path reproduces
-all 1,300 extract comparisons exactly, so the boundary is in the
-encoded incidence, not the evaluation.
+The first economy-wide evaluation made the witness boundary measurable.
+Its five literal line equalities left most listed actions outside the
+schedule calculation even though the rate tables were complete. Replay
+of the certified witness slice reproduced all 1,300 extract comparisons
+exactly. The missing incidence was therefore a composition boundary,
+not an evaluation error. The next layer removes that boundary while
+keeping the witness as an oracle.
 
-Set beside the tracker rerun of Section 4 — reported alongside, not
-as a like-for-like comparison — the distance decomposes into two
-independently measured wedges and one balancing residual. The
-unencoded line-list layer carries 6.58 points of the window mean on
-the tracker's own decomposition columns, and the surcharge's
-exemption and stacking structure, which the five-line witness never
-exercised, accounts for 7.03 points of overapplication in our
-flat-incidence evaluation: both magnitudes come from the tracker's
-per-authority columns, not from fitting. The remaining 1.16 points is
-a balancing residual by construction — the shared-scope difference
-minus the surcharge wedge — bundling basket composition, ad valorem
-equivalents for the excluded cells, and anything else; the resulting
-closure to the rerun mean (10.72) is therefore an accounting
-identity, not an independent gate, and the evidence bundle records it
-as report-only. What the decomposition establishes is bounded but
-real: the two dominant, independently measured wedges are the
-unencoded incidence layer itself, in both directions. Table 4 reports
-the constructs with these disclosures. The incidence layer —
-membership tables for the action lists and the surcharge's exemption
-structure, generated from the corpus-retained chapter 99 notes under
-the same gate ladder — is the declared next stage; until it lands,
-the average-rate series stay concept-separated, with the two
-dominant separations independently quantified and the remainder
-carried as a named residual.
+## Encoding the action-incidence layer
+
+The source is the tariff schedule itself. Chapter 99 notes state which
+ordinary tariff provisions receive each action heading. They are page-
+level provisions in the corpus and can be grounded at the same atom
+standard as a rate cell. The Section 232 note, for example, says that
+its headings apply to articles classifiable in the provisions in its
+lists, then introduces “(iii) Articles of steel.” The aluminum note says
+that a reference to a heading or subheading covers “all its subordinate
+provisions (both legal and statistical).” Those words require four- and
+six-digit scope as well as the eight- and ten-digit numbers used by the
+other lists.
+
+A declarative note grammar identifies the governing subdivision, its
+page-spanning bounds, the action, and the printed code widths. The
+generator emits 25 membership tables with 12,227 grounded rows.
+The tables preserve heading and subheading widths for the primary
+Section 232 scope. A structurally independent second parser uses the
+same pinned notes bytes but neither the generator's prose boundaries
+nor its number recognizer. It reproduced every emitted set exactly.
+We also reconciled the sets against the tracker's membership resources.
+Every difference was assigned to a vintage, partial-value, or
+statistical-level disposition.
+
+The composition generator then replaced five exemplar equalities with
+membership-semantic inputs. It also added a Section 232 steel component
+grounded on heading 9903.82.02. The hand-built five-line witness remains
+unchanged as the oracle. This separation caught a coupling defect: when
+general membership flags were fed into the exemplar slots, the witness
+zeroed Section 122 on Section 301-member lines. That was an artifact of
+the exemplar equalities, not the statute. The fix was made in the
+generated source and gated against the witness slice. The gate
+enumerates every coupling cell and requires equivalence on the witness
+mapping.
+
+Table 4 reports the fully gated round-three evaluation. The fixed-2024
+statutory mean is 14.43 percent, with 83.4 percent of basket value
+covered; the 2025-weight mean is 12.25 percent, with 86.4 percent
+covered. Ex-post collections are 6.81 percent. Section 301 is 1.347
+percent against the tracker's 1.329 percent, a residual of 0.017
+percentage point. Our steel-and-aluminum Section 232 scope is 4.313
+percent against the tracker's 5.168 percent. That −0.856-point
+residual compares our metal scope with its all-Section 232 family,
+which also includes autos, light trucks, parts, copper, semiconductors,
+medium- and heavy-duty vehicles and buses, and the wood family.
+Section 201 is zero against 0.080 percent because our slot fires only
+on crystalline-silicon photovoltaic membership.
+
+Section 122 is 6.435 percent against 2.969 percent, a difference of
+3.47 points. This wedge is not closed. It is decomposed into declared
+entry facts absent from the first version: General Note 6 civil-
+aircraft utilization, which is sensitivity-only and covers 11.1
+percent of value; USMCA and CAFTA entry status; partial-value facts;
+and transit status. The remaining unencoded line-list layer is 0.92
+percentage point, down from 6.58. These are accounting labels, not an
+independent validation of closure.

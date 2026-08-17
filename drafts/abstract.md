@@ -22,16 +22,17 @@ also produces two proposed reference corrections, each supported by a
 legal derivation and still awaiting maintainer response. An enabling data artifact converts
 official monthly import margins into synthetic, weighted customs-entry
 lines that reaggregate exactly, with assumptions recorded beside the
-data. The implementation has material boundaries. The composition
-contains five line predicates but no fail-closed domain guard, so
+data. The implementation has material boundaries. The hand-built
+witness composition contains five line predicates but no fail-closed domain guard, so
 callers must restrict it to the witness slice: unsupported lines can
 return plausible values rather than errors. The generated tables
 publish posted rates and dispositions at full coverage, and one
 hundred generated per-chapter compositions evaluate the statutory
-stack economy-wide under identity, differential, and replay gates; the
-action-incidence layer that remains unencoded is quantified against
-the tracker's own decomposition — 6.6 points of the window mean —
-rather than filled in. Its output is a posted ad
+stack economy-wide under identity, differential, and replay gates. The
+encoded action-incidence layer closes the Section 301 comparison to two
+hundredths of a percentage point; the remaining separation from the
+tracker is named entry-level facts and a scope difference in the
+Section 232 family. Its output is a posted ad
 valorem component-rate stack under declared synthetic timing, not a
 complete duty amount or revenue account; the inputs omit specific-duty
 quantities, aluminum-content value, quota state, and sub-monthly timing.

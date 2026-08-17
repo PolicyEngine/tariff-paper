@@ -80,6 +80,12 @@ re-derives and byte-compares all 300 committed files; the
 schedule-scale evaluation caches, the three-construct series, and the
 tracker reconciliation outputs live in the project lane with hash
 receipts, held for the archival release alongside the weight bases.
+The action-incidence tables, `tools/generate_incidence_tables.py`, and
+`tools/b16_differential_check.py` ship in rulespec-us at merge
+`956a5474`; the decoupled compositions and
+the heading-9903.82.02 steel component ship at merge `96d5e7c1`.
+Their gate reports and reconciliation evidence are archived in the
+project lane pending archival release.
 
 **AI-use disclosure.** The encodings, pipelines, tests, and reviews
 described in Section 7 were produced by AI agents under the stated

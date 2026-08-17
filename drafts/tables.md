@@ -74,26 +74,22 @@ versus per-revision weight keying, acting in opposite directions.
 
 | Construct | Window mean | Coverage and scope |
 |---|---:|---|
-| Encoded statutory, fixed-2024 weights | 12.34% | 83.4% of basket value available; 16.6% excluded (specific/compound/conditional cells, classified not force-parsed) |
-| Encoded statutory, 2025 weights | 12.07% | 86.4% available; 13.6% excluded |
+| Encoded statutory, fixed-2024 weights | 14.43% | 83.4% of basket value available; 16.6% excluded (specific/compound/conditional cells, classified not force-parsed) |
+| Encoded statutory, 2025 weights | 12.25% | 86.4% available; 13.6% excluded |
 | Ex-post collections | 6.81% | calculated duties over customs value, Census monthly |
 | Yale published (effective statutory, fixed-2024) | 11.08% | non-comparable reference series: full basket with ad valorem equivalents and exemption-adjusted incidence |
 | TPC published (statutory, 2025 ex-AD/CVD) | 9.46% | non-comparable reference series: published all-goods scope |
 
-By-authority decomposition of the encoded fixed-2024 mean: surcharge
-(Section 122) 10.00 points at flat statutory incidence; MFN base 2.34
-points; emergency-power layers zero in-window (terminated
-2026-02-24); line-list actions effectively zero beyond the five
-witness lines. Boundary quantification against the tracker rerun's
-own decomposition columns: unencoded line-list layer (301, 232
-derivative, 201, 338) 6.58 points; surcharge exemption/stacking wedge
-7.03 points; basket and ad-valorem-equivalent residual 1.16 points;
-the line-list and surcharge wedges are independently measured on the
-tracker's per-authority columns; the basket/AVE figure is a balancing
-residual by construction, so the resulting closure to the rerun mean
-is an accounting identity, recorded report-only in the evidence
-bundle. Notes: the encoded stack
-carries no antidumping or countervailing duties; rates are statutory
-posted, with no effective-layer ad valorem equivalents for excluded
-cells; evaluation replays the certified oracle slice exactly (1,300
-of 1,300 comparisons).
+| Authority comparison | Ours | Yale | Residual and scope |
+|---|---:|---:|---|
+| Section 301 | 1.347% | 1.329% | +0.017 percentage point |
+| Section 232 | 4.313% | 5.168% | −0.856 point; ours is steel and aluminum, while Yale is the all-Section 232 family, including autos, light trucks, parts, copper, semiconductors, medium- and heavy-duty vehicles and buses, and wood |
+| Section 201 | 0.000% | 0.080% | −0.080 point; our slot fires only on crystalline-silicon photovoltaic membership |
+| Section 122 | 6.435% | 2.969% | +3.47 points; not closed: GN6 civil-aircraft utilization, USMCA/CAFTA entry status, partial-value facts, and transit status are declared inputs absent in version 1 |
+
+The General Note 6 input is sensitivity-only and covers 11.1 percent
+of value. The remaining unencoded line-list layer is 0.92 percentage
+point, down from 6.58 in revision 9. The Section 122 labels decompose
+an accounting wedge; they do not close it. The encoded stack carries
+no antidumping or countervailing duties, and excluded cells receive no
+effective-layer ad valorem equivalents.

@@ -94,9 +94,9 @@ contribution is a margin-exact synthetic customs-entry dataset with a
 declared assumptions register (Section 6). The paper computes an
 import-weighted average of the encoded statutory scope across the full
 schedule (Section 7), but does not estimate the complete schedule-wide
-tariff burden, complete duties, or customs revenue: action-list
-incidence, surcharge exemptions, and non-ad-valorem equivalents remain
-unencoded, and Section 7 quantifies that boundary rather than filling
-it. Applications that add the missing bases and state — and
+tariff burden, complete duties, or customs revenue. The action-incidence
+layer is encoded. Entry-level utilization, entry status, partial value,
+the non-metal Section 232 family, and non-ad-valorem equivalents remain
+outside the reported scope. Applications that add the missing bases and state — and
 distributional incidence analyses built on them — remain future work
 (Section 8).

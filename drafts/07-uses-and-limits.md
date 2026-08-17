@@ -1,21 +1,16 @@
 # 8. Uses and limits
 
 What the pair enables now is deliberately narrower than duty
-assessment. After a caller filters inputs to the five witness lines,
-the composition supports source-traceable, posted ad valorem
-component-rate stack calculations for the supplied date, including
-counterfactual changes expressible as dated rules. The filter is a
-caller obligation: the pinned composition has five predicates but no
-domain guard, and an off-slice call may return a plausible value rather
-than an error. The generated schedule tables of Section 7 change the
-lookup boundary, not the computation boundary: any rated line's disposition, and its posted general or column-2
-rate where that column is ad valorem or Free, are now published,
-proof-grounded outputs, but wiring those tables into the composition —
-so an arbitrary entry's duty stack computes under a domain guard — is
-declared, deferred work on every generated module, not something this
-paper reports. The synthetic pilot supplies the needed identifiers and
-a declared mid-month date, but this paper reports no application of the
-composition to those rows. Separately, the ingest's 302,318 consumer
+assessment. The five-line witness still supports source-traceable,
+posted ad valorem component-rate calculations on its guarded caller
+surface. The generated schedule compositions now accept action-
+membership inputs for arbitrary rated lines, with their posted general
+or column-2 rate where that rate is ad valorem or Free. The action-
+incidence layer is encoded, but the entry-level facts that determine
+some exemptions and value bases are not inferred. The synthetic pilot
+supplies the needed identifiers and a declared mid-month date, but this
+paper reports no application of the composition to those rows.
+Separately, the ingest's 302,318 consumer
 facts publish at five aggregation grains with channel-invariant keys
 that can serve as calibration targets downstream.
 
@@ -44,10 +39,10 @@ joint application would require their true line-and-time intersection,
 but no such composed result or committed intersection receipt is
 reported here. The Section 7 schedule-scale averages inherit the same
 discipline from the other side: they are exact evaluations of the
-encoded scope, with the unencoded action-incidence layer quantified
-against the tracker's decomposition rather than filled in, and they
-become comparable to the published trackers only when that layer is
-encoded under the same gates.
+encoded scope. What remains outside is entry-level utilization, USMCA
+and CAFTA entry status, partial value, transit status, and the non-metal
+Section 232 family. The paper therefore does not estimate the complete
+burden.
 
 The natural next analyses — complete duty calculation, distributional
 incidence, and tariff-revenue counterfactuals — sit one layer up, after
