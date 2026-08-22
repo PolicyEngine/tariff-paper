@@ -1,6 +1,6 @@
 ---
 title: "Tariff rate constructs for the 2025–26 trade shock: weights, scope, and synthetic customs entries"
-author: "[Author slots — working draft, local only]"
+author: "AUTHORS: TBD (Max)"
 date: 2026-08-16
 bibliography: research/references.bib
 link-citations: true
@@ -485,7 +485,7 @@ Budget-Lab-Yale/tariff-rate-tracker
 `c4307e514196618afcbf88cf7fd33746417eeabf` (MIT). Entries pipeline:
 microcosm merge commits `d4b0855157af996bd367146bc200a2f72ee7d15d`
 (ingest) and `6707ed5912d33ff0a340474a1a24f31546c6dec5` (generator).
-No archival release accompanies this local draft. Before release, the
+No archival release accompanies this working paper. Before release, the
 project must also add the fail-closed five-line composition guard and
 negative tests, regenerate and tripwire the disposition mirror, archive
 the P2 outputs and review protocol, and retain the planned containerized

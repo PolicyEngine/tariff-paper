@@ -1,1 +1,9 @@
 tariff-rules-paper/
+/.cache/
+*.aux
+*.log
+*.out
+*.tex
+build/*
+!build/paper.pdf
+!build/pdf-preamble.tex
