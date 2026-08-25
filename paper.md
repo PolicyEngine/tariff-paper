@@ -1,6 +1,6 @@
 ---
 title: "Tariff rate constructs for the 2025–26 trade shock: weights, scope, and synthetic customs entries"
-author: "AUTHORS: TBD (Max)"
+author: "Max Ghenis"
 date: 2026-08-16
 bibliography: research/references.bib
 link-citations: true
