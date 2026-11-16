@@ -201,7 +201,7 @@ All six filings verified open with 0 maintainer comments as of
 - "Confirmed by Yale" or any maintainer-acceptance implication for
   #27/#28 — they are reported, derivation-backed, unacknowledged.
 - Lowercase product names in prose (Microcosm, PolicyEngine, Chronicle,
-  RuleSpec); "populace"/"ledger" only as code identifiers.
+  RuleSpec); old names only as code identifiers.
 - Policy advocacy in any direction.
 - Unpinned scoreboard numbers (every scoreboard claim carries its
   snapshot SHA).
