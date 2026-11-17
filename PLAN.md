@@ -54,7 +54,7 @@ wedge build, and is NOT this paper.
 ## Naming (as of 2026-08-07)
 
 "The Axiom Foundation" (never "nonprofit" in copy); Microcosm (repo
-renamed 8/7; packages renamed `microcosm.*` in
+renamed from populace 8/7; packages still `populace.*` until
 microcosm#638); Chronicle (renamed from Ledger 8/7 — schema ids still
 `policyengine_ledger.*`, frozen v1); PolicyEngine. No Thesis mention.
 Products capitalized in prose.
